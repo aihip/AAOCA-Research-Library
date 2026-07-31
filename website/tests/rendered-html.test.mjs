@@ -89,6 +89,11 @@ test("renders a non-full-text record with a prominent warning and identifiers", 
   assert.match(html, /does not present an abstract as the paper/);
   assert.match(html, /Persistent identifiers/);
   assert.match(html, /Repository provenance/);
+  assert.ok(
+    html.includes(
+      `https://github.com/aihip/AAOCA-Research-Library/blob/main/${paper.path}`,
+    ),
+  );
 });
 
 test("publishes a canonical sitemap and robots policy for all record pages", async () => {

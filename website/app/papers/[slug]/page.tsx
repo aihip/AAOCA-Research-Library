@@ -203,7 +203,16 @@ export default async function PaperPage({ params }: PaperPageProps) {
           <dl>
             <div>
               <dt>记录路径</dt>
-              <dd>{paper.path}</dd>
+              <dd>
+                <a
+                  href={`${REPOSITORY_URL}/blob/main/${paper.path}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`在 GitHub 中打开 ${paper.path}`}
+                >
+                  {paper.path} ↗
+                </a>
+              </dd>
             </div>
             <div>
               <dt>SHA-256</dt>
