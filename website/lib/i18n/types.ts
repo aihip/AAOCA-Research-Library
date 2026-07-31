@@ -11,6 +11,7 @@ export type Dictionary = {
     tagline: string;
     disclaimer: string;
     notMedicalAdvice: string;
+    rightsNotice: string;
   };
 
   nav: {

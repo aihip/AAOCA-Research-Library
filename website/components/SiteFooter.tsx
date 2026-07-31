@@ -7,6 +7,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
       <div>
         <strong>{dict.site.name}</strong>
         <p>{dict.site.notMedicalAdvice}</p>
+        <p>{dict.site.rightsNotice}</p>
       </div>
       <div className="footer-links">
         <a href={`${REPOSITORY_URL}/blob/main/CITATION.cff`}>

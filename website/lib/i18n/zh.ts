@@ -11,6 +11,8 @@ export const zh: Dictionary = {
     disclaimer:
       "本站整理公开发表的研究文献，帮助你和医生讨论，不能替代医生的诊断和建议。",
     notMedicalAdvice: "文献整理与检索，不提供医疗建议。",
+    rightsNotice:
+      "论文版权归原作者、期刊或其他权利人所有；如需版权或内容更正，请通过 GitHub Issues 联系维护者。请勿提交患者个人信息。",
   },
 
   nav: {

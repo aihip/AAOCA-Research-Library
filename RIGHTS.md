@@ -10,6 +10,8 @@
 - MIT License 仅适用于本项目自有软件代码；CC BY 4.0 仅适用于本项目自有说明文字和整理后的书目元数据。二者都不覆盖第三方论文 PDF、期刊排版、图表、商标或其他第三方材料。
 - 如权利人认为某个文件不应在本仓库中保存，请通过 GitHub Issue 指明文件路径和权利依据。维护者会优先核查，并在必要时移除文件、仅保留非全文访问卡及合法原始入口。
 - 本项目仅用于文献发现、科研整理和教学，不构成医疗或法律建议。
+- 本站目前不提供用户注册、评论、上传或个性化诊疗服务，也不要求提交健康信息。Cloudflare、GitHub 或其他基础设施提供商可能按照其隐私政策记录必要的访问日志。
+- 如需提出版权、隐私或内容更正请求，请通过 [GitHub Issues](https://github.com/aihip/AAOCA-Research-Library/issues) 提交可核查的文件路径、权利依据或更正来源；不应在 Issue 中提交患者姓名、病历号或其他敏感健康信息。
 
 ## English
 
@@ -21,3 +23,5 @@ This repository treats “full text obtained” and “redistribution permission
 - The MIT License covers only repository-authored software. CC BY 4.0 covers only repository-authored documentation and the curated bibliographic metadata. Neither license covers third-party article PDFs, journal layouts, figures, trademarks, or other third-party material.
 - A rightsholder who believes a file should not be stored here may open a GitHub Issue identifying the path and basis of the request. Maintainers should prioritize review and, where appropriate, remove the file while retaining only a non-full-text access card and lawful source links.
 - This collection is for literature discovery, research organization, and education. It is not medical or legal advice.
+- The site currently does not offer user accounts, comments, uploads, or individualized medical services, and it does not ask visitors to submit health information. Cloudflare, GitHub, or other infrastructure providers may record necessary access logs under their own privacy policies.
+- For copyright, privacy, or correction requests, use the [GitHub Issues](https://github.com/aihip/AAOCA-Research-Library/issues) page and include the verifiable file path, rights basis, or correction source. Do not submit patient names, medical-record numbers, or other sensitive health information in an issue.

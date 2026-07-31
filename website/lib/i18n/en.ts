@@ -11,6 +11,8 @@ export const en: Dictionary = {
     disclaimer:
       "This site organises published research to help you talk with your clinician. It does not replace medical diagnosis or advice.",
     notMedicalAdvice: "Literature discovery and research organisation—not medical advice.",
+    rightsNotice:
+      "Article rights remain with their authors, journals, or other rightsholders. Use GitHub Issues for copyright or correction requests; do not submit patient information.",
   },
 
   nav: {
