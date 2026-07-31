@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
+import { zh } from "../../lib/i18n/zh";
 import {
   SEARCH_KEYWORDS,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
-} from "../lib/site";
+} from "../../lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AAOCA Research Library｜冠状动脉起源异常文献库",
-    template: "%s | AAOCA Research Library",
+    default: zh.home.metaTitle,
+    template: `%s | ${zh.site.name}`,
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -19,21 +20,11 @@ export const metadata: Metadata = {
   creator: "AAOCA Research Library contributors",
   publisher: "AAOCA Research Library contributors",
   keywords: SEARCH_KEYWORDS,
-  alternates: {
-    canonical: "/",
-    languages: {
-      "zh-CN": "/",
-      en: "/",
-    },
-  },
   openGraph: {
     type: "website",
-    url: "/",
     siteName: SITE_NAME,
     locale: "zh_CN",
     alternateLocale: ["en_US"],
-    title: "AAOCA Research Library｜双语文献库",
-    description: SITE_DESCRIPTION,
     images: [
       {
         url: "/og.png",
@@ -45,25 +36,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AAOCA Research Library｜双语文献库",
-    description: SITE_DESCRIPTION,
     images: ["/og.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
+  robots: { index: true, follow: true },
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
-export default function RootLayout({
+export default function ChineseLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-CN">
       <body>{children}</body>

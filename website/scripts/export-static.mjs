@@ -65,12 +65,32 @@ async function writeRendered(pathname, response) {
   await writeFile(outputPath, body);
 }
 
-await writeRendered("/", await render("/"));
-for (const paper of papers) {
-  await writeRendered(`/papers/${paper.year}-${paper.sha256.slice(0, 12)}`, await render(`/papers/${paper.year}-${paper.sha256.slice(0, 12)}`));
+const TOPIC_SLUGS = [
+  "what-is-it",
+  "how-serious",
+  "what-tests",
+  "sports",
+  "surgery",
+  "guidelines",
+];
+
+// Chinese lives at the root, English under /en. Both trees are exported in full.
+const LANGUAGE_PREFIXES = ["", "/en"];
+
+const pagePaths = LANGUAGE_PREFIXES.flatMap((prefix) => [
+  prefix || "/",
+  ...TOPIC_SLUGS.map((slug) => `${prefix}/topics/${slug}`),
+  ...papers.map(
+    (paper) => `${prefix}/papers/${paper.year}-${paper.sha256.slice(0, 12)}`,
+  ),
+]);
+
+for (const pathname of pagePaths) {
+  await writeRendered(pathname, await render(pathname));
 }
+
 await writeRendered("/robots.txt", await render("/robots.txt", "text/plain"));
 await writeRendered("/sitemap.xml", await render("/sitemap.xml", "application/xml"));
 await writeRendered("/manifest.webmanifest", await render("/manifest.webmanifest", "application/manifest+json"));
 
-console.log(`Exported ${papers.length + 1} HTML routes plus SEO metadata to dist/client.`);
+console.log(`Exported ${pagePaths.length} HTML routes plus SEO metadata to dist/client.`);
