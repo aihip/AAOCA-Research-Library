@@ -2,7 +2,7 @@
 
 [在线检索 / Search online](https://aaoca.pheth.com) · [English](README.en.md) · [引用本项目](CITATION.cff) · [版权与全文说明](RIGHTS.md) · [参与维护](CONTRIBUTING.md)
 
-这是一个面向临床、科研和教学的双语可检索文献库，主题覆盖**冠状动脉异常主动脉起源**（Anomalous Aortic Origin of a Coronary Artery, **AAOCA**）、**异常右冠状动脉主动脉起源**（**AAORCA / ARCA-L**）、儿童与成人危险分层、影像学评估、运动管理和外科治疗。
+这是一个面向临床、科研和教学的双语可检索文献库，主题覆盖**冠状动脉起源异常**（Anomalous Aortic Origin of a Coronary Artery, **AAOCA**）、**右冠状动脉起源异常**（**AAORCA / ARCA-L**）、儿童与成人危险分层、影像学评估、运动管理和外科治疗。
 
 The **AAOCA Research Library** is a bilingual, deduplicated bibliography for anomalous aortic origin of a coronary artery, including pediatric and adult studies, expert consensus statements, clinical guidelines, imaging, ischemia assessment, sports participation, and surgical outcomes.
 

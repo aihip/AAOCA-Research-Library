@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AAOCA Research Library｜冠状动脉异常主动脉起源文献库",
+    default: "AAOCA Research Library｜冠状动脉起源异常文献库",
     template: "%s | AAOCA Research Library",
   },
   description: SITE_DESCRIPTION,

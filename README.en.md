@@ -51,7 +51,7 @@ website/
 
 ## Search terms
 
-AAOCA; AAORCA; ARCA-L; anomalous aortic origin of a coronary artery; anomalous origin of the right coronary artery; coronary artery anomaly; congenital coronary anomaly; interarterial coronary course; intramural coronary artery; unroofing; coronary reimplantation; pediatric cardiology; adult congenital heart disease; 冠状动脉异常主动脉起源; 主动脉起源异常; 右冠状动脉异常起源; 先天性冠状动脉异常; 壁内段; 冠状动脉去顶术; 冠状动脉再植术.
+AAOCA; AAORCA; ARCA-L; anomalous aortic origin of a coronary artery; anomalous origin of the right coronary artery; coronary artery anomaly; congenital coronary anomaly; interarterial coronary course; intramural coronary artery; unroofing; coronary reimplantation; pediatric cardiology; adult congenital heart disease; 冠状动脉起源异常; 主动脉起源异常; 右冠状动脉起源异常; 先天性冠状动脉异常; 壁内段; 冠状动脉去顶术; 冠状动脉再植术.
 
 ## Citation, rights, and contributions
 

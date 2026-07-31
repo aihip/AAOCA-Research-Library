@@ -67,7 +67,7 @@ test("server-renders the bilingual searchable library", async () => {
 
   const html = await response.text();
   assert.match(html, /AAOCA Research Library/);
-  assert.match(html, /冠状动脉异常主动脉起源/);
+  assert.match(html, /冠状动脉起源异常/);
   assert.match(html, /A bilingual index for pediatric and adult AAOCA literature/);
   assert.match(html, /没有用摘要冒充论文/);
   assert.match(html, /application\/ld\+json/);

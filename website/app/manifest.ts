@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "AAOCA Research Library｜冠状动脉异常主动脉起源文献库",
+    name: "AAOCA Research Library｜冠状动脉起源异常文献库",
     short_name: "AAOCA Library",
     description:
       "Bilingual pediatric and adult AAOCA literature index with guidelines and expert consensus.",

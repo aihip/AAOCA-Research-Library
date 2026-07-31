@@ -73,7 +73,7 @@ function matchesQuery(paper: Paper, query: string) {
     paper.access,
     aliases,
     accessAliases,
-    "AAOCA AAORCA ARCA-L 冠状动脉异常主动脉起源 先天性冠状动脉异常",
+    "AAOCA AAORCA ARCA-L 冠状动脉起源异常 先天性冠状动脉异常",
   ]
     .join(" ")
     .toLocaleLowerCase();

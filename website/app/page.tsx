@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "AAOCA 文献库：儿童、成人、专家共识",
   description:
-    "冠状动脉异常主动脉起源（AAOCA / AAORCA）双语文献索引，收录儿童、成人研究、专家共识与指南，醒目标注非全文记录。",
+    "冠状动脉起源异常（AAOCA / AAORCA）双语文献索引，收录儿童、成人研究、专家共识与指南，醒目标注非全文记录。",
   alternates: {
     canonical: "/",
   },
@@ -22,7 +22,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Dataset",
     name: "AAOCA Research Library",
-    alternateName: "冠状动脉异常主动脉起源文献库",
+    alternateName: "冠状动脉起源异常文献库",
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     isAccessibleForFree: true,
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">Curated evidence · 双语整理 · 2026-07-31</p>
           <h1>
-            冠状动脉异常主动脉起源
+            冠状动脉起源异常
             <span>AAOCA Research Library</span>
           </h1>
           <p className="hero-lede">
