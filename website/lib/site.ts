@@ -3,7 +3,7 @@ export const REPOSITORY_URL =
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://aaoca-research-library.huusondo988.chatgpt.site";
+  "https://aaoca.pheth.com";
 
 export const SITE_NAME = "AAOCA Research Library";
 

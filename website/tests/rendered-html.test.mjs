@@ -72,10 +72,8 @@ test("server-renders the bilingual searchable library", async () => {
   assert.match(html, /没有用摘要冒充论文/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /bibliography_and_access_status\.json/);
-  assert.match(
-    html,
-    /https:\/\/aaoca-research-library\.huusondo988\.chatgpt\.site/,
-  );
+  assert.match(html, /https:\/\/aaoca\.pheth\.com/);
+  assert.doesNotMatch(html, /aaoca-research-library\.huusondo988\.chatgpt\.site/);
   assert.doesNotMatch(html, /react-loading-skeleton|Your site is taking shape/);
 });
 
@@ -100,9 +98,9 @@ test("publishes a canonical sitemap and robots policy for all record pages", asy
   assert.equal((sitemap.match(/<url>/g) ?? []).length, 64);
   assert.match(
     sitemap,
-    /https:\/\/aaoca-research-library\.huusondo988\.chatgpt\.site\/papers\//,
+    /https:\/\/aaoca\.pheth\.com\/papers\//,
   );
-  assert.doesNotMatch(sitemap, /sites\.openai\.com/);
+  assert.doesNotMatch(sitemap, /chatgpt\.site|sites\.openai\.com/);
 
   const robotsResponse = await render("/robots.txt", "text/plain");
   assert.equal(robotsResponse.status, 200);
@@ -110,6 +108,6 @@ test("publishes a canonical sitemap and robots policy for all record pages", asy
   assert.match(robots, /Allow: \//);
   assert.match(
     robots,
-    /Sitemap: https:\/\/aaoca-research-library\.huusondo988\.chatgpt\.site\/sitemap\.xml/,
+    /Sitemap: https:\/\/aaoca\.pheth\.com\/sitemap\.xml/,
   );
 });

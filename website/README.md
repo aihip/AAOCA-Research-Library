@@ -2,7 +2,7 @@
 
 This directory contains the bilingual, searchable public interface for the repository bibliography.
 
-Production: <https://aaoca-research-library.huusondo988.chatgpt.site>
+Production: <https://aaoca.pheth.com>
 
 ## Data flow
 
