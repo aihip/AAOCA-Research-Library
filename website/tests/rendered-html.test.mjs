@@ -6,6 +6,25 @@ const records = JSON.parse(
   await readFile(new URL("../data/papers.json", import.meta.url), "utf8"),
 );
 
+const plainLanguage = JSON.parse(
+  await readFile(new URL("../data/plain-language.json", import.meta.url), "utf8"),
+);
+
+const TOPIC_SLUGS = [
+  "what-is-it",
+  "how-serious",
+  "what-tests",
+  "sports",
+  "surgery",
+  "guidelines",
+];
+
+const CONSENSUS_PATTERN =
+  /consensus|guideline|recommendations|scientific statement|专家共识|指南/i;
+
+const slugFor = (paper) => `${paper.year}-${paper.sha256.slice(0, 12)}`;
+const escape = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
 async function render(pathname = "/", accept = "text/html") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${pathname}`);
@@ -25,6 +44,12 @@ async function render(pathname = "/", accept = "text/html") {
       passThroughOnException() {},
     },
   );
+}
+
+async function renderHtml(pathname) {
+  const response = await render(pathname);
+  assert.equal(response.status, 200, `${pathname} did not return 200`);
+  return response.text();
 }
 
 test("bibliography remains complete, deduplicated, and access-safe", () => {
@@ -60,35 +85,152 @@ test("bibliography remains complete, deduplicated, and access-safe", () => {
   }
 });
 
-test("server-renders the bilingual searchable library", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+test("plain-language overlay stays joined to the authoritative index", () => {
+  const checksums = new Set(records.map((paper) => paper.sha256));
+  const keys = Object.keys(plainLanguage);
 
-  const html = await response.text();
-  assert.match(html, /AAOCA Research Library/);
+  assert.equal(keys.length, 63, "every record needs a plain-language entry");
+
+  for (const key of keys) {
+    assert.ok(
+      checksums.has(key),
+      `plain-language.json key matches no record: ${key}`,
+    );
+  }
+
+  for (const [key, entry] of Object.entries(plainLanguage)) {
+    assert.ok(entry.summary_zh?.length > 10, `summary too short for ${key}`);
+    assert.ok(
+      Array.isArray(entry.topics) && entry.topics.length > 0,
+      `no topics assigned for ${key}`,
+    );
+    for (const topic of entry.topics) {
+      assert.ok(TOPIC_SLUGS.includes(topic), `unknown topic "${topic}" on ${key}`);
+    }
+    assert.equal(typeof entry.reviewed, "boolean");
+  }
+
+  // The one record whose original title is already Chinese needs no translation.
+  const untranslated = Object.entries(plainLanguage).filter(
+    ([, entry]) => !entry.title_zh,
+  );
+  assert.equal(untranslated.length, 1);
+  const [chineseKey] = untranslated[0];
+  const chineseRecord = records.find((paper) => paper.sha256 === chineseKey);
+  assert.match(chineseRecord.title, /[一-鿿]/);
+});
+
+test("the guidelines topic matches the documented consensus records", () => {
+  const byTitle = records
+    .filter((paper) => CONSENSUS_PATTERN.test(paper.title))
+    .map((paper) => paper.sha256)
+    .sort();
+
+  const byTopic = Object.entries(plainLanguage)
+    .filter(([, entry]) => entry.topics.includes("guidelines"))
+    .map(([key]) => key)
+    .sort();
+
+  assert.equal(byTitle.length, 8);
+  assert.deepEqual(
+    byTopic,
+    byTitle,
+    "the guidelines topic has drifted from the title-derived consensus set",
+  );
+});
+
+test("Chinese landing page leads with plain language, not jargon", async () => {
+  const html = await renderHtml("/");
+
+  assert.match(html, /<html lang="zh-CN"/);
   assert.match(html, /冠状动脉起源异常/);
-  assert.match(html, /A bilingual index for pediatric and adult AAOCA literature/);
-  assert.match(html, /没有用摘要冒充论文/);
+  assert.match(html, /不能替代医生的诊断和建议/);
+  assert.match(html, /这是什么情况/);
+  assert.match(html, /心脏自己也需要血液供应/);
   assert.match(html, /application\/ld\+json/);
-  assert.match(html, /bibliography_and_access_status\.json/);
   assert.match(html, /https:\/\/aaoca\.pheth\.com/);
+
+  // Every question is reachable from the landing page.
+  for (const slug of TOPIC_SLUGS) {
+    assert.ok(html.includes(`/topics/${slug}`), `landing page omits ${slug}`);
+  }
+
   assert.doesNotMatch(html, /aaoca-research-library\.huusondo988\.chatgpt\.site/);
   assert.doesNotMatch(html, /react-loading-skeleton|Your site is taking shape/);
 });
 
-test("renders a non-full-text record with a prominent warning and identifiers", async () => {
-  const paper = records.find((record) => !record.access.startsWith("全文"));
-  const slug = `${paper.year}-${paper.sha256.slice(0, 12)}`;
-  const response = await render(`/papers/${slug}`);
-  assert.equal(response.status, 200);
+test("English tree renders independently with its own document language", async () => {
+  const html = await renderHtml("/en");
 
-  const html = await response.text();
-  assert.match(html, new RegExp(paper.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-  assert.match(html, /非全文 \/ NOT FULL TEXT/);
-  assert.match(html, /does not present an abstract as the paper/);
-  assert.match(html, /Persistent identifiers/);
-  assert.match(html, /Repository provenance/);
+  assert.match(html, /<html lang="en"/);
+  assert.match(html, /AAOCA Research Library/);
+  assert.match(html, /Anomalous aortic origin of a coronary artery/);
+  assert.match(html, /does not replace medical diagnosis or advice/);
+
+  // The English tree must not fall back to the Chinese primer.
+  assert.doesNotMatch(html, /心脏自己也需要血液供应/);
+});
+
+test("both trees declare each other as hreflang alternates", async () => {
+  const paths = ["/", "/topics/sports", `/papers/${slugFor(records[0])}`];
+
+  for (const path of paths) {
+    const zhHtml = await renderHtml(path);
+    const enHtml = await renderHtml(`/en${path === "/" ? "" : path}`);
+    const enUrl = `https://aaoca.pheth.com/en${path === "/" ? "" : path}`;
+    const zhUrl = `https://aaoca.pheth.com${path}`;
+
+    for (const html of [zhHtml, enHtml]) {
+      assert.ok(html.includes(enUrl), `${path} is missing the en alternate`);
+      assert.ok(html.includes(zhUrl), `${path} is missing the zh-CN alternate`);
+    }
+  }
+});
+
+test("every question page renders and none is empty", async () => {
+  for (const slug of TOPIC_SLUGS) {
+    const html = await renderHtml(`/topics/${slug}`);
+    const cards = (html.match(/class="paper-card"/g) ?? []).length;
+
+    assert.ok(cards > 0, `/topics/${slug} rendered no records`);
+
+    const expected = Object.values(plainLanguage).filter((entry) =>
+      entry.topics.includes(slug),
+    ).length;
+    assert.equal(cards, expected, `/topics/${slug} rendered ${cards} of ${expected}`);
+
+    assert.match(html, /不能替代医生的诊断和建议/);
+    assert.ok(await renderHtml(`/en/topics/${slug}`));
+  }
+});
+
+test("unreviewed summaries are labelled as AI drafts", async () => {
+  const drafted = Object.entries(plainLanguage).filter(
+    ([, entry]) => entry.reviewed === false,
+  );
+  assert.ok(drafted.length > 0, "this test is meaningless once all are reviewed");
+
+  const [checksum] = drafted[0];
+  const paper = records.find((record) => record.sha256 === checksum);
+  const html = await renderHtml(`/papers/${slugFor(paper)}`);
+
+  assert.match(html, /AI 初稿/);
+  assert.match(html, /尚未经过人工核对/);
+});
+
+test("renders a non-full-text record in plain words with usable identifiers", async () => {
+  const paper = records.find((record) => !record.access.startsWith("全文"));
+  const html = await renderHtml(`/papers/${slugFor(paper)}`);
+
+  assert.match(html, new RegExp(escape(paper.title)));
+  assert.match(html, /本站没有这篇的全文/);
+  assert.match(html, /本站不会用摘要冒充论文/);
+  // The actionable instruction is what makes a paywall survivable for a family.
+  assert.match(html, /请医生、医院图书馆或大学图书馆代为调阅/);
+  assert.match(html, /怎么找到这篇原文/);
+
+  // Provenance is retained but collapsed behind a disclosure.
+  assert.match(html, /<details class="provenance">/);
   assert.ok(
     html.includes(
       `https://github.com/aihip/AAOCA-Research-Library/blob/main/${paper.path}`,
@@ -96,23 +238,21 @@ test("renders a non-full-text record with a prominent warning and identifiers", 
   );
 });
 
-test("publishes a canonical sitemap and robots policy for all record pages", async () => {
+test("publishes a canonical sitemap and robots policy for both trees", async () => {
   const sitemapResponse = await render("/sitemap.xml", "application/xml");
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 64);
-  assert.match(
-    sitemap,
-    /https:\/\/aaoca\.pheth\.com\/papers\//,
-  );
+
+  // (1 landing + 6 questions + 63 records) x 2 language trees.
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 140);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/topics\/sports/);
   assert.doesNotMatch(sitemap, /chatgpt\.site|sites\.openai\.com/);
 
   const robotsResponse = await render("/robots.txt", "text/plain");
   assert.equal(robotsResponse.status, 200);
   const robots = await robotsResponse.text();
   assert.match(robots, /Allow: \//);
-  assert.match(
-    robots,
-    /Sitemap: https:\/\/aaoca\.pheth\.com\/sitemap\.xml/,
-  );
+  assert.match(robots, /Sitemap: https:\/\/aaoca\.pheth\.com\/sitemap\.xml/);
 });
