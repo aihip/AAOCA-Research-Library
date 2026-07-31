@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { HashScrollGuard } from "../../components/HashScrollGuard";
 import { zh } from "../../lib/i18n/zh";
 import {
   SEARCH_KEYWORDS,
@@ -47,7 +48,10 @@ export default function ChineseLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-CN">
-      <body>{children}</body>
+      <body>
+        <HashScrollGuard />
+        {children}
+      </body>
     </html>
   );
 }

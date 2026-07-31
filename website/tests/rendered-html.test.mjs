@@ -191,6 +191,20 @@ test("both trees declare each other as hreflang alternates", async () => {
   }
 });
 
+test("both trees ship the hash scroll guard", async () => {
+  // The router re-applies location.hash on hydration, about a second after
+  // paint, which yanks back anyone who started scrolling. The guard drops the
+  // hash on the first real gesture; without it that bounce returns silently.
+  for (const path of ["/", "/en", "/topics/sports", "/en/topics/sports"]) {
+    const html = await renderHtml(path);
+    assert.match(html, /window\.location\.hash/, `${path} has no scroll guard`);
+    assert.match(html, /"wheel", "touchmove", "keydown"/, `${path} guard is stale`);
+    // Listening on `scroll` would also fire for the browser's own fragment
+    // jump and clear the hash for readers who never scrolled.
+    assert.doesNotMatch(html, /addEventListener\("scroll"/);
+  }
+});
+
 test("every question page renders and none is empty", async () => {
   for (const slug of TOPIC_SLUGS) {
     const html = await renderHtml(`/topics/${slug}`);

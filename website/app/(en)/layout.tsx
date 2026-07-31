@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { HashScrollGuard } from "../../components/HashScrollGuard";
 import { en } from "../../lib/i18n/en";
 import {
   SEARCH_KEYWORDS,
@@ -47,7 +48,10 @@ export default function EnglishLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <HashScrollGuard />
+        {children}
+      </body>
     </html>
   );
 }
