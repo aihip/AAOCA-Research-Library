@@ -10,6 +10,10 @@ const plainLanguage = JSON.parse(
   await readFile(new URL("../data/plain-language.json", import.meta.url), "utf8"),
 );
 
+const synonyms = JSON.parse(
+  await readFile(new URL("../lib/synonyms.json", import.meta.url), "utf8"),
+);
+
 const TOPIC_SLUGS = [
   "what-is-it",
   "how-serious",
@@ -201,6 +205,71 @@ test("every question page renders and none is empty", async () => {
 
     assert.match(html, /不能替代医生的诊断和建议/);
     assert.ok(await renderHtml(`/en/topics/${slug}`));
+  }
+});
+
+test("every suggested query actually finds something", async () => {
+  // Mirrors expandTerm(): exact key, else every Chinese key contained in the
+  // token, because Chinese queries arrive as one compound word.
+  const cjkKeys = Object.keys(synonyms).filter((key) => /[一-鿿]/.test(key));
+  const expand = (term) => {
+    const normalized = term.toLocaleLowerCase();
+    const aliases = new Set([normalized]);
+    const exact = synonyms[normalized];
+    if (exact) {
+      for (const alias of exact) aliases.add(alias.toLocaleLowerCase());
+      return [...aliases];
+    }
+    for (const key of cjkKeys) {
+      if (!normalized.includes(key)) continue;
+      for (const alias of synonyms[key]) aliases.add(alias.toLocaleLowerCase());
+    }
+    return [...aliases];
+  };
+
+  // The runtime index also carries each record's topic labels, so take them
+  // from the rendered question pages rather than duplicating them here.
+  const topicQuestions = {};
+  for (const slug of TOPIC_SLUGS) {
+    const page = await renderHtml(`/topics/${slug}`);
+    topicQuestions[slug] = /<h1[^>]*>(.*?)<\/h1>/s.exec(page)[1].trim();
+  }
+
+  const corpus = records
+    .map((paper) => {
+      const entry = plainLanguage[paper.sha256] ?? {};
+      const population = paper.category === "儿童" ? "儿童 pediatric" : "成人 adult";
+      return [
+        paper.title,
+        paper.journal,
+        paper.notes,
+        entry.title_zh,
+        entry.summary_zh,
+        population,
+        ...(entry.topics ?? []).map((slug) => topicQuestions[slug]),
+      ]
+        .filter(Boolean)
+        .join(" ");
+    })
+    .map((text) => text.toLocaleLowerCase());
+
+  const html = await renderHtml("/");
+  const suggestions = [
+    ...html.matchAll(/<div class="search-suggestions">(.*?)<\/div>/gs),
+  ]
+    .flatMap((match) => [...match[1].matchAll(/<button[^>]*>(.*?)<\/button>/gs)])
+    .map((match) => match[1].trim());
+
+  assert.ok(suggestions.length >= 4, "landing page rendered no suggestion chips");
+
+  for (const suggestion of suggestions) {
+    // A suggestion is a promise to the reader; it must not lead to zero results.
+    const terms = suggestion.split(/\s+/).filter(Boolean);
+    const hits = corpus.filter((text) =>
+      terms.every((term) => expand(term).some((alias) => text.includes(alias))),
+    ).length;
+
+    assert.ok(hits > 0, `suggested query "${suggestion}" matches no record`);
   }
 });
 
