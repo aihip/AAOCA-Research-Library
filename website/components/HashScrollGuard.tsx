@@ -8,11 +8,16 @@ const GUARD = `(function(){
   if (!window.location.hash) return;
   function release() {
     if (window.location.hash) {
+      var y = window.scrollY;
       history.replaceState(
         history.state,
         "",
         window.location.pathname + window.location.search
       );
+      window.scrollTo(0, y);
+      requestAnimationFrame(function () {
+        window.scrollTo(0, y);
+      });
     }
   }
   function releaseAfterInitialJump() {
