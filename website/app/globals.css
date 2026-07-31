@@ -8,14 +8,18 @@
   --teal-dark: #0d3437;
   --teal-pale: #d9e7e2;
   --gold: #c8842f;
+  /* --gold is only 2.74:1 on --paper. Text uses this darker tone (5.6:1). */
+  --gold-text: #8a5310;
   --gold-pale: #f3e5cb;
   --red: #a43a32;
   --red-pale: #f8e1dc;
   --line: #d9d5ca;
   --shadow: 0 18px 50px rgba(25, 49, 48, 0.08);
-  --serif: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif;
-  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  /* Chinese faces lead: this is a Chinese-first site, and a Latin-first stack
+     makes mixed zh/en lines render at inconsistent weights. */
+  --serif: "Noto Serif SC", "Songti SC", Georgia, "Times New Roman", serif;
+  --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Inter,
+    ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -24,6 +28,9 @@
 
 html {
   scroll-behavior: auto;
+  /* 17px base. Readers here span a wide age range, and the whole scale is in
+     rem, so this lifts body copy and headings together. */
+  font-size: 106.25%;
 }
 
 body {
@@ -60,8 +67,7 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
-.site-header,
-.detail-header {
+.site-header {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
   min-height: 84px;
@@ -135,15 +141,11 @@ input:focus-visible {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
   padding: 92px 0 70px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-  gap: clamp(50px, 8vw, 110px);
-  align-items: center;
 }
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 0.73rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -182,13 +184,6 @@ input:focus-visible {
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.55vw, 1.18rem);
   line-height: 1.8;
-}
-
-.hero-lede.english {
-  margin-top: 9px;
-  font-family: var(--serif);
-  font-size: 1rem;
-  line-height: 1.7;
 }
 
 .hero-actions {
@@ -230,63 +225,6 @@ input:focus-visible {
 .button.secondary {
   border: 1px solid var(--line);
   background: var(--surface);
-}
-
-.integrity-card {
-  position: relative;
-  padding: 34px;
-  border: 1px solid rgba(13, 75, 77, 0.22);
-  border-radius: 14px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.integrity-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 5px;
-  background: var(--gold);
-}
-
-.integrity-label {
-  display: block;
-  margin-bottom: 22px;
-  color: var(--teal);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.integrity-card > strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 600;
-}
-
-.integrity-card p {
-  margin: 14px 0 24px;
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-}
-
-.integrity-row {
-  padding-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  border-top: 1px solid var(--line);
-}
-
-.integrity-row span {
-  color: var(--teal);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.64rem;
-  font-weight: 750;
-  text-align: center;
 }
 
 .stats {
@@ -352,33 +290,10 @@ input:focus-visible {
   font-size: 0.82rem;
 }
 
-.language-switch {
-  padding: 4px;
-  display: flex;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: rgba(255, 253, 248, 0.8);
-}
-
-.language-switch button,
 .segmented button,
 .toggle-filter {
   border: 0;
   cursor: pointer;
-}
-
-.language-switch button {
-  padding: 7px 11px;
-  border-radius: 6px;
-  color: var(--ink-soft);
-  background: transparent;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.language-switch button.active {
-  color: #fff;
-  background: var(--teal-dark);
 }
 
 .search-panel {
@@ -435,6 +350,12 @@ input:focus-visible {
   gap: 22px;
 }
 
+/* The question chips are the primary filter now, so they get their own row
+   above the three narrower groups. */
+.filter-groups > fieldset:first-child {
+  grid-column: 1 / -1;
+}
+
 .filter-groups fieldset {
   margin: 0;
   padding: 0;
@@ -458,12 +379,12 @@ input:focus-visible {
 
 .segmented button,
 .toggle-filter {
-  min-height: 35px;
-  padding: 7px 11px;
+  min-height: 40px;
+  padding: 9px 14px;
   border-radius: 6px;
   color: var(--ink-soft);
   background: #eeece5;
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   font-weight: 700;
 }
 
@@ -715,12 +636,6 @@ footer p {
   min-height: 100vh;
 }
 
-.detail-header > a:last-child {
-  color: var(--teal);
-  font-size: 0.82rem;
-  font-weight: 750;
-}
-
 .paper-detail {
   width: min(900px, calc(100% - 40px));
   margin: 0 auto;
@@ -893,19 +808,16 @@ footer p {
 }
 
 @media (max-width: 900px) {
-  .site-header nav a:not(.repo-link) {
+  /* The language switch and repo link must survive on mobile — hiding the
+     switch would strand English readers on the Chinese tree. */
+  .site-header nav a:not(.repo-link, .language-link) {
     display: none;
   }
 
   .hero {
     padding-top: 64px;
-    grid-template-columns: 1fr;
-    gap: 42px;
   }
 
-  .integrity-card {
-    max-width: 560px;
-  }
 
   .stats {
     grid-template-columns: repeat(2, 1fr);
@@ -927,7 +839,6 @@ footer p {
 
 @media (max-width: 680px) {
   .site-header,
-  .detail-header,
   .hero,
   .stats,
   .explorer,
@@ -935,8 +846,7 @@ footer p {
     width: min(100% - 28px, 1180px);
   }
 
-  .site-header,
-  .detail-header {
+  .site-header {
     min-height: 72px;
   }
 
@@ -956,7 +866,6 @@ footer p {
     font-size: 0.28em;
   }
 
-  .integrity-card,
   .search-panel,
   .paper-card {
     padding: 22px;
@@ -1034,5 +943,397 @@ footer p {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   Patient-facing layer: disclaimer, primer, question pages, plain-language
+   summaries, and the topic chips. Added with the 2026-07-31 redesign.
+   ========================================================================== */
+
+.language-link {
+  font-weight: 800;
+}
+
+.hero-disclaimer {
+  max-width: 52ch;
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  background: var(--teal-pale);
+  color: var(--teal-dark);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.primer {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 84px 0 24px;
+}
+
+.primer h2 {
+  margin: 0 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.primer p {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.questions {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 60px 0 20px;
+}
+
+.questions-heading {
+  margin-bottom: 28px;
+}
+
+.questions h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.question-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 12px 32px rgba(25, 49, 48, 0.09);
+}
+
+.question-card h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--teal-dark);
+}
+
+.question-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.question-count {
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.question-grid.compact .question-card {
+  padding: 20px;
+}
+
+/* --- search helpers --- */
+
+.search-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.search-suggestions > span {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.search-suggestions button,
+.chip-row button,
+.chip-row a {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.search-suggestions button:hover,
+.chip-row button:hover,
+.chip-row a:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.chip-row button.active {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: #fff;
+}
+
+.loose-notice {
+  margin: 0 0 18px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--gold-pale);
+  color: #6b3f0c;
+  font-size: 0.92rem;
+}
+
+/* --- plain-language summaries --- */
+
+.original-title {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.plain-summary {
+  margin: 12px 0 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.draft-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--red-pale);
+  color: #7d251e;
+  font-size: 0.72rem;
+  font-weight: 800;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.draft-note {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.draft-note .draft-badge {
+  margin: 0 8px 0 0;
+}
+
+/* --- topic pages --- */
+
+.topic-shell {
+  min-height: 100vh;
+}
+
+.topic-body {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 56px 0 90px;
+}
+
+.topic-body > h1 {
+  max-width: 20ch;
+  margin: 0 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.topic-intro {
+  max-width: 62ch;
+  margin: 0 0 20px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.topic-disclaimer {
+  max-width: 62ch;
+  margin: 0 0 56px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  background: var(--teal-pale);
+  color: var(--teal-dark);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.topic-records-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topic-records-heading h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+}
+
+.topic-records-heading span {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.topic-records .paper-list {
+  margin-top: 22px;
+}
+
+.topic-others {
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.topic-others h2 {
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/* --- detail page additions --- */
+
+.detail-original-title {
+  max-width: 70ch;
+  margin: 18px 0 10px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.detail-original-title > span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detail-summary {
+  max-width: 66ch;
+  margin: 34px 0 8px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.detail-summary h2 {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.detail-summary p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.detail-topics {
+  margin: 44px 0 0;
+}
+
+.detail-topics h2 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* Provenance is now collapsed by default — patients should not have to scroll
+   past checksums to reach the source links. */
+.provenance > summary {
+  padding: 14px 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.provenance > summary:hover {
+  color: var(--teal-dark);
+}
+
+/* --- touch targets --- */
+
+@media (pointer: coarse) {
+  .segmented button,
+  .toggle-filter,
+  .chip-row button,
+  .chip-row a,
+  .search-suggestions button,
+  .site-header nav a,
+  .paper-actions a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .primer,
+  .questions,
+  .topic-body {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .primer {
+    padding-top: 62px;
+  }
+
+  .question-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-summary {
+    padding: 22px;
   }
 }
