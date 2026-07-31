@@ -14,6 +14,9 @@
   --red: #a43a32;
   --red-pale: #f8e1dc;
   --line: #d9d5ca;
+  /* Side gutter for every page container. Steps down at the breakpoints
+     below; 40px total was leaving only 20px of air at 1024px. */
+  --gutter: 56px;
   --shadow: 0 18px 50px rgba(25, 49, 48, 0.08);
   /* Chinese faces lead: this is a Chinese-first site, and a Latin-first stack
      makes mixed zh/en lines render at inconsistent weights. */
@@ -68,7 +71,7 @@ input:focus-visible {
 }
 
 .site-header {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   min-height: 84px;
   display: flex;
@@ -138,7 +141,7 @@ input:focus-visible {
 }
 
 .hero {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   padding: 92px 0 70px;
 }
@@ -228,7 +231,7 @@ input:focus-visible {
 }
 
 .stats {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -260,7 +263,7 @@ input:focus-visible {
 }
 
 .explorer {
-  width: min(1040px, calc(100% - 40px));
+  width: min(1040px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   padding: 110px 0;
 }
@@ -637,7 +640,7 @@ footer p {
 }
 
 .paper-detail {
-  width: min(900px, calc(100% - 40px));
+  width: min(900px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   padding: 74px 0 110px;
 }
@@ -808,6 +811,10 @@ footer p {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --gutter: 32px;
+  }
+
   /* The language switch and repo link must survive on mobile — hiding the
      switch would strand English readers on the Chinese tree. */
   .site-header nav a:not(.repo-link, .language-link) {
@@ -838,12 +845,8 @@ footer p {
 }
 
 @media (max-width: 680px) {
-  .site-header,
-  .hero,
-  .stats,
-  .explorer,
-  .paper-detail {
-    width: min(100% - 28px, 1180px);
+  :root {
+    --gutter: 20px;
   }
 
   .site-header {
@@ -968,7 +971,7 @@ footer p {
 }
 
 .primer {
-  width: min(760px, calc(100% - 40px));
+  width: min(1040px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   padding: 84px 0 24px;
 }
@@ -983,13 +986,14 @@ footer p {
 }
 
 .primer p {
+  max-width: 42em;
   margin: 0 0 18px;
   font-size: 1.05rem;
   line-height: 1.85;
 }
 
 .questions {
-  width: min(1040px, calc(100% - 40px));
+  width: min(1040px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   padding: 60px 0 20px;
 }
@@ -1165,7 +1169,7 @@ footer p {
 }
 
 .topic-body {
-  width: min(1040px, calc(100% - 40px));
+  width: min(1040px, calc(100% - var(--gutter) * 2));
   margin: 0 auto;
   padding: 56px 0 90px;
 }
@@ -1322,7 +1326,6 @@ footer p {
   .primer,
   .questions,
   .topic-body {
-    width: min(100% - 28px, 1180px);
   }
 
   .primer {
