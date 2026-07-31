@@ -1,0 +1,66 @@
+name: Literature correction or addition / 文献补充或纠错
+description: Suggest a missing record, correction, or source update / 提交文献补充、纠错或入口更新
+title: "[Literature] "
+labels:
+  - literature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search the README, CSV, and JSON first to avoid duplicate records.
+        请先搜索 README、CSV 和 JSON，避免提交重复记录。
+
+  - type: input
+    id: title
+    attributes:
+      label: Original title / 原始题名
+    validations:
+      required: true
+
+  - type: input
+    id: identifiers
+    attributes:
+      label: DOI, PMID, PMCID, or original entry
+      description: Provide at least one stable identifier or lawful source URL / 请至少提供一个稳定标识或合法原始入口
+    validations:
+      required: true
+
+  - type: dropdown
+    id: population
+    attributes:
+      label: Population / 人群
+      options:
+        - Pediatric / 儿童
+        - Adult / 成人
+        - Mixed or uncertain / 混合或不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request type / 提交类型
+      options:
+        - Missing literature / 补充文献
+        - Metadata correction / 元数据纠错
+        - Access-status update / 获取状态更新
+        - Broken source link / 入口失效
+        - Duplicate report / 重复记录
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and classification rationale / 依据与分类理由
+      description: For mixed-age studies, explain why the record belongs in one category / 混合年龄研究请说明归类依据
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: policy
+    attributes:
+      label: Full-text policy / 全文规则
+      options:
+        - label: I understand that an abstract, preview, or landing page must not be submitted as article full text. / 我理解不得把摘要、预览或入口页冒充论文全文。
+          required: true

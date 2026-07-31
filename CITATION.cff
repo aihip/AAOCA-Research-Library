@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If this research library helps your work, please cite it using the metadata below."
+title: "AAOCA Research Library: Pediatric, Adult, and Expert Consensus Literature"
+type: dataset
+version: 1.0.0
+date-released: 2026-07-31
+authors:
+  - name: "AAOCA Research Library contributors"
+repository-code: "https://github.com/aihip/AAOCA-Research-Library"
+url: "https://aaoca-research-library.huusondo988.chatgpt.site"
+license: CC-BY-4.0
+keywords:
+  - AAOCA
+  - AAORCA
+  - anomalous aortic origin of a coronary artery
+  - pediatric cardiology
+  - adult congenital heart disease
+  - coronary artery anomaly
+  - expert consensus
+  - 冠状动脉异常主动脉起源
+abstract: >-
+  A bilingual, deduplicated bibliography of pediatric and adult literature,
+  expert consensus statements, and clinical guidelines on anomalous aortic
+  origin of a coronary artery. Non-full-text access cards are explicitly
+  identified and link to DOI, PMID, or original source entries.

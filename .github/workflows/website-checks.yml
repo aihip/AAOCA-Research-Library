@@ -1,0 +1,43 @@
+name: Website checks
+
+on:
+  push:
+    paths:
+      - "website/**"
+      - "index/bibliography_and_access_status.json"
+      - ".github/workflows/website-checks.yml"
+  pull_request:
+    paths:
+      - "website/**"
+      - "index/bibliography_and_access_status.json"
+      - ".github/workflows/website-checks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build and test
+        run: npm test

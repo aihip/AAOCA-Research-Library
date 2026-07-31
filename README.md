@@ -1,4 +1,10 @@
-# AAOCA / AAORCA 论文库：儿童与成人
+# AAOCA / AAORCA 研究文献库：儿童、成人与专家共识
+
+[在线检索 / Search online](https://aaoca-research-library.huusondo988.chatgpt.site) · [English](README.en.md) · [引用本项目](CITATION.cff) · [版权与全文说明](RIGHTS.md) · [参与维护](CONTRIBUTING.md)
+
+这是一个面向临床、科研和教学的双语可检索文献库，主题覆盖**冠状动脉异常主动脉起源**（Anomalous Aortic Origin of a Coronary Artery, **AAOCA**）、**异常右冠状动脉主动脉起源**（**AAORCA / ARCA-L**）、儿童与成人危险分层、影像学评估、运动管理和外科治疗。
+
+The **AAOCA Research Library** is a bilingual, deduplicated bibliography for anomalous aortic origin of a coronary artery, including pediatric and adult studies, expert consensus statements, clinical guidelines, imaging, ischemia assessment, sports participation, and surgical outcomes.
 
 ## 目录
 
@@ -10,6 +16,7 @@
 - [成人 - 全文](#成人---全文11)
 - [成人 - 非全文](#成人---非全文14)
 - [完整性与去重](#完整性与去重)
+- [引用、许可与贡献](#引用许可与贡献)
 
 整理日期：2026-07-31
 
@@ -151,3 +158,10 @@ index/
 - 所有 PDF 均已重新打开检查页数；所有非全文卡均以 `NON_FULLTEXT` 命名，并验证 PDF 元数据含“非全文 / NOT FULL TEXT”标识。
 - README 中的本地 PDF 链接均已验证；文件页数、字节数和 SHA-256 见 `index/`。
 - DOI 或 PMID 确实未分配、尚未进入 PubMed，或截至整理日未检得时，明确写作“未分配或未检得”，没有猜填或留空。
+
+## 引用、许可与贡献
+
+- 推荐引用信息见 [`CITATION.cff`](CITATION.cff)。
+- 本项目自有代码采用 MIT License；自有说明文字和整理后的元数据采用 CC BY 4.0。第三方论文 PDF **不在上述许可范围内**，具体边界见 [`RIGHTS.md`](RIGHTS.md)。
+- 发现遗漏、分类错误、失效入口或重复记录时，请按 [`CONTRIBUTING.md`](CONTRIBUTING.md) 提交 Issue 或 Pull Request。
+- 本项目仅用于文献发现与研究整理，不构成医疗建议。临床决策应查阅正式论文、现行指南并由合格专业人员作出。
