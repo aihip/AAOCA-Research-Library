@@ -551,7 +551,7 @@ input:focus-visible {
 }
 
 .principles {
-  padding: 110px max(20px, calc((100% - 1180px) / 2));
+  padding: 110px max(var(--gutter), calc((100% - 1180px) / 2));
   color: #f8f3e9;
   background: var(--teal-dark);
 }
@@ -601,7 +601,7 @@ input:focus-visible {
 }
 
 footer {
-  padding: 48px max(20px, calc((100% - 1180px) / 2));
+  padding: 48px max(var(--gutter), calc((100% - 1180px) / 2));
   display: flex;
   justify-content: space-between;
   gap: 40px;
