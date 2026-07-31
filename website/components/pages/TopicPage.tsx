@@ -2,6 +2,8 @@ import Link from "next/link";
 import { PaperCard } from "../PaperCard";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
+import { SourceList } from "../SourceList";
+import { SummaryNotice } from "../SummaryNotice";
 import { getDictionary, href, type Language } from "../../lib/i18n";
 import { papersForTopic } from "../../lib/library";
 import { SITE_URL } from "../../lib/site";
@@ -49,7 +51,16 @@ export function TopicPage({ lang, topic }: { lang: Language; topic: Topic }) {
 
         <p className="eyebrow">{dict.topic.eyebrow}</p>
         <h1>{copy.question}</h1>
-        <p className="topic-intro">{copy.intro}</p>
+        {copy.intro.split("\n").map((paragraph) => (
+          <p className="topic-intro" key={paragraph.slice(0, 24)}>
+            {paragraph}
+          </p>
+        ))}
+        <SourceList
+          slugs={topic.sources}
+          label={dict.topic.sourcesLabel}
+          dict={dict}
+        />
         <p className="topic-disclaimer">{dict.site.disclaimer}</p>
 
         <section className="topic-records" aria-labelledby="topic-records-title">
@@ -58,6 +69,8 @@ export function TopicPage({ lang, topic }: { lang: Language; topic: Topic }) {
             <span>{dict.topic.recordCount(records.length)}</span>
           </div>
           <p className="section-lede">{dict.topic.ordering}</p>
+
+          <SummaryNotice records={records} dict={dict} />
 
           {records.length ? (
             <div className="paper-list">

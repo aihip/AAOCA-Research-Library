@@ -14,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: base === "" ? 1 : 0.9,
     },
+    {
+      url: `${SITE_URL}${base}/about`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
     ...TOPIC_SLUGS.map((slug) => ({
       url: `${SITE_URL}${base}/topics/${slug}`,
       lastModified: LAST_MODIFIED,

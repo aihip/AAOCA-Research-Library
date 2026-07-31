@@ -24,6 +24,7 @@ export function SiteHeader({ dict, path }: SiteHeaderProps) {
       <nav aria-label={dict.nav.questions}>
         <Link href={href(dict, "/#questions")}>{dict.nav.questions}</Link>
         <Link href={href(dict, "/#library")}>{dict.nav.library}</Link>
+        <Link href={href(dict, "/about")}>{dict.nav.about}</Link>
         <a href={`${REPOSITORY_URL}/blob/main/RIGHTS.md`}>{dict.nav.rights}</a>
         <Link
           className="language-link"

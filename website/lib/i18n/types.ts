@@ -1,3 +1,5 @@
+import type { SummaryCheck } from "../library";
+
 export type Language = "zh" | "en";
 
 export type Dictionary = {
@@ -17,6 +19,7 @@ export type Dictionary = {
   nav: {
     questions: string;
     library: string;
+    about: string;
     rights: string;
     github: string;
     switchTo: string;
@@ -36,6 +39,7 @@ export type Dictionary = {
     primerEyebrow: string;
     primerHeading: string;
     primerBody: string[];
+    primerSourcesLabel: string;
     questionsEyebrow: string;
     questionsHeading: string;
     questionsLede: string;
@@ -87,11 +91,30 @@ export type Dictionary = {
     adultBadge: string;
     nonfullNote: string;
     noIdentifier: string;
-    draftBadge: string;
-    draftTitle: string;
+    /**
+     * Badge and explanation per check state. The badge carries "AI" in every
+     * state — a reader who only glances at the pill must not come away thinking
+     * a person vouched for the text.
+     */
+    summaryCheck: Record<SummaryCheck, { badge: string; note: string }>;
+    /**
+     * Standing notice above every record list. The per-card explanation lives in
+     * a `title` tooltip, which touch devices never show.
+     */
+    summaryNotice: string;
+  };
+
+  about: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    lede: string;
+    sections: { heading: string; body: string[] }[];
   };
 
   topic: {
+    sourcesLabel: string;
     metaTitle: (question: string) => string;
     metaDescription: (question: string) => string;
     eyebrow: string;

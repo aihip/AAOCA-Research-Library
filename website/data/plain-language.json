@@ -1,11 +1,11 @@
 {
   "07cb5fd4bd9eca18fddaf296f1dd9cb379e6540a0b66e686a4e31845ef2011d1": {
     "title_zh": "冠状动脉起源异常的手术结果：单中心早期与中期经验",
-    "summary_zh": "17 例儿童手术病例的早期和中期随访结果。样本量小，属于单家医院的经验总结。",
+    "summary_zh": "17 例儿童手术病例（平均 11.9 岁）的早期与中期结果：没有住院死亡，平均随访约 50 个月时全部存活，心功能保持正常。样本量小，属于单家医院的经验总结。",
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "09d388f43230c0ee2d732c1dba0b5b04155acbe196710da2540538116e81f54a": {
     "title_zh": "冠状动脉起源异常外科干预的结局：一项大型前瞻性队列研究",
@@ -13,7 +13,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "14d98310ad080f8e807faccee3ff5a3409b9223bca02e8a301585ca23af7e5ad": {
     "title_zh": "两例儿童冠状动脉起源异常",
@@ -22,16 +22,16 @@
       "how-serious",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "1857dc200bc2aea42c6db0b61430ac17651ff5df2567927a77714f58f0db352f": {
     "title_zh": "儿童冠状动脉起源异常的单中心分析：用多种影像方法做风险分层",
-    "summary_zh": "58 例儿童的单中心分析，综合使用超声、CT、磁共振等多种影像方法评估风险高低，而不是只依赖单一检查。",
+    "summary_zh": "58 例儿童的单中心分析，用到的检查是超声心动图、冠脉 CT 和核素心肌灌注显像。其中 24 例（41.4%）最初的超声没能发现异常，提示只靠超声筛查可能漏诊。",
     "topics": [
       "what-tests",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "1ce9306f71d19975a37ff831ee7f48c8485b25327e2cfee37e8e4b8654655982": {
     "title_zh": "2020 年欧洲心脏病学会成人先天性心脏病管理指南",
@@ -40,7 +40,7 @@
       "guidelines",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "21b30495440f37463442cccd460a992b5793ea8ab6372e5a6dc4366d96784ff6": {
     "title_zh": "成人冠状动脉起源异常的临床意义与预后",
@@ -48,7 +48,7 @@
     "topics": [
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "27b1754e3df36de07425affdc6c70bcffc752c3b0e839619621245ac6785501f": {
     "title_zh": "先天性冠状动脉异常多模态影像评估建议：美国超声心动图学会指南",
@@ -57,7 +57,7 @@
       "what-tests",
       "guidelines"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "27e176bacbcab647ae127428dca37b8874ef751c324a86b979030aa57f174eb8": {
     "title_zh": "右冠状动脉起源异常：手术治疗与非手术治疗的结局比较",
@@ -66,7 +66,7 @@
       "surgery",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "29a21e711c7a0b23f6be1b258edc0f7a543e1b74356045b1afb87f71137e6a63": {
     "title_zh": "冠状动脉起源异常中与心肌缺血相关的特征：先天性心脏外科医师学会研究",
@@ -75,7 +75,7 @@
       "how-serious",
       "what-tests"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "2fb60c400aabd33aaf03bd8c8da46f1b6eedfe7abd091842993e01c57d95d91a": {
     "title_zh": "心血管磁共振发现的冠状动脉异常的分布与预后：两家三级中心 15 年经验",
@@ -84,7 +84,7 @@
       "what-tests",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "342543e3086d7e73467ac4e93b2317606def6a3b8e69dc5be191942f7d9de138": {
     "title_zh": "成人冠状动脉起源异常合并冠心病",
@@ -92,16 +92,16 @@
     "topics": [
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "39bcfc31513d5dc18acbd9a4a14d89619b86dbf5999aa887468d07c3f89b0294": {
     "title_zh": "欧洲冠状动脉起源异常注册研究（EURO-AAOCA）首次报告",
-    "summary_zh": "欧洲多国合作建立的病例注册数据库的第一份报告，中位年龄 33 岁，跨儿童与成人。注册研究汇总多家医院的数据，比单中心研究更能反映整体情况。",
+    "summary_zh": "欧洲 13 家中心、262 例患者的注册数据库第一份报告，中位年龄 33 岁，跨儿童与成人；53.1% 有症状，最常见的是胸痛。作者的结论之一是各中心在检查方案和处理方式上并无统一意见——如果你遇到不同医生说法不一致，这在国际上也是现状。",
     "topics": [
       "what-is-it",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "40438196109504a664a35eaf8187b9e0222e4c02f0297689b47402a16ea355ab": {
     "title_zh": "2020 年欧洲心脏病学会心血管疾病患者运动与运动心脏病学指南",
@@ -110,23 +110,23 @@
       "sports",
       "guidelines"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "4495d4569a252ad6c72c82aec16d8d50be459daf1df85fb27f421bf7f1fcaae5": {
     "title_zh": "成人动脉间走行冠状动脉起源异常患者壁内段的组织学分析",
-    "summary_zh": "从组织切片的层面观察「壁内段」——异常冠状动脉埋在主动脉壁里的那一段——的显微结构。这一段的长度和形态，被认为与血管受挤压的程度有关。",
+    "summary_zh": "15 例手术切除标本的组织学研究（年龄 11 至 66 岁）。从显微结构观察「壁内段」——异常冠状动脉埋在主动脉壁里的那一段——研究者认为它的构造可能形成类似「活瓣」的效果，与血管在运动时受挤压有关。",
     "topics": [
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "47ce389f656a3b111d6dfc28622cb0c50dd6e5f3c74532836cc40cd3bb7465ad": {
     "title_zh": "右冠状动脉起源异常：9 例儿童病例系列",
-    "summary_zh": "9 例儿童病例的详细描述，包括各自的表现、检查和处理方式。病例系列的样本很小，用于呈现具体情况，不能据此推断普遍规律。",
+    "summary_zh": "9 例儿童病例（3 个月至 12 岁）的详细描述。随访 2 至 64 个月，8 例预后良好，1 例因心力衰竭加重猝死。研究还做了全外显子测序，在部分患儿身上发现基因变异。病例系列样本很小，用于呈现具体情况，不能据此推断普遍规律。",
     "topics": [
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "4ba99e8418d2c9fe7b0b098c5b884d29cc020f2c93a2b16e8d68d139a05bb5c1": {
     "title_zh": "冠状动脉起源异常：术前诊断与手术规划",
@@ -135,7 +135,7 @@
       "what-tests",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "4c17be48382baaf1659d251f081e4cb6b18770c381153239e44cc05add0e3adf": {
     "title_zh": "以晕厥为表现的儿童先天性冠状动脉起源异常：病例系列",
@@ -144,7 +144,7 @@
       "how-serious",
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "52c6c055cafaa8f4c84e9ad86e61c7664e650df86312d87f9a0f7cde75af026c": {
     "title_zh": "儿童冠状动脉起源异常的临床特点与结局：日本全国性调查",
@@ -153,7 +153,7 @@
       "what-is-it",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "547493071487a3a86c29e25aecf0ade6307a10077d0a09b1fb066b79185b5f52": {
     "title_zh": "230 例冠状动脉起源异常手术修复患者的结局",
@@ -161,7 +161,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "54e43b42fc865cc8ba0fd161426e8240fa3dd35f2b69e00d7f60c24fcce1819f": {
     "title_zh": "右冠状动脉起自左冠状窦患者的冠脉 CT 血流储备分数研究",
@@ -169,7 +169,7 @@
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "576e33889fe858b4e21e56410832177474d6accd0749e1c85228b1c415f1f23f": {
     "title_zh": "冠状动脉起源异常修复术后的结局：先天性心脏外科医师学会研究",
@@ -177,7 +177,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "63390950c883e6fe6ccdf576fc1c2d4cf63924b5d2a586f0a69fa1ca29ab9f06": {
     "title_zh": "个体化计算流体力学在冠状动脉起源异常中的应用：系统综述",
@@ -185,7 +185,7 @@
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "6728908de0ba3050414db2089be8b59e81dcc3d80a33fcd5a4cd4fe6e6e0b358": {
     "title_zh": "成人冠状动脉起源异常：有创功能学检查如何影响临床决策——MuSCAT 注册研究",
@@ -194,7 +194,7 @@
       "what-tests",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "6b0bf46bb67ecbbb82ae72cf40f66efb83c1a75d97c6ecf4e56bae197130ed8b": {
     "title_zh": "右冠状动脉起源异常中的心肌缺血：大型儿童队列的中期结局",
@@ -203,7 +203,7 @@
       "how-serious",
       "what-tests"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "6cd7e8c072c9b24c6a4b142ae123fbabfd8fb8d41ab0d93b802bf2f2a5cebcec": {
     "title_zh": "青少年与成人冠状动脉起源异常的手术结果",
@@ -211,7 +211,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "6efcdad14b268689b7d2777dc5b4406b68facdd9d0eb26d44acd17736f9026af": {
     "title_zh": "某转诊中心成人冠状动脉起源异常的手术方式与结局",
@@ -219,7 +219,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "72124f4587eb93bca044f84a8d91c981b9e58de4f9762ca594b1b1ac9ed617bc": {
     "title_zh": "灌注检查有助于室间隔内走行冠状动脉异常的处理",
@@ -227,7 +227,7 @@
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "74b98652484123d5451a88fb5b6e435157b18faf3e99ac766aba2f7e252f8a83": {
     "title_zh": "冠状动脉起源异常：西班牙单一外科团队的手术结果",
@@ -235,7 +235,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "77e6509d5d2b435ac0b16c02127b5a1d8f48d0d27b2fbd5f576a7b643e7b900b": {
     "title_zh": "冠状动脉起源异常去顶手术：单中心经验",
@@ -243,7 +243,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "7b3aff8d30c34eb56b9b1f4204a96dc0de1f824aa23869e800d33c4b348e27b2": {
     "title_zh": "经前胸小切口修复冠状动脉起源异常",
@@ -251,7 +251,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "8307e9daa3cd1be83ec36ff8d162a5c5095ca1b8ed29a1a50acff4d713f53db2": {
     "title_zh": "起自对侧冠状窦的冠状动脉起源异常：风险的批判性评述",
@@ -259,7 +259,7 @@
     "topics": [
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "86ad8963ac782e4fe68055abc36a5417aa179a0e3625de3994150c04e9552c73": {
     "title_zh": "儿童与青少年冠状动脉起源异常手术治疗的荟萃分析",
@@ -267,7 +267,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "88014e02a22f7a3198eb76eb9f27d9357753a2cbe019dc7864a93a755de4d146": {
     "title_zh": "中年人群起自对侧冠状窦的冠状动脉异常的结局：配对队列研究",
@@ -275,7 +275,7 @@
     "topics": [
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "8bcae4884a2a48785f4183f7cf638a4afd1692db9248cf8c1fdd6ab259ab9d9c": {
     "summary_zh": "国家心血管病专家委员会先天性心脏病专业委员会制定的中文专家共识，覆盖冠状动脉起源异常、冠状动脉异常起源于肺动脉、冠状动脉瘘等，并给出外科诊疗建议。这是中文材料里最直接对应的权威文件。",
@@ -283,7 +283,7 @@
       "guidelines",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "9277da5bd562dd8a69e0d8894540cd2c91f4dc13d130806f60ed9e3666698034": {
     "title_zh": "冠状动脉起源异常患者手术修复后仍存在风险",
@@ -292,15 +292,15 @@
       "surgery",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "94384acd16a95d75c6bc624bf8a2732d7d95260ef053cfdd7d6464c31787d4f3": {
     "title_zh": "用血流动力学分析冠脉 CT 的几何参数，预测右冠状动脉异常患者的有创 FFR 结果",
-    "summary_zh": "平均年龄 52.3 岁的成人研究，尝试从冠脉 CT 测量出的血管形状参数推算血流是否受限，看能不能减少做有创检查的必要。本地文件是作者手稿，未注明期刊 DOI。",
+    "summary_zh": "81 例成人（平均 52.3 岁）的研究，尝试从冠脉 CT 测量出的血管形状参数推算血流是否受限，看能不能减少做有创检查的必要。本地文件是作者手稿，未注明期刊 DOI。",
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "96ebfd17d8eb6858416858c6c5385195d846b6377fe23646385c84af0c02f7ef": {
     "title_zh": "心血管异常运动员参加竞技体育的临床考量：美国心脏协会与美国心脏病学会科学声明",
@@ -309,7 +309,7 @@
       "sports",
       "guidelines"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "a0c57955c805f35d5484a67fdcab83b3399ab0f8eaa5f57cf39d3766d58620df": {
     "title_zh": "冠状动脉起源异常：先天性心脏外科医师学会注册研究报告",
@@ -318,7 +318,7 @@
       "what-is-it",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "b786a953c43b76e4b8cea2202585ebbfe9f779a1f198943926148803b5877183": {
     "title_zh": "用决策分析确定运动员冠状动脉起源异常的最佳处理方式",
@@ -327,7 +327,7 @@
       "sports",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "bcb1e74fe84188f668855d039ceb8c2ebfcfd2daac1a00b4c69801fdad471ebc": {
     "title_zh": "冠状动脉起源异常的外科修复",
@@ -335,23 +335,23 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "bcdd8a8f44fd8eff1ee8fee60640260354be733c90410c7534d9a1a877687296": {
     "title_zh": "经右腋下开胸治疗儿童冠状动脉起源异常",
-    "summary_zh": "12 例儿童病例，采用右侧腋下切口而不是传统的胸骨正中切口，目的之一是减少胸前疤痕。属于小样本的术式探索。",
+    "summary_zh": "12 例儿童病例，改用右侧腋下切口而不是传统的胸骨正中切口。论文给出的理由是正中开胸可能带来胸壁变形和外观上的负担。研究本身要回答的是这种入路可行不可行、安全不安全；随访时间较短，期间没有出现晚期死亡或残余缺血。",
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "bce5d4ccfe0a4151fe09d7d4da01f7f3bdc1db54f75de787fca78da549b16de8": {
     "title_zh": "儿童冠状动脉起源异常的外科治疗：中国单中心经验",
-    "summary_zh": "中国一家医院 27 例儿童手术病例的经验总结。",
+    "summary_zh": "中国一家医院 27 例儿童手术病例，其中 14 例左冠状动脉异常、13 例右冠状动脉异常。左冠异常的孩子术前心功能明显更差，术前发生不良事件的也更多。中位随访 58.5 个月，随访期间没有胸闷胸痛，心功能较术前改善。",
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "c04bf2c3cfee08f29ff83d647f7b3cd6d5f458cdde9722b4132514e55aa33fe7": {
     "title_zh": "冠状动脉起源异常的诊断与治疗处理：中国单中心回顾性研究",
@@ -360,16 +360,16 @@
       "what-tests",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "c09a074e6ec1b926e0c5966bfe605a6000de497a63a9e0f4cbb226d1be96476c": {
     "title_zh": "右冠状动脉起源异常患者运动诱发的局部心肌运动异常",
-    "summary_zh": "平均年龄约 13 至 15 岁的儿童青少年研究，在运动负荷下用超声观察心肌局部收缩是否出现异常。安静时正常、运动时才显现的问题，正是这类检查想要捕捉的。",
+    "summary_zh": "33 例右冠状动脉异常患者与 11 名对照的运动负荷超声研究，年龄多在十几岁。结果需要留意：肉眼观察并没有发现室壁运动异常，只有一项组织多普勒指标在未手术组与对照组之间存在差异。作者认为这一发现能否用于风险评估，还需要进一步研究。",
     "topics": [
       "what-tests",
       "sports"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "c4f1dce74fe190e4c2d73bcf424a41356eb4c40709d855275336cffa699b6247": {
     "title_zh": "用流固耦合仿真预测儿童冠状动脉起源异常患者的血流储备分数",
@@ -377,7 +377,7 @@
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "c7c794a68cea88a6a77823aaaf6c3fb3d17b0146f42266217611cd679ef3ef4d": {
     "title_zh": "冠状动脉起源异常的临床评估",
@@ -385,7 +385,7 @@
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "c8277633b54de34a57d90d7c8717521429b74799558d807c043cdb0db952d9cc": {
     "title_zh": "成人右冠状动脉起源异常：冠状动脉移植术及中期随访结果",
@@ -393,7 +393,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "c9e5b9f9717df8cf27fd496bbfe563f64744a11583fccd2162225e6eadd902b2": {
     "title_zh": "成人冠状动脉起源异常的处理：最新进展综述",
@@ -402,7 +402,7 @@
       "how-serious",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "c9f0dd890dd7874ec792284dd23c4c8ee03fae0a4d412b4f87462d68167078db": {
     "title_zh": "起自错误主动脉窦的冠状动脉起源异常",
@@ -410,7 +410,7 @@
     "topics": [
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "cb13c56504daf1e1625e632dba6eb4afd2a97d12809abbb4e9d643c998551032": {
     "title_zh": "起自对侧冠状窦的冠状动脉起源异常的临床处理策略",
@@ -419,7 +419,7 @@
       "how-serious",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "d1956b8a8fe084017b581c71a35912c6987622f026588d3dd9cdaa90c467f87a": {
     "title_zh": "左冠状动脉起源异常患儿的临床表现与中期结局：动脉间走行之外的高危特征",
@@ -427,16 +427,16 @@
     "topics": [
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "d29299373d7fdc68556464145b1e7cad2d8f2d96be04bbae977deac49a30bfc8": {
     "title_zh": "儿童右冠状动脉起源异常的风险分层与真实世界处理：解剖特征与临床症状不一致的问题",
-    "summary_zh": "151 例儿童的单中心队列。研究关注一个实际难题：影像上看起来高危的孩子不一定有症状，有症状的孩子解剖上不一定高危，两者对不上的时候该怎么判断。",
+    "summary_zh": "151 例儿童的单中心队列（平均 7.4 岁），其中约一半有症状。研究关注一个实际难题：影像上看起来高危的孩子不一定有症状，有症状的孩子解剖上也不一定高危，两者对不上的时候该怎么判断。",
     "topics": [
       "how-serious",
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "d6beccc7969e26ae1cc9d5fcf03aa89412b3c7dff0d067f7b23464de66487ecd": {
     "title_zh": "冠状动脉起源异常标准化命名方案：国际多学科倡议",
@@ -444,16 +444,16 @@
     "topics": [
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "d6d8607bd6c48aaf7dad30e8753a11c7cc1b8b89d05a127d54ec042ab05a41be": {
     "title_zh": "69 例儿童冠状动脉起源异常的临床分析",
-    "summary_zh": "69 例儿童的临床资料分析，涵盖发现方式、症状、检查和处理。",
+    "summary_zh": "69 例儿童的临床资料分析。其中 82.6% 是右冠状动脉异常起源；43 例（62.3%）具有高危解剖特征，这些孩子更容易出现严重症状和心源性晕厥。婴幼儿和学龄前儿童当中无症状的比例最高。",
     "topics": [
       "what-is-it",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "d7a1fd81726390d982384ea0347b308f30f98e41e8df604c1a1dbba075c0e222": {
     "title_zh": "冠状动脉异常：成人人群中按血管走行与是否手术分析临床结局",
@@ -462,7 +462,7 @@
       "how-serious",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "d93190bf644cc808123b6b7fd54d621c8193128eb9e1895dc8918d7b3884828a": {
     "title_zh": "用冠脉 CT 评估冠状动脉起源异常的患病率和解剖类型：单中心研究",
@@ -470,7 +470,7 @@
     "topics": [
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "d96e5cc95fe6ba9c85968aac2b009f8c4554aeba84c0c41492b5e6e4e6194166": {
     "title_zh": "心血管异常竞技运动员参赛资格与禁赛建议 第 4 部分：先天性心脏病",
@@ -479,7 +479,7 @@
       "sports",
       "guidelines"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "dd50add7c5ce2542a507f6f1d2ad38e36e386b1d1e58ce67115973a1f16cbc69": {
     "title_zh": "用人工智能从冠脉 CT 图像中检测和分类冠状动脉起源异常",
@@ -487,7 +487,7 @@
     "topics": [
       "what-tests"
     ],
-    "reviewed": false
+    "check": "source"
   },
   "ed09fc8e12126072df213049c25457d2bf5cb58f4ae2e39aee713bb218b7eb51": {
     "title_zh": "青少年与成人冠状动脉起源异常手术前后症状的意义",
@@ -496,7 +496,7 @@
       "surgery",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "eef7d139c8b6a3406b53789c9252c86446fbb3a5b31fcc01162722577cac51a9": {
     "title_zh": "冠状动脉起源异常专家共识指南",
@@ -505,7 +505,7 @@
       "guidelines",
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "fbb611083fb91982da0abccfb3526a68d90ebbad024e155c3fa8f2cbfd66e3e9": {
     "title_zh": "先天性心脏外科医师学会冠状动脉起源异常注册研究",
@@ -513,7 +513,7 @@
     "topics": [
       "what-is-it"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "fe5139622f029b5c41d5a6ab59c4d2eb343306b6e916a0505447fa5d4952c29e": {
     "title_zh": "二十年间冠状动脉起源异常外科处理方式的变化趋势",
@@ -521,7 +521,7 @@
     "topics": [
       "surgery"
     ],
-    "reviewed": false
+    "check": "draft"
   },
   "ffd1b8aa169db35e4743ef8fb5c7813362afcf12102680807e4c06e335211554": {
     "title_zh": "2018 年美国心脏协会／美国心脏病学会成人先天性心脏病管理指南",
@@ -530,6 +530,6 @@
       "guidelines",
       "how-serious"
     ],
-    "reviewed": false
+    "check": "draft"
   }
 }

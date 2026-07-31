@@ -96,12 +96,12 @@ export function PaperDetail({ lang, paper }: { lang: Language; paper: Paper }) {
           <section className="detail-summary">
             <h2>{dict.detail.summaryHeading}</h2>
             <p>{summary}</p>
-            {!paper.reviewed && (
-              <p className="draft-note">
-                <span className="draft-badge">{dict.card.draftBadge}</span>
-                {dict.card.draftTitle}
-              </p>
-            )}
+            <p className="check-note">
+              <span className={`check-badge ${paper.check}`}>
+                {dict.card.summaryCheck[paper.check].badge}
+              </span>
+              {dict.card.summaryCheck[paper.check].note}
+            </p>
           </section>
         )}
 

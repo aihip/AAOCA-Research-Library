@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PaperExplorer } from "../PaperExplorer";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
+import { SourceList } from "../SourceList";
 import { getDictionary, href, type Language } from "../../lib/i18n";
 import { libraryStats, papers, topicCounts } from "../../lib/library";
 import {
@@ -10,7 +11,7 @@ import {
   SITE_DESCRIPTION,
   SITE_URL,
 } from "../../lib/site";
-import { topics } from "../../lib/topics";
+import { PRIMER_SOURCES, topics } from "../../lib/topics";
 
 export function HomePage({ lang }: { lang: Language }) {
   const dict = getDictionary(lang);
@@ -77,6 +78,11 @@ export function HomePage({ lang }: { lang: Language }) {
         {dict.home.primerBody.map((paragraph) => (
           <p key={paragraph.slice(0, 24)}>{paragraph}</p>
         ))}
+        <SourceList
+          slugs={PRIMER_SOURCES}
+          label={dict.home.primerSourcesLabel}
+          dict={dict}
+        />
       </section>
 
       <section className="questions" id="questions" aria-labelledby="questions-title">

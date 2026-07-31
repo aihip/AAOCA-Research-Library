@@ -111,7 +111,10 @@ test("plain-language overlay stays joined to the authoritative index", () => {
     for (const topic of entry.topics) {
       assert.ok(TOPIC_SLUGS.includes(topic), `unknown topic "${topic}" on ${key}`);
     }
-    assert.equal(typeof entry.reviewed, "boolean");
+    assert.ok(
+      ["source", "metadata", "draft"].includes(entry.check),
+      `unknown check state "${entry.check}" on ${key}`,
+    );
   }
 
   // The one record whose original title is already Chinese needs no translation.
@@ -193,12 +196,16 @@ test("both trees declare each other as hreflang alternates", async () => {
 
 test("both trees ship the hash scroll guard", async () => {
   // The router re-applies location.hash on hydration, about a second after
-  // paint, which yanks back anyone who started scrolling. The guard drops the
-  // hash on the first real gesture; without it that bounce returns silently.
+  // paint, which yanks back anyone who started scrolling. The guard lets the
+  // browser's own fragment jump land, then drops the hash while holding the
+  // reader where they are; without it that bounce returns silently.
   for (const path of ["/", "/en", "/topics/sports", "/en/topics/sports"]) {
     const html = await renderHtml(path);
     assert.match(html, /window\.location\.hash/, `${path} has no scroll guard`);
-    assert.match(html, /"wheel", "touchmove", "keydown"/, `${path} guard is stale`);
+    assert.match(html, /history\.replaceState/, `${path} never clears the hash`);
+    // Clearing the hash without restoring scrollY drops the reader back to the
+    // top of the page — the bug this guard exists to prevent.
+    assert.match(html, /window\.scrollTo\(0, y\)/, `${path} guard loses position`);
     // Listening on `scroll` would also fire for the browser's own fragment
     // jump and clear the hash for readers who never scrolled.
     assert.doesNotMatch(html, /addEventListener\("scroll"/);
@@ -287,18 +294,101 @@ test("every suggested query actually finds something", async () => {
   }
 });
 
-test("unreviewed summaries are labelled as AI drafts", async () => {
-  const drafted = Object.entries(plainLanguage).filter(
-    ([, entry]) => entry.reviewed === false,
+/**
+ * Every check is performed by AI. The badges must never let a reader conclude
+ * that a person vouched for a summary, so each one carries "AI" and disclaims
+ * professional involvement outright.
+ */
+const CHECK_BADGES = {
+  source: "AI 已校对原文",
+  metadata: "AI 仅据题录",
+  draft: "AI 初稿未校",
+};
+
+test("every summary states how far it was checked", async () => {
+  const states = new Set(
+    Object.values(plainLanguage).map((entry) => entry.check),
   );
-  assert.ok(drafted.length > 0, "this test is meaningless once all are reviewed");
 
-  const [checksum] = drafted[0];
-  const paper = records.find((record) => record.sha256 === checksum);
-  const html = await renderHtml(`/papers/${slugFor(paper)}`);
+  for (const state of states) {
+    const [checksum] = Object.entries(plainLanguage).find(
+      ([, entry]) => entry.check === state,
+    );
+    const paper = records.find((record) => record.sha256 === checksum);
+    const html = await renderHtml(`/papers/${slugFor(paper)}`);
 
-  assert.match(html, /AI 初稿/);
-  assert.match(html, /尚未经过人工核对/);
+    assert.match(html, new RegExp(CHECK_BADGES[state]));
+    assert.match(html, /没有医学专业人士参与/);
+    // "尚未" would promise a human review that is never coming.
+    assert.doesNotMatch(html, /人工核对/);
+  }
+});
+
+test("hand-written medical prose points at the consensus it rests on", async () => {
+  const home = await renderHtml("/");
+  assert.match(home, /source-list/, "the primer cites nothing");
+  // The risk figures in the primer come from these two consensus documents.
+  assert.match(home, /href="\/papers\/2020-8bcae4884a2a"/);
+  assert.match(home, /href="\/papers\/2017-eef7d139c8b6"/);
+  // Both consensus documents stress that sudden death is often the first sign,
+  // so the primer must not leave a family reassured by an absence of symptoms.
+  assert.match(home, /没有症状不等于没有风险/);
+
+  for (const slug of TOPIC_SLUGS) {
+    const html = await renderHtml(`/topics/${slug}`);
+    assert.match(html, /source-list/, `/topics/${slug} cites nothing`);
+  }
+});
+
+test("every cited source resolves to a record held here in full", async () => {
+  // Read from the module source rather than restating the slugs, so a citation
+  // edited in lib/topics.ts cannot drift past this check.
+  const topicsSource = await readFile(
+    new URL("../lib/topics.ts", import.meta.url),
+    "utf8",
+  );
+  const cited = new Set(
+    (topicsSource.match(/"\d{4}-[0-9a-f]{12}"/g) ?? []).map((quoted) =>
+      quoted.slice(1, -1),
+    ),
+  );
+  assert.ok(cited.size >= 5, "no citations found in lib/topics.ts");
+
+  for (const slug of cited) {
+    const paper = records.find((record) => slugFor(record) === slug);
+    assert.ok(paper, `cited source ${slug} matches no record`);
+    // A citation the reader cannot open is not a citation.
+    assert.ok(
+      paper.access.startsWith("全文"),
+      `cited source ${slug} has no full text here`,
+    );
+  }
+});
+
+test("the about page says who compiled this and that no clinician checked it", async () => {
+  const zhHtml = await renderHtml("/about");
+  assert.match(zhHtml, /患者家属/);
+  assert.match(zhHtml, /我不是医生/);
+  assert.match(zhHtml, /没有医学专业人士参与/);
+  // The scope limit matters as much as the credentials.
+  assert.match(zhHtml, /这不是一份系统综述/);
+
+  const enHtml = await renderHtml("/en/about");
+  assert.match(enHtml, /not a doctor/);
+  assert.match(enHtml, /No medical professional was involved/);
+
+  // Reachable from the nav on every page rather than buried in the footer.
+  for (const path of ["/", "/topics/sports"]) {
+    assert.match(await renderHtml(path), /href="\/about"/);
+  }
+});
+
+test("record lists carry the summary notice in body text, not only a tooltip", async () => {
+  for (const path of ["/", "/topics/how-serious"]) {
+    const html = await renderHtml(path);
+    assert.match(html, /summary-notice/);
+    assert.match(html, /也由 AI 校对/);
+  }
 });
 
 test("renders a non-full-text record in plain words with usable identifiers", async () => {
@@ -326,11 +416,14 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
 
-  // (1 landing + 6 questions + 63 records) x 2 language trees.
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 140);
+  // (landing + about + one per question + one per record) x 2 language trees.
+  const perTree = 2 + TOPIC_SLUGS.length + records.length;
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, perTree * 2);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/topics\/sports/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/about/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/about/);
   assert.doesNotMatch(sitemap, /chatgpt\.site|sites\.openai\.com/);
 
   const robotsResponse = await render("/robots.txt", "text/plain");

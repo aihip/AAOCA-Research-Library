@@ -18,6 +18,7 @@ export const en: Dictionary = {
   nav: {
     questions: "Questions",
     library: "All records",
+    about: "About",
     rights: "Rights",
     github: "GitHub",
     switchTo: "中文",
@@ -41,9 +42,13 @@ export const en: Dictionary = {
     primerBody: [
       "The heart needs its own blood supply, delivered by the two coronary arteries. They arise from the root of the aorta, one on each side, each from its own fixed position.",
       "Anomalous aortic origin of a coronary artery (AAOCA) means one of those arteries begins in the wrong place — for example, an artery that should arise on the left instead arises on the right. If that vessel then runs between the aorta and the pulmonary artery, the chance of it being compressed increases. This is a difference in anatomy present from birth, not an illness acquired later, and it is not contagious.",
-      "Many people never have symptoms and are found incidentally during testing done for another reason. Others experience chest pain, breathlessness on exertion, or fainting, and in a small number of cases the condition is linked to cardiac events during intense exercise. Risk depends on the specific anatomy, needs imaging to assess, and varies considerably between individuals.",
+      "Which artery is affected matters a great deal. The Chinese expert consensus records that anomalous origin of the right coronary artery is far more common than the left, by roughly six to one, while sudden cardiac death occurs 1.8 to 4.7 times more often with an anomalous left coronary artery. So the first thing a clinician establishes is which artery is involved and where it runs.",
+      "Many people never have symptoms and are found incidentally during testing done for another reason. Others experience chest pain, breathlessness on exertion, or fainting. One thing needs saying plainly: no symptoms does not mean no risk — the same consensus cites figures showing that between 38% and 66% of patients had never had any related symptom before the sudden death event. \"He has always been fine\" is not a reason to relax.",
+      "The other side of this is that the word \"sudden death\" should not flatten you either. The AATS expert consensus notes that among young people who do not take part in competitive sport, the absolute rate of such events is exceedingly low; the risk concentrates in particular anatomical types combined with high-intensity exercise. How high the risk is for one individual depends on the anatomy, needs imaging to assess, and varies considerably between people.",
       "The questions below are the ones families ask most often. Under each are the relevant records — they show what the research currently reports, but they cannot substitute for your clinician's assessment of your own situation.",
     ],
+    primerSourcesLabel:
+      "This section is written from the following consensus documents and guidelines — you can check it against them:",
 
     questionsEyebrow: "Browse by question",
     questionsHeading: "What you may want to ask",
@@ -115,11 +120,74 @@ export const en: Dictionary = {
     adultBadge: "Adult",
     nonfullNote: "Bibliographic record only — the full text must be obtained from the publisher.",
     noIdentifier: "No DOI / PMID found",
-    draftBadge: "AI draft",
-    draftTitle: "This summary was drafted by AI from the record metadata and has not yet been checked by a person.",
+    summaryCheck: {
+      source: {
+        badge: "AI-checked against full text",
+        note: "Drafted by AI and checked line by line against the full text held here. No medical professional was involved.",
+      },
+      metadata: {
+        badge: "AI, metadata only",
+        note: "The full text is not held here, so this summary rests on the title and curator note alone and could not be compared with the article. No medical professional was involved.",
+      },
+      draft: {
+        badge: "AI draft, unchecked",
+        note: "Drafted by AI from the record metadata and not checked against anything. No medical professional was involved.",
+      },
+    },
+    summaryNotice:
+      "The Chinese summaries below are drafted by AI and checked by AI. No medical professional was involved. The tag after each one states how far it was checked.",
+  },
+
+  about: {
+    metaTitle: "About this library | AAOCA Research Library",
+    metaDescription:
+      "Who compiled this library and why, how the records were selected, where the Chinese summaries come from, and what this site cannot do.",
+    eyebrow: "About",
+    title: "Who made this",
+    lede: "If you are going to act on anything here, you are entitled to know where it came from first.",
+    sections: [
+      {
+        heading: "Who compiled it",
+        body: [
+          "This library was compiled by a patient's family member. I am not a doctor, not a medical researcher, and have no medical training of any kind.",
+          "After the diagnosis in my family, I found almost nothing reliable about anomalous aortic origin of a coronary artery in Chinese, and what research existed was almost entirely in English and unreadable to a layperson. I built this to understand it myself, then published it in case it helps someone else.",
+        ],
+      },
+      {
+        heading: "How the records were selected",
+        body: [
+          "There are 63 deduplicated records covering pediatric and adult studies, imaging and risk stratification, sports participation, surgical management, and expert consensus and clinical guidelines. Each keeps its original title, journal, year, and DOI, PMID, or PMCID where one exists, so you can go back to the source and check.",
+          "To be clear: this is not a systematic review. The scope reflects what was found and retained during compilation. It is not exhaustive and does not represent the whole of the evidence. A question with many records is not more important than one with few, and few records does not mean lower risk.",
+        ],
+      },
+      {
+        heading: "Where the Chinese titles and summaries come from",
+        body: [
+          "Every Chinese title and plain-language summary on this site was drafted by AI from the record metadata. The checking is also done by AI, line by line against the full text held here. No medical professional was involved at any stage, and no clinician has reviewed any of this text.",
+          "Each summary carries a tag stating how far it was checked: checked against the full text; based on the title and curator note only, because the full text is not held here and no comparison was possible; or drafted and not yet checked.",
+          "These tags are not boilerplate. Where a summary conflicts with what your clinician tells you, your clinician is right, and corrections are welcome via GitHub.",
+        ],
+      },
+      {
+        heading: "What this site cannot do",
+        body: [
+          "It cannot tell you whether to have surgery, whether sport is safe, or how high the risk is. Those depend on the specific anatomy, symptoms, and test results, and only a clinician who has seen the imaging can judge them.",
+          "It is not a substitute for the articles. Most records are not held here in full, and those that are are English-language clinical papers. A summary only helps you decide whether a paper is worth raising with your clinician.",
+          "It is not guaranteed to stay current. The literature was compiled in July 2026; anything published since is absent.",
+          "It collects no personal information and has no accounts, comments, or uploads. Please do not put names, medical record numbers, or other health information in a GitHub issue.",
+        ],
+      },
+      {
+        heading: "How to use it well",
+        body: [
+          "Pick the few records closest to your situation, note the DOI or PMID, and take them to the appointment — printed or on your phone — and ask whether the situation they describe resembles yours. Treat it as a list to talk through with a clinician, not as an answer.",
+        ],
+      },
+    ],
   },
 
   topic: {
+    sourcesLabel: "The guidance behind this introduction:",
     metaTitle: (question) => `${question} | AAOCA Research Library`,
     metaDescription: (question) =>
       `Published research on anomalous aortic origin of a coronary artery (AAOCA / AAORCA), organised around the question: ${question}.`,

@@ -19,11 +19,36 @@ export type Topic = {
   slug: TopicSlug;
   zh: TopicCopy;
   en: TopicCopy;
+  /**
+   * Record slugs for the consensus documents the intro was checked against.
+   * The intros are original medical prose, which makes them the least
+   * accountable text on the site unless they point at something.
+   */
+  sources: string[];
 };
+
+/**
+ * The consensus records held here in full, so an assertion in the hand-written
+ * copy can be traced to a document a reader can actually open.
+ */
+export const SOURCE = {
+  chineseConsensus2020: "2020-8bcae4884a2a",
+  aatsConsensus2017: "2017-eef7d139c8b6",
+  aseImaging2020: "2020-27b1754e3df3",
+  ahaAthletes2015: "2015-d96e5cc95fe6",
+  ahaAdultChd2019: "2019-ffd1b8aa169d",
+} as const;
+
+/** Sources behind the landing-page primer. */
+export const PRIMER_SOURCES: string[] = [
+  SOURCE.chineseConsensus2020,
+  SOURCE.aatsConsensus2017,
+];
 
 export const topics: Topic[] = [
   {
     slug: "what-is-it",
+    sources: [SOURCE.chineseConsensus2020, SOURCE.aatsConsensus2017],
     zh: {
       question: "这是什么情况",
       blurb: "冠状动脉从哪里发出，为什么位置会有影响",
@@ -39,6 +64,7 @@ export const topics: Topic[] = [
   },
   {
     slug: "how-serious",
+    sources: [SOURCE.aatsConsensus2017, SOURCE.chineseConsensus2020],
     zh: {
       question: "严不严重",
       blurb: "风险分层、猝死风险、长期随访结果",
@@ -54,6 +80,7 @@ export const topics: Topic[] = [
   },
   {
     slug: "what-tests",
+    sources: [SOURCE.aseImaging2020, SOURCE.chineseConsensus2020],
     zh: {
       question: "需要做什么检查",
       blurb: "CT、磁共振、超声心动图、负荷试验各能看出什么",
@@ -69,21 +96,23 @@ export const topics: Topic[] = [
   },
   {
     slug: "sports",
+    sources: [SOURCE.ahaAthletes2015, SOURCE.aatsConsensus2017],
     zh: {
       question: "还能运动吗",
       blurb: "运动限制、恢复训练、竞技体育参与",
       intro:
-        "运动限制往往是确诊后对日常生活影响最大的一件事。相关的专家共识在过去十年里有明显变化，不同国家和学会的建议也不完全相同。下面既包括正式的运动心脏病学指南，也包括观察运动人群结局的研究。能不能运动、运动到什么强度，必须由你的医生结合具体解剖和检查结果决定。",
+        "运动限制往往是确诊后对日常生活影响最大的一件事。相关的专家共识在过去十年里有明显变化，不同国家和学会的建议也不完全相同。下面既包括正式的运动心脏病学指南，也包括观察运动人群结局的研究。能不能运动、运动到什么强度，必须由你的医生结合具体解剖和检查结果决定。\n先说明一件事：这个问题下面的记录最少。这不是整理时漏掉了，而是针对冠状动脉起源异常与运动的专门研究本来就很少，其中一部分还是面向所有心血管疾病的通用运动指南，并非专门研究这个情况。家属最关心的问题，恰恰是证据最薄的问题——这本身就是你和医生讨论时需要知道的一件事。",
     },
     en: {
       question: "Can sport continue",
       blurb: "Activity restriction, return to training, competitive participation",
       intro:
-        "Activity restriction is often the change that affects daily life most after diagnosis. Consensus in this area has shifted noticeably over the past decade, and recommendations differ between societies. These records include formal sports cardiology guidance as well as studies following athletic populations. Decisions about activity belong with your clinician.",
+        "Activity restriction is often the change that affects daily life most after diagnosis. Consensus in this area has shifted noticeably over the past decade, and recommendations differ between societies. These records include formal sports cardiology guidance as well as studies following athletic populations. Decisions about activity belong with your clinician.\nOne thing to say plainly: this question holds the fewest records of any here. That is not an oversight in the curation — research specific to this condition and exercise is genuinely scarce, and part of what exists is general sports cardiology guidance rather than work on this anomaly. The question families care most about is the one with the thinnest evidence, which is itself worth knowing when you talk to your clinician.",
     },
   },
   {
     slug: "surgery",
+    sources: [SOURCE.chineseConsensus2020, SOURCE.aatsConsensus2017],
     zh: {
       question: "要不要手术",
       blurb: "手术指征、术式选择、术后结果",
@@ -99,6 +128,7 @@ export const topics: Topic[] = [
   },
   {
     slug: "guidelines",
+    sources: [SOURCE.aatsConsensus2017, SOURCE.ahaAdultChd2019],
     zh: {
       question: "医生依据什么",
       blurb: "专家共识与临床指南",

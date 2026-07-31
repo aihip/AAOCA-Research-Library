@@ -21,13 +21,30 @@ export type PaperRecord = {
   sha256: string;
 };
 
+/**
+ * How far the Chinese summary has been checked. Every summary is AI-drafted and
+ * every check is performed by AI — no medical professional signs off at any
+ * level, which is why none of these states is called "reviewed".
+ *
+ * - `source`   checked line by line against the full text held in this repository
+ * - `metadata` no full text exists here, so it could only be checked against the
+ *              title and the curator note
+ * - `draft`    not checked at all
+ */
+export type SummaryCheck = "source" | "metadata" | "draft";
+
+const SUMMARY_CHECKS: SummaryCheck[] = ["source", "metadata", "draft"];
+
+function isSummaryCheck(value: unknown): value is SummaryCheck {
+  return SUMMARY_CHECKS.includes(value as SummaryCheck);
+}
+
 /** Editorial content layered on top of a record, keyed by sha256. */
 export type PlainLanguage = {
   titleZh?: string;
   summaryZh?: string;
   topics: TopicSlug[];
-  /** False while the AI draft is still awaiting human review. */
-  reviewed: boolean;
+  check: SummaryCheck;
 };
 
 export type Paper = PaperRecord & PlainLanguage & { slug: string };
@@ -36,7 +53,7 @@ type PlainLanguageEntry = {
   title_zh?: string;
   summary_zh?: string;
   topics?: string[];
-  reviewed?: boolean;
+  check?: string;
 };
 
 const overlay = plainLanguageData as Record<string, PlainLanguageEntry>;
@@ -60,7 +77,7 @@ function enrich(record: PaperRecord): Paper {
     titleZh: entry?.title_zh,
     summaryZh: entry?.summary_zh,
     topics,
-    reviewed: entry?.reviewed === true,
+    check: isSummaryCheck(entry?.check) ? entry.check : "draft",
   };
 }
 
@@ -138,6 +155,8 @@ export const libraryStats = {
   fullText: papers.filter(isFullText).length,
   nonFullText: papers.filter((paper) => !isFullText(paper)).length,
   consensus: papers.filter(isConsensus).length,
-  reviewed: papers.filter((paper) => paper.reviewed).length,
+  checkedAgainstSource: papers.filter((paper) => paper.check === "source").length,
+  checkedAgainstMetadata: papers.filter((paper) => paper.check === "metadata")
+    .length,
   drafted: papers.filter((paper) => Boolean(paper.summaryZh)).length,
 };

@@ -79,6 +79,7 @@ const LANGUAGE_PREFIXES = ["", "/en"];
 
 const pagePaths = LANGUAGE_PREFIXES.flatMap((prefix) => [
   prefix || "/",
+  `${prefix}/about`,
   ...TOPIC_SLUGS.map((slug) => `${prefix}/topics/${slug}`),
   ...papers.map(
     (paper) => `${prefix}/papers/${paper.year}-${paper.sha256.slice(0, 12)}`,

@@ -41,11 +41,12 @@ export function PaperCard({ paper, dict }: { paper: Paper; dict: Dictionary }) {
       {summary && (
         <p className="plain-summary">
           {summary}
-          {!paper.reviewed && (
-            <span className="draft-badge" title={dict.card.draftTitle}>
-              {dict.card.draftBadge}
-            </span>
-          )}
+          <span
+            className={`check-badge ${paper.check}`}
+            title={dict.card.summaryCheck[paper.check].note}
+          >
+            {dict.card.summaryCheck[paper.check].badge}
+          </span>
         </p>
       )}
 

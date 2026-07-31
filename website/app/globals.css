@@ -1138,28 +1138,109 @@ footer p {
   line-height: 1.75;
 }
 
-.draft-badge {
+/* Three provenance states, weakest claim in the loudest colour. */
+.check-badge {
   display: inline-block;
   margin-left: 8px;
   padding: 2px 8px;
   border-radius: 999px;
-  background: var(--red-pale);
-  color: #7d251e;
   font-size: 0.72rem;
   font-weight: 800;
   vertical-align: middle;
   white-space: nowrap;
 }
 
-.draft-note {
+.check-badge.source {
+  background: var(--teal-pale);
+  color: var(--teal-dark);
+}
+
+.check-badge.metadata {
+  background: var(--gold-pale);
+  color: var(--gold-text);
+}
+
+.check-badge.draft {
+  background: var(--red-pale);
+  color: #7d251e;
+}
+
+.check-note {
   margin: 12px 0 0;
   color: var(--ink-soft);
   font-size: 0.85rem;
   line-height: 1.6;
 }
 
-.draft-note .draft-badge {
+.check-note .check-badge {
   margin: 0 8px 0 0;
+}
+
+/* Standing notice above a record list — the per-card badge explanation lives in
+   a title tooltip, which touch devices never surface. */
+.summary-notice {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  background: var(--gold-pale);
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* Traceability for the hand-written medical prose: every assertion points at a
+   consensus document the reader can open. */
+.source-list {
+  margin: 24px 0 0;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.source-list p {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.source-list ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.source-list li {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.source-list a {
+  color: var(--teal);
+}
+
+/* --- about page --- */
+
+.about-body {
+  max-width: 760px;
+}
+
+.about-section {
+  margin-top: 40px;
+}
+
+.about-section h2 {
+  margin: 0 0 12px;
+  font-size: 1.28rem;
+  color: var(--teal-dark);
+}
+
+.about-section p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+  color: var(--ink);
 }
 
 /* --- topic pages --- */

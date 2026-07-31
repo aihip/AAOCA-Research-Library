@@ -6,6 +6,7 @@ import { isConsensus, isFullText, type Paper } from "../lib/library";
 import { searchPapers } from "../lib/search";
 import { topics, type TopicSlug } from "../lib/topics";
 import { PaperCard } from "./PaperCard";
+import { SummaryNotice } from "./SummaryNotice";
 
 type Population = "all" | "pediatric" | "adult";
 type Access = "all" | "full" | "nonfull";
@@ -179,6 +180,8 @@ export function PaperExplorer({
       </div>
 
       {loose && <p className="loose-notice">{dict.explorer.looseNotice}</p>}
+
+      <SummaryNotice records={matches} dict={dict} />
 
       {matches.length ? (
         <div className="paper-list">
