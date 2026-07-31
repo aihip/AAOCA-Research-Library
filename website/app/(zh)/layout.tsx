@@ -49,8 +49,8 @@ export default function ChineseLayout({
   return (
     <html lang="zh-CN">
       <body>
-        <HashScrollGuard />
         {children}
+        <HashScrollGuard />
       </body>
     </html>
   );

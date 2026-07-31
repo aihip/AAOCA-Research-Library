@@ -1,37 +1,30 @@
 /**
- * The router sets `history.scrollRestoration = "manual"` and may restore
- * `location.hash` again during hydration. Keep the browser's initial fragment
- * jump, then remove the hash after the first layout has settled so a later
- * hydration pass cannot pull a reader back to the anchor.
+ * Resolve the initial fragment once the page markup exists, then remove it
+ * before hydration can re-apply the same jump. This script is rendered after
+ * the page children, so the target is already available and no delayed scroll
+ * correction can fight with a reader's first wheel or touch gesture.
  */
 const GUARD = `(function(){
-  if (!window.location.hash) return;
-  function release() {
-    if (window.location.hash) {
-      var y = window.scrollY;
-      history.replaceState(
-        history.state,
-        "",
-        window.location.pathname + window.location.search
-      );
-      window.scrollTo(0, y);
-      requestAnimationFrame(function () {
-        window.scrollTo(0, y);
-      });
-    }
+  var hash = window.location.hash;
+  if (!hash) return;
+
+  var id = hash.slice(1);
+  try {
+    id = decodeURIComponent(id);
+  } catch (_) {
+    // A malformed fragment has no valid target, but should still be released.
   }
-  function releaseAfterInitialJump() {
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        setTimeout(release, 0);
-      });
-    });
+
+  var target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView();
   }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", releaseAfterInitialJump, { once: true });
-  } else {
-    releaseAfterInitialJump();
-  }
+
+  history.replaceState(
+    history.state,
+    "",
+    window.location.pathname + window.location.search
+  );
 })();`;
 
 export function HashScrollGuard() {

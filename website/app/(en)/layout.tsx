@@ -49,8 +49,8 @@ export default function EnglishLayout({
   return (
     <html lang="en">
       <body>
-        <HashScrollGuard />
         {children}
+        <HashScrollGuard />
       </body>
     </html>
   );

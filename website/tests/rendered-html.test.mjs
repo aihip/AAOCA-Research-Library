@@ -194,21 +194,56 @@ test("both trees declare each other as hreflang alternates", async () => {
   }
 });
 
-test("both trees ship the hash scroll guard", async () => {
-  // The router re-applies location.hash on hydration, about a second after
-  // paint, which yanks back anyone who started scrolling. The guard lets the
-  // browser's own fragment jump land, then drops the hash while holding the
-  // reader where they are; without it that bounce returns silently.
+test("both trees resolve a fragment once without locking later scrolling", async () => {
+  // The router can re-apply location.hash during hydration. Resolve the target
+  // synchronously after the page markup, then clear the fragment without any
+  // delayed scroll correction that could fight a wheel or touch gesture.
   for (const path of ["/", "/en", "/topics/sports", "/en/topics/sports"]) {
     const html = await renderHtml(path);
     assert.match(html, /window\.location\.hash/, `${path} has no scroll guard`);
+    assert.match(html, /document\.getElementById/, `${path} never resolves its target`);
+    assert.match(html, /target\.scrollIntoView\(\)/, `${path} never lands on its target`);
     assert.match(html, /history\.replaceState/, `${path} never clears the hash`);
-    // Clearing the hash without restoring scrollY drops the reader back to the
-    // top of the page — the bug this guard exists to prevent.
-    assert.match(html, /window\.scrollTo\(0, y\)/, `${path} guard loses position`);
-    // Listening on `scroll` would also fire for the browser's own fragment
-    // jump and clear the hash for readers who never scrolled.
+    assert.doesNotMatch(html, /window\.scrollTo/);
+    assert.doesNotMatch(html, /requestAnimationFrame/);
+    assert.doesNotMatch(html, /setTimeout/);
     assert.doesNotMatch(html, /addEventListener\("scroll"/);
+  }
+});
+
+test("every internal fragment link points to an element on its destination page", async () => {
+  const samplePaper = `/papers/${slugFor(records[0])}`;
+  const paths = [
+    "/",
+    "/en",
+    "/topics/sports",
+    "/en/topics/sports",
+    samplePaper,
+    `/en${samplePaper}`,
+  ];
+  const rendered = new Map();
+
+  for (const path of paths) {
+    const html = await renderHtml(path);
+    const hrefs = [...html.matchAll(/href="([^"]*#[^"]+)"/g)].map(
+      (match) => match[1],
+    );
+
+    for (const href of hrefs) {
+      const url = new URL(href, `https://aaoca.pheth.com${path}`);
+      if (url.origin !== "https://aaoca.pheth.com") continue;
+
+      const destination = url.pathname === "/en/" ? "/en" : url.pathname;
+      if (!rendered.has(destination)) {
+        rendered.set(destination, await renderHtml(destination));
+      }
+
+      const id = decodeURIComponent(url.hash.slice(1));
+      assert.ok(
+        rendered.get(destination).includes(`id="${id}"`),
+        `${path} links to missing fragment ${url.pathname}${url.hash}`,
+      );
+    }
   }
 });
 
