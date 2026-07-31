@@ -54,12 +54,15 @@ async function writeRendered(pathname, response) {
   const cleanPath = pathname.replace(/^\/+/, "");
   const relativePath = pathname === "/"
     ? "index.html"
-    : extname(pathname)
-      ? cleanPath
-      : `${cleanPath}/index.html`;
+    : pathname === "/sitemap.xml"
+      ? `${cleanPath}/index.html`
+      : extname(pathname)
+        ? cleanPath
+        : `${cleanPath}/index.html`;
   const outputPath = resolve(clientRoot, relativePath);
   await mkdir(dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, await response.text());
+  const body = await response.text();
+  await writeFile(outputPath, body);
 }
 
 await writeRendered("/", await render("/"));
