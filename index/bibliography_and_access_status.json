@@ -194,6 +194,38 @@
   {
     "category": "儿童",
     "access": "全文",
+    "year": "2020",
+    "title": "Recommendations for Multimodality Assessment of Congenital Coronary Anomalies: A Guide from the American Society of Echocardiography",
+    "journal": "Journal of the American Society of Echocardiography",
+    "doi": "10.1016/j.echo.2019.10.011",
+    "pmid": "32143778",
+    "pmcid": "",
+    "entry_url": "https://www.asecho.org/wp-content/uploads/2020/03/ConCoronary_March2020.pdf",
+    "notes": "ASE 先天性冠状动脉异常多模态影像指南；与 SCAI、JSE 和 SCMR 合作制定；以先天性/儿童影像评估为主要应用场景。",
+    "path": "papers/pediatric/fulltext/2020_Frommelt_ASE_Multimodality_Congenital_Coronary_Anomalies_Guideline.pdf",
+    "pages": "36",
+    "bytes": "7920476",
+    "sha256": "27b1754e3df36de07425affdc6c70bcffc752c3b0e839619621245ac6785501f"
+  },
+  {
+    "category": "儿童",
+    "access": "全文",
+    "year": "2020",
+    "title": "先天性心脏病外科治疗中国专家共识（十二）：先天性冠状动脉异常",
+    "journal": "中国胸心血管外科临床杂志",
+    "doi": "10.7507/1007-4848.202008031",
+    "pmid": "",
+    "pmcid": "",
+    "entry_url": "https://www.biomedeng.cn/article/10.7507/1007-4848.202008031",
+    "notes": "国家心血管病专家委员会先天性心脏病专业委员会制定；覆盖 AAOCA、冠状动脉异常起源于肺动脉、冠状动脉瘘及相关外科诊疗建议。",
+    "path": "papers/pediatric/fulltext/2020_An_Li_Chinese_Expert_Consensus_Congenital_Coronary_Anomalies.pdf",
+    "pages": "7",
+    "bytes": "635951",
+    "sha256": "8bcae4884a2a48785f4183f7cf638a4afd1692db9248cf8c1fdd6ab259ab9d9c"
+  },
+  {
+    "category": "儿童",
+    "access": "全文",
     "year": "2019",
     "title": "Features associated with myocardial ischemia in anomalous aortic origin of a coronary artery: A Congenital Heart Surgeons' Society study",
     "journal": "Journal of Thoracic and Cardiovascular Surgery",
@@ -238,6 +270,22 @@
     "pages": "18",
     "bytes": "1729299",
     "sha256": "eef7d139c8b6a3406b53789c9252c86446fbb3a5b31fcc01162722577cac51a9"
+  },
+  {
+    "category": "儿童",
+    "access": "全文-官方合订本",
+    "year": "2015",
+    "title": "Eligibility and Disqualification Recommendations for Competitive Athletes With Cardiovascular Abnormalities: Task Force 4: Congenital Heart Disease: A Scientific Statement From the American Heart Association and American College of Cardiology",
+    "journal": "Circulation",
+    "doi": "10.1161/CIR.0000000000000240",
+    "pmid": "26621645",
+    "pmcid": "",
+    "entry_url": "https://doi.org/10.1161/CIR.0000000000000240",
+    "notes": "AHA/ACC 竞技运动员先天性心脏病共识；本地 PDF 为 ACC 发布的 108 页官方合订本，其中完整收录 Task Force 4；DOI/PMID 对应该章节。",
+    "path": "papers/pediatric/fulltext/2015_AHA_ACC_Competitive_Athlete_Eligibility_Combined_Statement.pdf",
+    "pages": "108",
+    "bytes": "3829796",
+    "sha256": "d96e5cc95fe6ba9c85968aac2b009f8c4554aeba84c0c41492b5e6e4e6194166"
   },
   {
     "category": "儿童",
@@ -302,6 +350,22 @@
     "pages": "1",
     "bytes": "69749",
     "sha256": "d6beccc7969e26ae1cc9d5fcf03aa89412b3c7dff0d067f7b23464de66487ecd"
+  },
+  {
+    "category": "儿童",
+    "access": "非全文",
+    "year": "2025",
+    "title": "Clinical Considerations for Competitive Sports Participation for Athletes With Cardiovascular Abnormalities: A Scientific Statement From the American Heart Association and American College of Cardiology",
+    "journal": "Circulation",
+    "doi": "10.1161/CIR.0000000000001297",
+    "pmid": "39973614",
+    "pmcid": "",
+    "entry_url": "https://doi.org/10.1161/CIR.0000000000001297",
+    "notes": "非全文书目访问卡；涵盖青年及成年竞技运动员，并涉及先天性冠状动脉异常；出版社反自动下载页面阻止取得正式 PDF，未使用摘要冒充全文。",
+    "path": "papers/pediatric/non_fulltext/2025_NON_FULLTEXT_Kim_AHA_ACC_Competitive_Athlete_Scientific_Statement.pdf",
+    "pages": "1",
+    "bytes": "48063",
+    "sha256": "96ebfd17d8eb6858416858c6c5385195d846b6377fe23646385c84af0c02f7ef"
   },
   {
     "category": "儿童",
@@ -830,6 +894,22 @@
     "pages": "1",
     "bytes": "67224",
     "sha256": "342543e3086d7e73467ac4e93b2317606def6a3b8e69dc5be191942f7d9de138"
+  },
+  {
+    "category": "成人",
+    "access": "非全文",
+    "year": "2021",
+    "title": "2020 ESC Guidelines on sports cardiology and exercise in patients with cardiovascular disease",
+    "journal": "European Heart Journal",
+    "doi": "10.1093/eurheartj/ehaa605",
+    "pmid": "32860412",
+    "pmcid": "",
+    "entry_url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/sports-cardiology-and-exercise/",
+    "notes": "非全文书目访问卡；正式卷期年份为 2021；包含冠状动脉异常的运动参与建议；出版社反自动下载页面阻止取得正式 PDF，未使用摘要冒充全文。",
+    "path": "papers/adult/non_fulltext/2021_NON_FULLTEXT_Pelliccia_ESC_Sports_Cardiology_Guideline.pdf",
+    "pages": "1",
+    "bytes": "49192",
+    "sha256": "40438196109504a664a35eaf8187b9e0222e4c02f0297689b47402a16ea355ab"
   },
   {
     "category": "成人",

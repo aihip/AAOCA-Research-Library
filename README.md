@@ -2,7 +2,7 @@
 
 整理日期：2026-07-31
 
-当前仓库共收录 **58 条独立文献记录、469 个 PDF 页面**：儿童类 **34 条**（17 全文、17 非全文），成人类 **24 条**（11 全文、13 非全文）。
+当前仓库共收录 **63 条独立文献记录、622 个 PDF 页面**：儿童类 **38 条**（20 全文、18 非全文），成人类 **25 条**（11 全文、14 非全文）。
 
 > [!WARNING]
 > **凡文件名含 `NON_FULLTEXT`，均不是论文全文。** 这些条目因出版社付费墙、登录要求、反自动下载限制，或仅取得书目信息/会议摘要等原因，未在本地收录正式全文。每个文件只是一页书目访问卡，醒目标注“非全文”，并附 DOI、PMID（如已分配）及原始入口。**没有用摘要冒充论文，也不能把访问卡当作原文引用。**
@@ -31,10 +31,23 @@ index/
 - 明确纳入儿童、青少年或以儿童先天性心脏病为主要应用场景者归入“儿童”。
 - 明确纳入成人、成人指南，或样本平均/中位年龄及多数受试者为成人者归入“成人”。
 - 跨年龄研究只保留一个分类；分类依据已写入相应全文条目的“研究概况”。
-- “全文”包括完整论文、指南、完整预印本、完整作者稿或出版社 reference 版本；后几类均在获取状态或研究概况中单独说明。
+- “全文”包括完整论文、指南、完整预印本、完整作者稿、出版社 reference 版本或官方合订本；后几类均在获取状态或研究概况中单独说明。
 - `NON_FULLTEXT` 访问卡仅用于定位合法入口；引用前必须通过 DOI、PMID 或原始入口取得并核对正式论文。
 
-## 儿童 - 全文（17）
+## 专家共识与指南（8）
+
+| 年份 | 共识/指南 | 机构或期刊 | 状态 | 本地文件 |
+|:---:|---|---|---|:---:|
+| 2025 | Clinical Considerations for Competitive Sports Participation for Athletes With Cardiovascular Abnormalities: A Scientific Statement From the American Heart Association and American College of Cardiology | Circulation | ⚠️ 非全文 | [【非全文】PDF](<papers/pediatric/non_fulltext/2025_NON_FULLTEXT_Kim_AHA_ACC_Competitive_Athlete_Scientific_Statement.pdf>) |
+| 2021 | 2020 ESC Guidelines on sports cardiology and exercise in patients with cardiovascular disease | European Heart Journal | ⚠️ 非全文 | [【非全文】PDF](<papers/adult/non_fulltext/2021_NON_FULLTEXT_Pelliccia_ESC_Sports_Cardiology_Guideline.pdf>) |
+| 2020 | 先天性心脏病外科治疗中国专家共识（十二）：先天性冠状动脉异常 | 中国胸心血管外科临床杂志 | 全文 | [PDF](<papers/pediatric/fulltext/2020_An_Li_Chinese_Expert_Consensus_Congenital_Coronary_Anomalies.pdf>) |
+| 2020 | Recommendations for Multimodality Assessment of Congenital Coronary Anomalies: A Guide from the American Society of Echocardiography | Journal of the American Society of Echocardiography | 全文 | [PDF](<papers/pediatric/fulltext/2020_Frommelt_ASE_Multimodality_Congenital_Coronary_Anomalies_Guideline.pdf>) |
+| 2020 | 2020 ESC Guidelines for the management of adult congenital heart disease | European Heart Journal | ⚠️ 非全文 | [【非全文】PDF](<papers/adult/non_fulltext/2020_NON_FULLTEXT_ESC_Adult_CHD_Guideline.pdf>) |
+| 2019 | 2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease | Journal of the American College of Cardiology | 全文 | [PDF](<papers/adult/fulltext/2019_Stout_AHA_ACC_Adult_CHD_Guideline.pdf>) |
+| 2017 | Expert consensus guidelines: Anomalous aortic origin of a coronary artery | Journal of Thoracic and Cardiovascular Surgery | 全文 | [PDF](<papers/pediatric/fulltext/2017_Brothers_AATS_AAOCA_Expert_Consensus.pdf>) |
+| 2015 | Eligibility and Disqualification Recommendations for Competitive Athletes With Cardiovascular Abnormalities: Task Force 4: Congenital Heart Disease: A Scientific Statement From the American Heart Association and American College of Cardiology | Circulation | 全文 | [PDF](<papers/pediatric/fulltext/2015_AHA_ACC_Competitive_Athlete_Eligibility_Combined_Statement.pdf>) |
+
+## 儿童 - 全文（20）
 
 | 年份 | 论文 | 来源 | DOI/入口 | 获取状态 | 研究概况 | PDF |
 |:---:|---|---|---|---|---|:---:|
@@ -50,13 +63,16 @@ index/
 | 2022 | Surgery for Anomalous Aortic Origin of a Coronary Artery (AAOCA) in Children and Adolescents: A Meta-Analysis | World Journal for Pediatric and Congenital Heart Surgery | [10.1177/21501351221095424](https://doi.org/10.1177/21501351221095424) | 全文 | 儿童、青少年和 30 岁以下青年外科荟萃分析。 | [PDF](<papers/pediatric/fulltext/2022_Ponzoni_Pediatric_AAOCA_Meta_Analysis.pdf>) |
 | 2020 | Anomalous aortic origin of a coronary artery in two children | Asian Cardiovascular & Thoracic Annals | [10.1177/0218492319870614](https://doi.org/10.1177/0218492319870614) | 全文 | 2 例儿童心搏骤停后确诊并接受去顶术。 | [PDF](<papers/pediatric/fulltext/2020_Hosoda_Two_Pediatric_AAOCA_Cases.pdf>) |
 | 2020 | Exercise-Induced Abnormalities of Regional Myocardial Deformation in Anomalous Aortic Origin of the Right Coronary Artery | World Journal for Pediatric and Congenital Heart Surgery | [10.1177/2150135120947689](https://doi.org/10.1177/2150135120947689) | 全文 | 儿童/青少年运动负荷超声研究；各组平均年龄约 13-15 岁。 | [PDF](<papers/pediatric/fulltext/2020_Binka_AAORCA_Exercise_Myocardial_Deformation.pdf>) |
+| 2020 | Recommendations for Multimodality Assessment of Congenital Coronary Anomalies: A Guide from the American Society of Echocardiography | Journal of the American Society of Echocardiography | [10.1016/j.echo.2019.10.011](https://doi.org/10.1016/j.echo.2019.10.011) | 全文 | ASE 先天性冠状动脉异常多模态影像指南；与 SCAI、JSE 和 SCMR 合作制定；以先天性/儿童影像评估为主要应用场景。 | [PDF](<papers/pediatric/fulltext/2020_Frommelt_ASE_Multimodality_Congenital_Coronary_Anomalies_Guideline.pdf>) |
+| 2020 | 先天性心脏病外科治疗中国专家共识（十二）：先天性冠状动脉异常 | 中国胸心血管外科临床杂志 | [10.7507/1007-4848.202008031](https://doi.org/10.7507/1007-4848.202008031) | 全文 | 国家心血管病专家委员会先天性心脏病专业委员会制定；覆盖 AAOCA、冠状动脉异常起源于肺动脉、冠状动脉瘘及相关外科诊疗建议。 | [PDF](<papers/pediatric/fulltext/2020_An_Li_Chinese_Expert_Consensus_Congenital_Coronary_Anomalies.pdf>) |
 | 2019 | Features associated with myocardial ischemia in anomalous aortic origin of a coronary artery: A Congenital Heart Surgeons' Society study | Journal of Thoracic and Cardiovascular Surgery | [10.1016/j.jtcvs.2019.02.122](https://doi.org/10.1016/j.jtcvs.2019.02.122) | 全文 | CHSS 多中心队列；诊断年龄不超过 30 岁，主要归入儿童/青年。 | [PDF](<papers/pediatric/fulltext/2019_Jegatheeswaran_CHSS_Ischemia_Features.pdf>) |
 | 2019 | Perfusion Study Helps in the Management of the Intraseptal Course of an Anomalous Coronary Artery | World Journal for Pediatric and Congenital Heart Surgery | [10.1177/2150135119829004](https://doi.org/10.1177/2150135119829004) | 全文 | 11 岁儿童病例；核素灌注研究用于指导手术。 | [PDF](<papers/pediatric/fulltext/2019_Agati_Intraseptal_Anomalous_Coronary_Perfusion_Study.pdf>) |
 | 2017 | Expert consensus guidelines: Anomalous aortic origin of a coronary artery | Journal of Thoracic and Cardiovascular Surgery | [10.1016/j.jtcvs.2016.06.066](https://doi.org/10.1016/j.jtcvs.2016.06.066) | 全文 | AATS 专家共识；以先天性/儿童及青年管理为主要应用场景。 | [PDF](<papers/pediatric/fulltext/2017_Brothers_AATS_AAOCA_Expert_Consensus.pdf>) |
+| 2015 | Eligibility and Disqualification Recommendations for Competitive Athletes With Cardiovascular Abnormalities: Task Force 4: Congenital Heart Disease: A Scientific Statement From the American Heart Association and American College of Cardiology | Circulation | [10.1161/CIR.0000000000000240](https://doi.org/10.1161/CIR.0000000000000240) | 全文-官方合订本 | AHA/ACC 竞技运动员先天性心脏病共识；本地 PDF 为 ACC 发布的 108 页官方合订本，其中完整收录 Task Force 4；DOI/PMID 对应该章节。 | [PDF](<papers/pediatric/fulltext/2015_AHA_ACC_Competitive_Athlete_Eligibility_Combined_Statement.pdf>) |
 | 2012 | Anomalous aortic origin of coronary arteries from the opposite sinus: A critical appraisal of risk | BMC Cardiovascular Disorders | [10.1186/1471-2261-12-83](https://doi.org/10.1186/1471-2261-12-83) | 全文 | 以儿童和青年猝死风险及管理为主要应用场景的风险评述。 | [PDF](<papers/pediatric/fulltext/2012_Penalver_AAOCA_Risk_Critical_Appraisal.pdf>) |
 | 2011 | Anomalous Aortic Origin of a Coronary Artery: Preoperative Diagnosis and Surgical Planning | World Journal for Pediatric and Congenital Heart Surgery | [10.1177/2150135111406938](https://doi.org/10.1177/2150135111406938) | 全文 | 外科队列，53 例；平均年龄 13.9 岁（4-65 岁），按主要年龄归入儿童。 | [PDF](<papers/pediatric/fulltext/2011_Turner_AAOCA_Preoperative_Diagnosis_and_Surgical_Planning.pdf>) |
 
-## 儿童 - 非全文（17）
+## 儿童 - 非全文（18）
 
 > 下表每一项及其本地 PDF 都是 **非全文书目访问卡**，不是论文原文。
 
@@ -64,6 +80,7 @@ index/
 |:---:|---|---|---|---|:---:|:---:|
 | 2026 | ⚠️ **非全文**<br>Clinical characteristics and outcomes of the anomalous aortic origin of a coronary artery: a nationwide pediatric survey in Japan | Heart and Vessels | [10.1007/s00380-026-02722-y](https://doi.org/10.1007/s00380-026-02722-y) | [42472738](https://pubmed.ncbi.nlm.nih.gov/42472738/) | [原始入口](https://doi.org/10.1007/s00380-026-02722-y) | [【非全文】PDF](<papers/pediatric/non_fulltext/2026_NON_FULLTEXT_Japan_Pediatric_Nationwide_Survey.pdf>) |
 | 2026 | ⚠️ **非全文**<br>Proposed Standardized Nomenclature for Anomalous Aortic Origin of a Coronary Artery: An International Multidisciplinary Initiative | JACC: Cardiovascular Imaging | [10.1016/j.jcmg.2026.02.005](https://doi.org/10.1016/j.jcmg.2026.02.005) | 未分配或未检得（截至 2026-07-31） | [原始入口](https://doi.org/10.1016/j.jcmg.2026.02.005) | [【非全文】PDF](<papers/pediatric/non_fulltext/2026_NON_FULLTEXT_AAOCA_Standardized_Nomenclature.pdf>) |
+| 2025 | ⚠️ **非全文**<br>Clinical Considerations for Competitive Sports Participation for Athletes With Cardiovascular Abnormalities: A Scientific Statement From the American Heart Association and American College of Cardiology | Circulation | [10.1161/CIR.0000000000001297](https://doi.org/10.1161/CIR.0000000000001297) | [39973614](https://pubmed.ncbi.nlm.nih.gov/39973614/) | [原始入口](https://doi.org/10.1161/CIR.0000000000001297) | [【非全文】PDF](<papers/pediatric/non_fulltext/2025_NON_FULLTEXT_Kim_AHA_ACC_Competitive_Athlete_Scientific_Statement.pdf>) |
 | 2025 | ⚠️ **非全文**<br>Outcomes of 230 Patients Undergoing Surgical Repair of Anomalous Aortic Origin of a Coronary Artery | The Annals of Thoracic Surgery | [10.1016/j.athoracsur.2025.01.029](https://doi.org/10.1016/j.athoracsur.2025.01.029) | [39983947](https://pubmed.ncbi.nlm.nih.gov/39983947/) | [原始入口](https://doi.org/10.1016/j.athoracsur.2025.01.029) | [【非全文】PDF](<papers/pediatric/non_fulltext/2025_NON_FULLTEXT_230_Patient_Surgical_Outcomes.pdf>) |
 | 2025 | ⚠️ **非全文**<br>The Diagnosis and Therapeutic Management of Anomalous Aortic Origin of the Coronary Artery: A Retrospective Study Conducted at a Single Center in China | Reviews in Cardiovascular Medicine | [10.31083/RCM33432](https://doi.org/10.31083/RCM33432) | 未分配或未检得（截至 2026-07-31） | [原始入口](https://doi.org/10.31083/RCM33432) | [【非全文】PDF](<papers/pediatric/non_fulltext/2025_NON_FULLTEXT_China_Single_Center_Management.pdf>) |
 | 2023 | ⚠️ **非全文**<br>Application of Patient-Specific Computational Fluid Dynamics in Anomalous Aortic Origin of Coronary Artery: A Systematic Review | Journal of Cardiovascular Development and Disease | [10.3390/jcdd10090384](https://doi.org/10.3390/jcdd10090384) | [37754814](https://pubmed.ncbi.nlm.nih.gov/37754814/) | [原始入口](https://doi.org/10.3390/jcdd10090384) | [【非全文】PDF](<papers/pediatric/non_fulltext/2023_NON_FULLTEXT_Patient_Specific_CFD_Systematic_Review.pdf>) |
@@ -96,7 +113,7 @@ index/
 | 2018 | Clinical Strategies of Anomalous Aortic Origin of the Coronary Artery Arising from the Opposite Sinus | 中国分子心脏病学杂志 | [10.16563/j.cnki.1671-6272.2018.06.005](https://doi.org/10.16563/j.cnki.1671-6272.2018.06.005) | 全文 | 回顾性队列，64 例；其中 56 例为 30-75 岁中老年患者，归入成人。 | [PDF](<papers/adult/fulltext/2018_Su_Opposite_Sinus_AAOCA_Clinical_Strategies.pdf>) |
 | 2014 | The distribution and prognosis of anomalous coronary arteries identified by cardiovascular magnetic resonance: 15 year experience from two tertiary centres | Journal of Cardiovascular Magnetic Resonance | [10.1186/1532-429X-16-34](https://doi.org/10.1186/1532-429X-16-34) | 全文 | 成人为主的 CMR 队列，172 例；中位年龄 54 岁。 | [PDF](<papers/adult/fulltext/2014_Ripley_CMR_172_Adult_Patients.pdf>) |
 
-## 成人 - 非全文（13）
+## 成人 - 非全文（14）
 
 > 下表每一项及其本地 PDF 都是 **非全文书目访问卡**，不是论文原文。
 
@@ -109,6 +126,7 @@ index/
 | 2025 | ⚠️ **非全文**<br>Surgical approach and outcomes in adults with anomalous aortic origin of coronary arteries at a reference center: Outcomes of proximal coronary surgery | JTCVS Open | [10.1016/j.xjon.2025.05.011](https://doi.org/10.1016/j.xjon.2025.05.011) | [41169309](https://pubmed.ncbi.nlm.nih.gov/41169309/) | [原始入口](https://pmc.ncbi.nlm.nih.gov/articles/PMC12570585/) | [【非全文】PDF](<papers/adult/non_fulltext/2025_NON_FULLTEXT_Adult_Proximal_Coronary_Surgery.pdf>) |
 | 2023 | ⚠️ **非全文**<br>Management of Adults With Anomalous Aortic Origin of the Coronary Arteries: State-of-the-Art Review | Journal of the American College of Cardiology | [10.1016/j.jacc.2023.08.012](https://doi.org/10.1016/j.jacc.2023.08.012) | [37855757](https://pubmed.ncbi.nlm.nih.gov/37855757/) | [原始入口](https://doi.org/10.1016/j.jacc.2023.08.012) | [【非全文】PDF](<papers/adult/non_fulltext/2023_NON_FULLTEXT_Adult_AAOCA_State_of_the_Art.pdf>) |
 | 2022 | ⚠️ **非全文**<br>Coronary artery disease in adults with anomalous aortic origin of a coronary artery | JTCVS Open | [10.1016/j.xjon.2022.04.022](https://doi.org/10.1016/j.xjon.2022.04.022) | [36004264](https://pubmed.ncbi.nlm.nih.gov/36004264/) | [原始入口](https://pmc.ncbi.nlm.nih.gov/articles/PMC9390708/) | [【非全文】PDF](<papers/adult/non_fulltext/2022_NON_FULLTEXT_Adult_AAOCA_Coronary_Disease.pdf>) |
+| 2021 | ⚠️ **非全文**<br>2020 ESC Guidelines on sports cardiology and exercise in patients with cardiovascular disease | European Heart Journal | [10.1093/eurheartj/ehaa605](https://doi.org/10.1093/eurheartj/ehaa605) | [32860412](https://pubmed.ncbi.nlm.nih.gov/32860412/) | [原始入口](https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/sports-cardiology-and-exercise/) | [【非全文】PDF](<papers/adult/non_fulltext/2021_NON_FULLTEXT_Pelliccia_ESC_Sports_Cardiology_Guideline.pdf>) |
 | 2021 | ⚠️ **非全文**<br>The significance of symptoms before and after surgery for anomalous aortic origin of coronary arteries in adolescents and adults | Interactive CardioVascular and Thoracic Surgery | [10.1093/icvts/ivaa234](https://doi.org/10.1093/icvts/ivaa234) | [33221843](https://pubmed.ncbi.nlm.nih.gov/33221843/) | [原始入口](https://doi.org/10.1093/icvts/ivaa234) | [【非全文】PDF](<papers/adult/non_fulltext/2021_NON_FULLTEXT_Adolescent_Adult_Surgical_Symptoms.pdf>) |
 | 2020 | ⚠️ **非全文**<br>2020 ESC Guidelines for the management of adult congenital heart disease | European Heart Journal | [10.1093/eurheartj/ehaa554](https://doi.org/10.1093/eurheartj/ehaa554) | [32860028](https://pubmed.ncbi.nlm.nih.gov/32860028/) | [原始入口](https://doi.org/10.1093/eurheartj/ehaa554) | [【非全文】PDF](<papers/adult/non_fulltext/2020_NON_FULLTEXT_ESC_Adult_CHD_Guideline.pdf>) |
 | 2017 | ⚠️ **非全文**<br>Anomalous Aortic Origin of a Coronary Artery From the Inappropriate Sinus of Valsalva | Journal of the American College of Cardiology | [10.1016/j.jacc.2017.01.031](https://doi.org/10.1016/j.jacc.2017.01.031) | [28335843](https://pubmed.ncbi.nlm.nih.gov/28335843/) | [原始入口](https://doi.org/10.1016/j.jacc.2017.01.031) | [【非全文】PDF](<papers/adult/non_fulltext/2017_NON_FULLTEXT_JACC_AAOCA_Review.pdf>) |
