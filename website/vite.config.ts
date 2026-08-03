@@ -10,11 +10,14 @@ const { d1, r2 } = hostingConfig;
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
+// Cloudflare Pages reads the production D1 binding from wrangler.toml. Leaving
+// the local vinext binding enabled there would emit the same DB binding twice.
+const isCloudflarePagesBuild = process.env.CF_PAGES === "1";
 
 const localBindingConfig = {
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
-  d1_databases: d1
+  d1_databases: d1 && !isCloudflarePagesBuild
     ? [
         {
           binding: d1,
