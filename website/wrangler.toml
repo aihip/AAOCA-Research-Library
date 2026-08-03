@@ -1,0 +1,8 @@
+name = "aaoca-research-library-cf"
+pages_build_output_dir = "./dist/client"
+compatibility_date = "2026-08-03"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aaoca-page-views"
+database_id = "5524c5ec-98b8-46b8-a9ad-c4ce02f7f4e6"
