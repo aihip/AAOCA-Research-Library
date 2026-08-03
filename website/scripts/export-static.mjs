@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -136,3 +136,10 @@ background:#0d3437;color:#fffdf8;font-weight:700;text-decoration:none}
 console.log(
   `Exported ${pagePaths.length} HTML routes plus SEO metadata and 404.html to dist/client.`,
 );
+
+// The Cloudflare Vite plugin emits a Worker deployment redirect for vinext.
+// Pages must ignore that redirect and deploy the static output plus /functions
+// using the Pages-specific root wrangler.toml instead.
+if (process.env.CF_PAGES === "1") {
+  await rm(resolve(siteRoot, ".wrangler/deploy/config.json"), { force: true });
+}
