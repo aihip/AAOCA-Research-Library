@@ -157,5 +157,7 @@ export type Dictionary = {
     rights: string;
     contributing: string;
     github: string;
+    visitCount: string;
+    visitCountLoading: string;
   };
 };

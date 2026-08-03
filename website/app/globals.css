@@ -620,6 +620,12 @@ footer p {
   font-size: 0.75rem;
 }
 
+footer .visit-counter {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  font-variant-numeric: tabular-nums;
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;

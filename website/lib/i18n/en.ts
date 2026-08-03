@@ -235,5 +235,7 @@ export const en: Dictionary = {
     rights: "Rights",
     contributing: "Contributing",
     github: "GitHub",
+    visitCount: "Page views",
+    visitCountLoading: "Loading page view count…",
   },
 };

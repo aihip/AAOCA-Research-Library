@@ -234,5 +234,7 @@ export const zh: Dictionary = {
     rights: "版权与全文说明",
     contributing: "参与维护",
     github: "GitHub",
+    visitCount: "本页累计访问",
+    visitCountLoading: "正在读取访问次数…",
   },
 };

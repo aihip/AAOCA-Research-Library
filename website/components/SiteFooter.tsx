@@ -1,5 +1,6 @@
 import type { Dictionary } from "../lib/i18n";
 import { REPOSITORY_URL } from "../lib/site";
+import { VisitCounter } from "./VisitCounter";
 
 export function SiteFooter({ dict }: { dict: Dictionary }) {
   return (
@@ -8,6 +9,11 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
         <strong>{dict.site.name}</strong>
         <p>{dict.site.notMedicalAdvice}</p>
         <p>{dict.site.rightsNotice}</p>
+        <VisitCounter
+          lang={dict.lang}
+          label={dict.footer.visitCount}
+          loadingLabel={dict.footer.visitCountLoading}
+        />
       </div>
       <div className="footer-links">
         <a href={`${REPOSITORY_URL}/blob/main/CITATION.cff`}>
