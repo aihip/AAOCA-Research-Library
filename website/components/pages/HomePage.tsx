@@ -26,7 +26,7 @@ export function HomePage({ lang }: { lang: Language }) {
     isAccessibleForFree: true,
     inLanguage: ["zh-CN", "en"],
     keywords: SEARCH_KEYWORDS.join(", "),
-    dateModified: "2026-07-31",
+    dateModified: "2026-08-10",
     version: "2.0.0",
     license: "https://creativecommons.org/licenses/by/4.0/",
     creator: {

@@ -80,7 +80,7 @@ npm test
 ```
 
 `npm test` builds the site and asserts against the rendered HTML. It covers the
-63-record inventory (pediatric/adult, full-text/non-full-text, 622 pages, unique
+64-record inventory (pediatric/adult, full-text/non-full-text, 632 pages, unique
 paths and hashes, a persistent source for every access card), that the overlay
 keys still match the index, that the `guidelines` topic has not drifted from the
 8 title-derived consensus records, that no question page is empty, that both

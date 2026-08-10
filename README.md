@@ -13,16 +13,16 @@ The **AAOCA Research Library** is a bilingual, deduplicated bibliography for ano
 - [目录结构](#目录结构)
 - [分类与使用规则](#分类与使用规则)
 - [专家共识与指南](#专家共识与指南8)
-- [儿童 - 全文](#儿童---全文20)
+- [儿童 - 全文](#儿童---全文21)
 - [儿童 - 非全文](#儿童---非全文18)
 - [成人 - 全文](#成人---全文11)
 - [成人 - 非全文](#成人---非全文14)
 - [完整性与去重](#完整性与去重)
 - [引用、许可与贡献](#引用许可与贡献)
 
-整理日期：2026-07-31
+整理日期：2026-08-10
 
-当前仓库共收录 **63 条独立文献记录、622 个 PDF 页面**：儿童类 **38 条**（20 全文、18 非全文），成人类 **25 条**（11 全文、14 非全文）。
+当前仓库共收录 **64 条独立文献记录、632 个 PDF 页面**：儿童类 **39 条**（21 全文、18 非全文），成人类 **25 条**（11 全文、14 非全文）。
 
 > [!WARNING]
 > **凡文件名含 `NON_FULLTEXT`，均不是论文全文。** 这些条目因出版社付费墙、登录要求、反自动下载限制，或仅取得书目信息/会议摘要等原因，未在本地收录正式全文。每个文件只是一页书目访问卡，醒目标注“非全文”，并附 DOI、PMID（如已分配）及原始入口。**没有用摘要冒充论文，也不能把访问卡当作原文引用。**
@@ -67,13 +67,14 @@ index/
 | 2017 | Expert consensus guidelines: Anomalous aortic origin of a coronary artery | Journal of Thoracic and Cardiovascular Surgery | 全文 | [PDF](<papers/pediatric/fulltext/2017_Brothers_AATS_AAOCA_Expert_Consensus.pdf>) |
 | 2015 | Eligibility and Disqualification Recommendations for Competitive Athletes With Cardiovascular Abnormalities: Task Force 4: Congenital Heart Disease: A Scientific Statement From the American Heart Association and American College of Cardiology | Circulation | 全文 | [PDF](<papers/pediatric/fulltext/2015_AHA_ACC_Competitive_Athlete_Eligibility_Combined_Statement.pdf>) |
 
-## 儿童 - 全文（20）
+## 儿童 - 全文（21）
 
 | 年份 | 论文 | 来源 | DOI/入口 | 获取状态 | 研究概况 | PDF |
 |:---:|---|---|---|---|---|:---:|
 | 2026 | Risk stratification and real-world management of pediatric AAORCA: discordance between anatomical features and clinical symptoms | Frontiers in Cardiovascular Medicine | [10.3389/fcvm.2026.1876090](https://doi.org/10.3389/fcvm.2026.1876090) | 全文 | 儿童 AAORCA 单中心队列，151 例。 | [PDF](<papers/pediatric/fulltext/2026_Yu_Pediatric_AAORCA_Risk_Stratification.pdf>) |
 | 2026 | Single-center clinical analysis of anomalous aortic origin of a coronary artery (AAOCA) in children: a multimodal imaging approach to risk stratification | Journal of Cardiothoracic Surgery | [10.1186/s13019-026-04667-9](https://doi.org/10.1186/s13019-026-04667-9) | 全文-reference | 儿童队列，58 例；出版社 Article in Press/reference 全文。 | [PDF](<papers/pediatric/fulltext/2026_Wang_Pediatric_AAOCA_Multimodal_Imaging_reference.pdf>) |
 | 2026 | Surgical Outcomes of anomalous aortic origin of coronary arteries: early and mid-term results from a single-center experience | BMC Pediatrics | [10.1186/s12887-026-06746-1](https://doi.org/10.1186/s12887-026-06746-1) | 全文 | 儿童外科队列，17 例。 | [PDF](<papers/pediatric/fulltext/2026_Cao_Pediatric_AAOCA_Surgical_Outcomes.pdf>) |
+| 2026 | Surgical Results for Anomalous Aortic Origin of Coronary Artery - Is Right Side Prompt Surgery Necessary? | Circulation Journal | [10.1253/circj.CJ-25-0097](https://doi.org/10.1253/circj.CJ-25-0097) | 全文 | 儿童外科队列，34 例；AAORCA 占 94.1%，32 例行去顶术；手术中位年龄 13.4 岁。 | [PDF](<papers/pediatric/fulltext/2026_Yun_Pediatric_AAOCA_Surgical_Results_Korea.pdf>) |
 | 2025 | Right Axillary Thoracotomy for Anomalous Aortic Origin of a Coronary Artery in Children | Congenital Heart Disease | [10.32604/chd.2026.076517](https://doi.org/10.32604/chd.2026.076517) | 全文 | 儿童右腋下开胸病例系列，12 例；按正式卷期年份 2025 归档。 | [PDF](<papers/pediatric/fulltext/2025_Li_Pediatric_AAOCA_Right_Axillary_Thoracotomy.pdf>) |
 | 2025 | Surgical treatment of anomalous aortic origin of the coronary artery in paediatric patients: a Chinese single-center experience | BMC Surgery | [10.1186/s12893-025-02781-4](https://doi.org/10.1186/s12893-025-02781-4) | 全文 | 儿童外科队列，27 例。 | [PDF](<papers/pediatric/fulltext/2025_Luo_Pediatric_AAOCA_Surgery_China.pdf>) |
 | 2024 | Fluid-structure interaction simulations for the prediction of fractional flow reserve in pediatric patients with anomalous aortic origin of a coronary artery | arXiv preprint | [原始入口](https://arxiv.org/abs/2405.01703) | 全文-预印本 | 儿童 FSI/FFR 建模；完整预印本，不是期刊最终版。 | [PDF](<papers/pediatric/fulltext/2024_Puelz_Pediatric_AAOCA_FFR_Preprint.pdf>) |

@@ -3,7 +3,7 @@ message: "If this research library helps your work, please cite it using the met
 title: "AAOCA Research Library: Pediatric, Adult, and Expert Consensus Literature"
 type: dataset
 version: 1.0.0
-date-released: 2026-07-31
+date-released: 2026-08-10
 authors:
   - name: "AAOCA Research Library contributors"
 repository-code: "https://github.com/aihip/AAOCA-Research-Library"

@@ -50,6 +50,22 @@
   {
     "category": "儿童",
     "access": "全文",
+    "year": "2026",
+    "title": "Surgical Results for Anomalous Aortic Origin of Coronary Artery - Is Right Side Prompt Surgery Necessary?",
+    "journal": "Circulation Journal",
+    "doi": "10.1253/circj.CJ-25-0097",
+    "pmid": "40958550",
+    "pmcid": "",
+    "entry_url": "https://doi.org/10.1253/circj.CJ-25-0097",
+    "notes": "儿童外科队列，34 例；AAORCA 占 94.1%，32 例行去顶术；手术中位年龄 13.4 岁。",
+    "path": "papers/pediatric/fulltext/2026_Yun_Pediatric_AAOCA_Surgical_Results_Korea.pdf",
+    "pages": "10",
+    "bytes": "1415645",
+    "sha256": "0b67b39d1ffd95638998eb09c6f18b1223553faa116fe8cccae015c9b88fdafa"
+  },
+  {
+    "category": "儿童",
+    "access": "全文",
     "year": "2025",
     "title": "Right Axillary Thoracotomy for Anomalous Aortic Origin of a Coronary Artery in Children",
     "journal": "Congenital Heart Disease",
