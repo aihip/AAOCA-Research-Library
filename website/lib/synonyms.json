@@ -1,4 +1,25 @@
 {
+  "aaoca": [
+    "anomalous aortic origin of a coronary artery",
+    "冠状动脉起源异常"
+  ],
+  "aaorca": [
+    "anomalous aortic origin of the right coronary artery",
+    "r-aaoca",
+    "right coronary aaoca",
+    "右冠状动脉起源异常"
+  ],
+  "r-aaoca": [
+    "right coronary aaoca",
+    "aaorca",
+    "anomalous aortic origin of the right coronary artery"
+  ],
+  "acaos": [
+    "anomalous coronary artery from the opposite sinus"
+  ],
+  "r-acaos": [
+    "right coronary artery from opposite sinus"
+  ],
   "异常": [
     "anomalous",
     "anomaly"
@@ -29,8 +50,28 @@
   "壁内": [
     "intramural"
   ],
+  "壁内段": [
+    "intramural",
+    "intramural course"
+  ],
   "动脉间": [
     "interarterial"
+  ],
+  "主动脉-肺动脉间走行": [
+    "interarterial",
+    "interarterial course"
+  ],
+  "主肺动脉间走行": [
+    "interarterial",
+    "interarterial course"
+  ],
+  "裂隙样开口": [
+    "slit-like ostium",
+    "slit like ostium"
+  ],
+  "锐角起源": [
+    "acute take-off angle",
+    "acute takeoff angle"
   ],
   "危险": [
     "risk",
@@ -194,6 +235,18 @@
   "去顶术": [
     "unroofing"
   ],
+  "冠脉再植": [
+    "coronary reimplantation",
+    "reimplantation"
+  ],
+  "冠状动脉再植": [
+    "coronary reimplantation",
+    "reimplantation"
+  ],
+  "肺动脉移位": [
+    "pulmonary artery translocation",
+    "translocation"
+  ],
   "移位": [
     "translocation",
     "reimplantation"
@@ -201,6 +254,16 @@
   "搭桥": [
     "bypass",
     "graft"
+  ],
+  "冠脉搭桥": [
+    "cabg",
+    "coronary artery bypass grafting",
+    "bypass graft"
+  ],
+  "冠状动脉搭桥": [
+    "cabg",
+    "coronary artery bypass grafting",
+    "bypass graft"
   ],
   "术后": [
     "postoperative",
@@ -316,5 +379,39 @@
     "guideline",
     "consensus",
     "recommendations"
+  ],
+  "intramural": [
+    "intramural course",
+    "壁内段"
+  ],
+  "interarterial": [
+    "interarterial course",
+    "主动脉-肺动脉间走行"
+  ],
+  "slit-like": [
+    "slit-like ostium",
+    "slit like ostium",
+    "裂隙样开口"
+  ],
+  "take-off": [
+    "acute take-off angle",
+    "acute takeoff angle",
+    "锐角起源"
+  ],
+  "unroofing": [
+    "去顶术"
+  ],
+  "reimplantation": [
+    "coronary reimplantation",
+    "冠脉再植"
+  ],
+  "translocation": [
+    "pulmonary artery translocation",
+    "肺动脉移位"
+  ],
+  "cabg": [
+    "coronary artery bypass grafting",
+    "coronary bypass",
+    "冠脉搭桥"
   ]
 }

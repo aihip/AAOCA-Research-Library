@@ -2,7 +2,7 @@
 
 [![Live site](https://img.shields.io/badge/Live%20site-aaoca.pheth.com-0d4b4d?style=for-the-badge)](https://aaoca.pheth.com/)
 
-[Search online](https://aaoca.pheth.com) · [中文](README.md) · [Cite this project](CITATION.cff) · [Rights and full-text policy](RIGHTS.md) · [Contributing](CONTRIBUTING.md)
+[Search online](https://aaoca.pheth.com) · [Terminology and keywords](TERMINOLOGY.md) · [中文](README.md) · [Cite this project](CITATION.cff) · [Rights and full-text policy](RIGHTS.md) · [Contributing](CONTRIBUTING.md)
 
 The **AAOCA Research Library** is a bilingual, deduplicated bibliography on **anomalous aortic origin of a coronary artery (AAOCA)** and **anomalous aortic origin of the right coronary artery (AAORCA / ARCA-L)**. It covers pediatric and adult cohorts, expert consensus statements, clinical guidelines, multimodality imaging, ischemia and risk assessment, sports participation, and surgical management.
 
@@ -53,7 +53,7 @@ website/
 
 ## Search terms
 
-AAOCA; AAORCA; ARCA-L; anomalous aortic origin of a coronary artery; anomalous origin of the right coronary artery; coronary artery anomaly; congenital coronary anomaly; interarterial coronary course; intramural coronary artery; unroofing; coronary reimplantation; pediatric cardiology; adult congenital heart disease; 冠状动脉起源异常; 主动脉起源异常; 右冠状动脉起源异常; 先天性冠状动脉异常; 壁内段; 冠状动脉去顶术; 冠状动脉再植术.
+The canonical bilingual list is maintained in [TERMINOLOGY.md](TERMINOLOGY.md). It includes AAOCA, AAORCA, R-AAOCA, ACAOS, R-ACAOS, intramural and interarterial course, slit-like ostium, acute take-off angle, unroofing, coronary reimplantation, pulmonary artery translocation, and CABG.
 
 ## Citation, rights, and contributions
 

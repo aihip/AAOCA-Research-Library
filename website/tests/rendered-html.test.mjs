@@ -28,8 +28,34 @@ const ANALYSIS_PATH = "/analysis/aaorca-evidence-20-studies";
 const CONSENSUS_PATTERN =
   /consensus|guideline|recommendations|scientific statement|专家共识|指南/i;
 
+const REQUIRED_TERMINOLOGY = {
+  aaoca: "anomalous aortic origin of a coronary artery",
+  aaorca: "anomalous aortic origin of the right coronary artery",
+  "r-aaoca": "right coronary aaoca",
+  acaos: "anomalous coronary artery from the opposite sinus",
+  "r-acaos": "right coronary artery from opposite sinus",
+  "壁内段": "intramural course",
+  "主动脉-肺动脉间走行": "interarterial course",
+  "裂隙样开口": "slit-like ostium",
+  "锐角起源": "acute take-off angle",
+  "去顶术": "unroofing",
+  "冠脉再植": "coronary reimplantation",
+  "肺动脉移位": "pulmonary artery translocation",
+  "冠脉搭桥": "coronary artery bypass grafting",
+};
+
 const slugFor = (paper) => `${paper.year}-${paper.sha256.slice(0, 12)}`;
 const escape = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+test("the disease terminology list remains available to search", () => {
+  for (const [term, expansion] of Object.entries(REQUIRED_TERMINOLOGY)) {
+    assert.ok(synonyms[term], `${term} is missing from the search vocabulary`);
+    assert.ok(
+      synonyms[term].includes(expansion),
+      `${term} does not expand to ${expansion}`,
+    );
+  }
+});
 
 async function render(pathname = "/", accept = "text/html") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);

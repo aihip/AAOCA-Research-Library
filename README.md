@@ -2,7 +2,7 @@
 
 [![在线检索](https://img.shields.io/badge/在线检索-aaoca.pheth.com-0d4b4d?style=for-the-badge)](https://aaoca.pheth.com/)
 
-[在线检索 / Search online](https://aaoca.pheth.com) · [English](README.en.md) · [引用本项目](CITATION.cff) · [版权与全文说明](RIGHTS.md) · [参与维护](CONTRIBUTING.md)
+[在线检索 / Search online](https://aaoca.pheth.com) · [统一术语与关键词](TERMINOLOGY.md) · [English](README.en.md) · [引用本项目](CITATION.cff) · [版权与全文说明](RIGHTS.md) · [参与维护](CONTRIBUTING.md)
 
 这是一个面向临床、科研和教学的双语可检索文献库，主题覆盖**冠状动脉起源异常**（Anomalous Aortic Origin of a Coronary Artery, **AAOCA**）、**右冠状动脉起源异常**（**AAORCA / ARCA-L**）、儿童与成人危险分层、影像学评估、运动管理和外科治疗。
 
@@ -11,6 +11,7 @@ The **AAOCA Research Library** is a bilingual, deduplicated bibliography for ano
 ## 目录
 
 - [目录结构](#目录结构)
+- [术语与检索关键词](#术语与检索关键词)
 - [分类与使用规则](#分类与使用规则)
 - [专家共识与指南](#专家共识与指南8)
 - [儿童 - 全文](#儿童---全文23)
@@ -44,7 +45,13 @@ index/
 ├── pdf_integrity_check.tsv
 ├── SHA256SUMS.txt
 └── manifest.txt
+
+TERMINOLOGY.md
 ```
+
+## 术语与检索关键词
+
+本库将 AAOCA、AAORCA、R-AAOCA、ACAOS、R-ACAOS，以及壁内段、主动脉-肺动脉间走行、裂隙样开口、锐角起源和各类手术术语统一记录在 [TERMINOLOGY.md](TERMINOLOGY.md)。网站搜索同时识别中文、英文全称和常用缩写。
 
 ## 分类与使用规则
 
