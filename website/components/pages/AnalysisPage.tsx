@@ -520,9 +520,9 @@ export function AnalysisPage({ lang }: { lang: Language }) {
                 {cohortRows.map((row) => (
                   <tr key={row.study}>
                     <th scope="row">{row.study}</th>
-                    <td>{row.total}</td>
-                    <td><strong>{row.surgery}</strong></td>
-                    <td>{row.observed}</td>
+                    <td data-label={copy.cohortHeaders[1]}>{row.total}</td>
+                    <td data-label={copy.cohortHeaders[2]}><strong>{row.surgery}</strong></td>
+                    <td data-label={copy.cohortHeaders[3]}>{row.observed}</td>
                   </tr>
                 ))}
               </tbody>
@@ -561,14 +561,14 @@ export function AnalysisPage({ lang }: { lang: Language }) {
                     <th scope="row">
                       <Link href={href(dict, `/papers/${row.slug}`)}>{row.study}</Link>
                     </th>
-                    <td><span className="cell-label">{row.population[lang]}</span>{row.patients}</td>
-                    <td>{row.age[lang]}</td>
-                    <td>{row.anatomy[lang]}</td>
-                    <td>{row.surgery[lang]}</td>
-                    <td>{row.technique[lang]}</td>
-                    <td>{row.followUp[lang]}</td>
-                    <td>{row.outcome[lang]}</td>
-                    <td>{row.signal[lang]}</td>
+                    <td data-label={copy.headers[1]}><span className="cell-label">{row.population[lang]}</span>{row.patients}</td>
+                    <td data-label={copy.headers[2]}>{row.age[lang]}</td>
+                    <td data-label={copy.headers[3]}>{row.anatomy[lang]}</td>
+                    <td data-label={copy.headers[4]}>{row.surgery[lang]}</td>
+                    <td data-label={copy.headers[5]}>{row.technique[lang]}</td>
+                    <td data-label={copy.headers[6]}>{row.followUp[lang]}</td>
+                    <td data-label={copy.headers[7]}>{row.outcome[lang]}</td>
+                    <td data-label={copy.headers[8]}>{row.signal[lang]}</td>
                   </tr>
                 ))}
               </tbody>

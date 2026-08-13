@@ -438,11 +438,14 @@ test("the evidence analysis keeps unlike study designs separate and traceable", 
   assert.match(zhHtml, /切取冠脉纽扣/);
   assert.match(zhHtml, /CC BY 4\.0/);
   assert.match(zhHtml, /pmc\.ncbi\.nlm\.nih\.gov\/articles\/PMC8149602/);
+  assert.match(zhHtml, /data-label="壁内段\/近端解剖"/);
+  assert.match(zhHtml, /data-label="死亡\/缺血\/再干预"/);
   assert.ok((zhHtml.match(/href="\/papers\//g) ?? []).length >= 16);
 
   const enHtml = await renderHtml(`/en${ANALYSIS_PATH}`);
   assert.match(enHtml, /patient counts, operation rates, techniques, and follow-up side by side/);
   assert.match(enHtml, /No medical professional reviewed it/);
+  assert.match(enHtml, /data-label="Intramural\/proximal anatomy"/);
 });
 
 test("record lists carry the summary notice in body text, not only a tooltip", async () => {
