@@ -76,10 +76,12 @@ const TOPIC_SLUGS = [
 
 // Chinese lives at the root, English under /en. Both trees are exported in full.
 const LANGUAGE_PREFIXES = ["", "/en"];
+const ANALYSIS_SLUGS = ["aaorca-evidence-20-studies"];
 
 const pagePaths = LANGUAGE_PREFIXES.flatMap((prefix) => [
   prefix || "/",
   `${prefix}/about`,
+  ...ANALYSIS_SLUGS.map((slug) => `${prefix}/analysis/${slug}`),
   ...TOPIC_SLUGS.map((slug) => `${prefix}/topics/${slug}`),
   ...papers.map(
     (paper) => `${prefix}/papers/${paper.year}-${paper.sha256.slice(0, 12)}`,

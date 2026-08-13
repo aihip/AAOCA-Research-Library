@@ -12,9 +12,10 @@ plain-language primer, then six question pages, then the full searchable index:
 
 ```text
 /                      Chinese landing page
+/analysis/…            dated evidence synthesis and comparison article
 /topics/[slug]         one page per family question
 /papers/[slug]         one page per bibliography record
-/en, /en/topics/…      the English tree, same components
+/en, /en/analysis/…    the English tree, same components
 ```
 
 The six question slugs are `what-is-it`, `how-serious`, `what-tests`, `sports`,

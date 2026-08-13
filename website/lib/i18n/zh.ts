@@ -16,6 +16,7 @@ export const zh: Dictionary = {
   },
 
   nav: {
+    analysis: "最新分析",
     questions: "常见问题",
     library: "全部文献",
     about: "关于本站",

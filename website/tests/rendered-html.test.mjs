@@ -23,6 +23,8 @@ const TOPIC_SLUGS = [
   "guidelines",
 ];
 
+const ANALYSIS_PATH = "/analysis/aaorca-evidence-20-studies";
+
 const CONSENSUS_PATTERN =
   /consensus|guideline|recommendations|scientific statement|专家共识|指南/i;
 
@@ -156,6 +158,9 @@ test("Chinese landing page leads with plain language, not jargon", async () => {
   assert.match(html, /心脏自己也需要血液供应/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /https:\/\/aaoca\.pheth\.com/);
+  assert.match(html, /最新分析/);
+  assert.ok(html.includes(ANALYSIS_PATH));
+  assert.match(html, /证据时间线/);
 
   // Every question is reachable from the landing page.
   for (const slug of TOPIC_SLUGS) {
@@ -179,7 +184,7 @@ test("English tree renders independently with its own document language", async 
 });
 
 test("both trees declare each other as hreflang alternates", async () => {
-  const paths = ["/", "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
 
   for (const path of paths) {
     const zhHtml = await renderHtml(path);
@@ -418,6 +423,22 @@ test("the about page says who compiled this and that no clinician checked it", a
   }
 });
 
+test("the evidence analysis keeps unlike study designs separate and traceable", async () => {
+  const zhHtml = await renderHtml(ANALYSIS_PATH);
+  assert.match(zhHtml, /把病例数、手术比例、术式和随访真正摊平/);
+  assert.match(zhHtml, /真实世界队列问/);
+  assert.match(zhHtml, /手术系列问/);
+  assert.match(zhHtml, /腺苷 FFR 异常/);
+  assert.match(zhHtml, /多巴酚丁胺 FFR 异常/);
+  assert.match(zhHtml, /13 人 \/ 15 次/);
+  assert.match(zhHtml, /没有医学专业人士审阅/);
+  assert.ok((zhHtml.match(/href="\/papers\//g) ?? []).length >= 16);
+
+  const enHtml = await renderHtml(`/en${ANALYSIS_PATH}`);
+  assert.match(enHtml, /patient counts, operation rates, techniques, and follow-up side by side/);
+  assert.match(enHtml, /No medical professional reviewed it/);
+});
+
 test("record lists carry the summary notice in body text, not only a tooltip", async () => {
   for (const path of ["/", "/topics/how-serious"]) {
     const html = await renderHtml(path);
@@ -451,14 +472,15 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
 
-  // (landing + about + one per question + one per record) x 2 language trees.
-  const perTree = 2 + TOPIC_SLUGS.length + records.length;
+  // (landing + about + analysis + one per question + one per record) x 2 trees.
+  const perTree = 3 + TOPIC_SLUGS.length + records.length;
   assert.equal((sitemap.match(/<url>/g) ?? []).length, perTree * 2);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/topics\/sports/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/about/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/about/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/analysis\/aaorca-evidence-20-studies/);
   assert.doesNotMatch(sitemap, /chatgpt\.site|sites\.openai\.com/);
 
   const robotsResponse = await render("/robots.txt", "text/plain");

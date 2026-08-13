@@ -17,6 +17,7 @@ export type Dictionary = {
   };
 
   nav: {
+    analysis: string;
     questions: string;
     library: string;
     about: string;

@@ -12,9 +12,16 @@ import {
   SITE_URL,
 } from "../../lib/site";
 import { PRIMER_SOURCES, topics } from "../../lib/topics";
+import {
+  ANALYSIS_PATH,
+  analysisSummary,
+  evidenceTimeline,
+  latestAnalysis,
+} from "../../lib/analyses";
 
 export function HomePage({ lang }: { lang: Language }) {
   const dict = getDictionary(lang);
+  const analysis = analysisSummary(lang);
 
   const datasetJsonLd = {
     "@context": "https://schema.org",
@@ -51,6 +58,34 @@ export function HomePage({ lang }: { lang: Language }) {
   return (
     <main>
       <SiteHeader dict={dict} path="/" />
+
+      <section className="latest-analysis" aria-labelledby="latest-analysis-title">
+        <div className="latest-analysis-copy">
+          <div className="latest-analysis-meta">
+            <span>{analysis.label}</span>
+            <time dateTime={latestAnalysis.date}>
+              {lang === "zh" ? "2026 年 8 月 13 日" : "13 August 2026"}
+            </time>
+          </div>
+          <h2 id="latest-analysis-title">{analysis.title}</h2>
+          <p>{analysis.summary}</p>
+          <Link className="analysis-link" href={href(dict, ANALYSIS_PATH)}>
+            {analysis.read} <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+
+        <aside className="analysis-timeline-preview" aria-label={analysis.timelineLabel}>
+          <p>{analysis.timelineLabel}</p>
+          <ol>
+            {evidenceTimeline.map((item) => (
+              <li key={item.year}>
+                <time>{item.year}</time>
+                <span>{item[lang]}</span>
+              </li>
+            ))}
+          </ol>
+        </aside>
+      </section>
 
       <section className="hero" id="top">
         <div className="hero-copy">
