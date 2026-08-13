@@ -30,7 +30,7 @@ export const en: Dictionary = {
     metaTitle: "AAOCA for patients and families: an evidence library",
     metaDescription:
       "What anomalous aortic origin of a coronary artery (AAOCA / AAORCA) is, how serious it is, which tests are used, whether sport can continue, and when surgery is considered. Published research organised around the questions families ask.",
-    eyebrow: "Updated 2026-08-10",
+    eyebrow: "Updated 2026-08-13",
     title: "Anomalous aortic origin of a coronary artery",
     subtitle: "AAOCA / AAORCA",
     lede: "If you or someone in your family has just been given this diagnosis, this library organises the published research around the questions you are most likely to ask.",
@@ -156,7 +156,7 @@ export const en: Dictionary = {
       {
         heading: "How the records were selected",
         body: [
-          "There are 64 deduplicated records covering pediatric and adult studies, imaging and risk stratification, sports participation, surgical management, and expert consensus and clinical guidelines. Each keeps its original title, journal, year, and DOI, PMID, or PMCID where one exists, so you can go back to the source and check.",
+          "There are 74 deduplicated records covering pediatric and adult studies, imaging and risk stratification, sports participation, surgical management, and expert consensus and clinical guidelines. Each keeps its original title, journal, year, and DOI, PMID, or PMCID where one exists, so you can go back to the source and check.",
           "To be clear: this is not a systematic review. The scope reflects what was found and retained during compilation. It is not exhaustive and does not represent the whole of the evidence. A question with many records is not more important than one with few, and few records does not mean lower risk.",
         ],
       },

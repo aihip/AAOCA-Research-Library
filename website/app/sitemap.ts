@@ -3,7 +3,7 @@ import { papers } from "../lib/library";
 import { SITE_URL } from "../lib/site";
 import { TOPIC_SLUGS } from "../lib/topics";
 
-const LAST_MODIFIED = "2026-08-10";
+const LAST_MODIFIED = "2026-08-13";
 const TREES = ["", "/en"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
