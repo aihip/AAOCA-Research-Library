@@ -1852,7 +1852,7 @@ footer .visit-counter {
 .technique-paths {
   margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 14px;
 }
 
@@ -1864,9 +1864,31 @@ footer .visit-counter {
 }
 
 .technique-paths article.cabg-path {
-  grid-column: 1 / -1;
   border-left: 5px solid var(--red);
   background: var(--red-pale);
+}
+
+.diagram-caution {
+  max-width: 74ch;
+  margin: 20px 0 0;
+  padding: 12px 15px;
+  border: 1px solid rgba(13, 75, 77, 0.18);
+  border-radius: 9px;
+  color: var(--teal-dark);
+  background: rgba(217, 231, 226, 0.55);
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.technique-paths article.procedure-card {
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  overflow: hidden;
+}
+
+.procedure-copy {
+  padding: 34px;
 }
 
 .technique-paths h3 {
@@ -1879,69 +1901,58 @@ footer .visit-counter {
   line-height: 1.35;
 }
 
-.technique-paths p {
+.technique-paths .procedure-copy p,
+.technique-paths .cabg-path p {
   margin: 20px 0 0;
   color: var(--ink-soft);
   font-size: 0.9rem;
   line-height: 1.8;
 }
 
-.coronary-sketch {
-  min-height: 76px;
-  margin: 24px 0 4px;
-  padding: 0 18px;
+.technical-figure {
+  min-width: 0;
+  margin: 0;
+  padding: 28px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 24px;
-  border-radius: 10px;
-  background: var(--teal-pale);
+  border-left: 1px solid var(--line);
+  background: #f1efe9;
 }
 
-.coronary-sketch b {
-  color: var(--gold-text);
-  font-family: var(--serif);
-  font-size: 1.5rem;
-}
-
-.coronary-sketch i {
-  position: relative;
+.technical-figure img {
+  width: 100%;
+  height: auto;
   display: block;
+  border: 1px solid rgba(20, 42, 44, 0.13);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(20, 42, 44, 0.08);
 }
 
-.long-segment,
-.short-segment {
-  width: 88px;
-  height: 14px;
-  border: 3px solid var(--teal);
-  border-radius: 999px;
-  background: transparent;
+.technical-figure.portrait-figure img {
+  width: auto;
+  max-width: 100%;
+  max-height: 520px;
+  margin: 0 auto;
 }
 
-.short-segment {
-  width: 34px;
+.technical-figure figcaption {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
 }
 
-.open-ostium,
-.new-origin {
-  width: 78px;
-  height: 20px;
-  border: 4px solid var(--teal);
-  border-radius: 999px;
-  background: var(--surface);
+.technical-figure figcaption strong {
+  color: var(--ink);
+  font-size: 0.78rem;
+  line-height: 1.65;
 }
 
-.new-origin::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  width: 28px;
-  height: 4px;
-  border-radius: 4px;
-  background: var(--teal);
-  transform: translateY(-50%) rotate(-18deg);
-  transform-origin: left center;
+.technical-figure figcaption a {
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  line-height: 1.55;
 }
 
 .physiology-section {
@@ -2311,8 +2322,23 @@ footer .visit-counter {
     padding: 24px;
   }
 
-  .coronary-sketch {
-    gap: 14px;
+  .technique-paths article.procedure-card {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .procedure-copy {
+    padding: 24px;
+  }
+
+  .technical-figure {
+    padding: 18px;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .technical-figure.portrait-figure img {
+    max-height: 430px;
   }
 
   .chss-grid {

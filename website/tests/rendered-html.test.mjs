@@ -432,6 +432,12 @@ test("the evidence analysis keeps unlike study designs separate and traceable", 
   assert.match(zhHtml, /多巴酚丁胺 FFR 异常/);
   assert.match(zhHtml, /13 人 \/ 15 次/);
   assert.match(zhHtml, /没有医学专业人士审阅/);
+  assert.match(zhHtml, /\/figures\/aaoca-unroofing-technical\.jpg/);
+  assert.match(zhHtml, /\/figures\/aaorca-reimplantation-technical\.jpg/);
+  assert.match(zhHtml, /探针定位壁内段/);
+  assert.match(zhHtml, /切取冠脉纽扣/);
+  assert.match(zhHtml, /CC BY 4\.0/);
+  assert.match(zhHtml, /pmc\.ncbi\.nlm\.nih\.gov\/articles\/PMC8149602/);
   assert.ok((zhHtml.match(/href="\/papers\//g) ?? []).length >= 16);
 
   const enHtml = await renderHtml(`/en${ANALYSIS_PATH}`);

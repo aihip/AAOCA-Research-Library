@@ -293,12 +293,16 @@ const articleCopy = {
     headers: ["研究", "人群与病例数（总数 / AAORCA）", "年龄", "壁内段/近端解剖", "手术比例", "术式", "随访", "死亡/缺血/再干预", "这篇真正回答什么"],
     techniqueHeading: "去顶 vs 再植：术式跟着解剖走",
     techniqueLede: "没有文献证明一种术式适用于所有 AAORCA。关键不是哪一种“更高级”，而是哪一种能把异常开口和近端狭窄真正纠正。",
+    diagramCaution: "以下是公开发表的术式技术图，用来解释手术步骤；不是 Jim 的影像，也不代表任何一个孩子的具体手术方案。",
     longTitle: "长而明确的壁内段",
     longBody: "如果去顶后能形成位置合适、足够大的新开口，去顶路径短、经验多。Ramponi/Puskas 的 13 例全部是长壁内段，全部正式去顶，约 20 个月内无死亡、心梗或再次干预。",
     shortTitle: "壁内段短或去顶后开口仍不理想",
     shortBody: "这时再植或新开口重建的吸引力上升，因为它们直接改变冠脉的起点。成人 40 例再植系列显示良好中期通畅，但不能直接外推到 8 岁儿童。",
     cabgTitle: "CABG 通常不是年轻患者的默认备选",
     cabgBody: "没有固定性重度狭窄时，原生 RCA 与桥血管会竞争血流。14 例成人 CABG 系列发生过 1 例桥血管失败，作者也强调无血流限制性病变时要谨慎。",
+    unroofingFigure: "A：主动脉切开后探查异常开口；B：从异常开口置入小弯钳，确认壁内段方向；C：沿探针切开冠脉与主动脉之间的共同壁，完成去顶。",
+    reimplantFigure: "A：游离并松解异常 RCA；B：连同周围主动脉壁切取冠脉纽扣；C：在正确的右冠窦选择无张力、无扭折的位置打孔，准备吻合。",
+    figureCredit: "原图未修改：Padalino 等，Frontiers in Cardiovascular Medicine 2021，图 3 / 图 7，CC BY 4.0。",
     physiologyHeading: "近年的焦点：不只问“走在哪里”，而是问“运动时到底堵不堵”",
     physiologyBody: "81 例成人 R-AAOCA 同时接受两种 FFR。腺苷主要反映固定性狭窄；多巴酚丁胺更接近心率和血压上升时的动态负荷。异常比例从 6.2% 增至 19.8%，提示静息或单纯扩血管检查可能漏掉动态成分。成人结果不能直接套到儿童，但它改变了风险机制的表达方式。",
     adenosine: "腺苷 FFR 异常",
@@ -354,12 +358,16 @@ const articleCopy = {
     headers: ["Study", "Population and count (total / AAORCA)", "Age", "Intramural/proximal anatomy", "Operation rate", "Technique", "Follow-up", "Death/ischemia/reintervention", "What it actually answers"],
     techniqueHeading: "Unroofing vs reimplantation: let the anatomy choose",
     techniqueLede: "No evidence establishes one best repair for every AAORCA. The issue is which operation actually corrects the abnormal ostium and proximal narrowing.",
+    diagramCaution: "These are published operative-technique drawings used to explain the steps. They are not Jim’s imaging and do not represent an individual child’s surgical plan.",
     longTitle: "A long, definite intramural segment",
     longBody: "When unroofing can create a well-positioned, generous new ostium, it is direct and well established. All 13 adults in the Ramponi/Puskas series had a long intramural segment and underwent formal unroofing, with no death, MI, or reintervention over about 20 months.",
     shortTitle: "A short intramural segment or an unsatisfactory ostium after unroofing",
     shortBody: "Reimplantation or neo-ostial reconstruction becomes more attractive because it changes where the artery starts. A 40-adult reimplantation series reported good intermediate patency, but it cannot be directly extrapolated to an eight-year-old.",
     cabgTitle: "CABG is rarely the default fallback in a young patient",
     cabgBody: "Without severe fixed stenosis, native RCA flow competes with the graft. One graft failure occurred in a 14-adult CABG series, whose authors specifically caution about patients without flow-limiting disease.",
+    unroofingFigure: "A: the anomalous ostium is explored after aortotomy; B: a small right-angle clamp maps the intramural course; C: the shared aortic-coronary wall is opened along the probe to complete unroofing.",
+    reimplantFigure: "A: the anomalous RCA is dissected and mobilised; B: the ostium is excised as a coronary button; C: the correct sinus is punched at a tension-free, kink-free target for anastomosis.",
+    figureCredit: "Unmodified originals: Padalino et al., Frontiers in Cardiovascular Medicine 2021, Figures 3 and 7, CC BY 4.0.",
     physiologyHeading: "The newer question is not only “where does it run?” but “does it obstruct under stress?”",
     physiologyBody: "In 81 adults with R-AAOCA, adenosine FFR—more reflective of fixed narrowing—was abnormal in 6.2%. Dobutamine FFR, closer to the higher heart rate and pressure of exercise, was abnormal in 19.8%. Adult data cannot be applied directly to children, but the contrast makes the dynamic mechanism visible.",
     adenosine: "Abnormal adenosine FFR",
@@ -427,7 +435,10 @@ export function AnalysisPage({ lang }: { lang: Language }) {
       "@type": "Organization",
       name: "AAOCA Research Library contributors",
     },
-    citation: sourceTitles.map(([slug]) => `${SITE_URL}${dict.basePath}/papers/${slug}`),
+    citation: [
+      ...sourceTitles.map(([slug]) => `${SITE_URL}${dict.basePath}/papers/${slug}`),
+      "https://doi.org/10.3389/fcvm.2021.626108",
+    ],
   };
 
   return (
@@ -569,26 +580,55 @@ export function AnalysisPage({ lang }: { lang: Language }) {
           <p className="eyebrow">05 · {copy.tocItems[4][1]}</p>
           <h2>{copy.techniqueHeading}</h2>
           <p className="analysis-section-lede">{copy.techniqueLede}</p>
+          <p className="diagram-caution">{copy.diagramCaution}</p>
           <div className="technique-paths">
-            <article>
-              <span className="path-tag">A</span>
-              <h3>{copy.longTitle}</h3>
-              <div className="coronary-sketch" aria-hidden="true">
-                <i className="long-segment" />
-                <b>→</b>
-                <i className="open-ostium" />
+            <article className="procedure-card">
+              <div className="procedure-copy">
+                <span className="path-tag">A</span>
+                <h3>{copy.longTitle}</h3>
+                <p>{copy.longBody}</p>
               </div>
-              <p>{copy.longBody}</p>
+              <figure className="technical-figure">
+                {/* The original CC BY figure is intentionally not cropped or altered. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/figures/aaoca-unroofing-technical.jpg"
+                  width="669"
+                  height="311"
+                  loading="lazy"
+                  alt={lang === "zh" ? "去顶术技术图：主动脉切开、探针定位壁内段和切开共同壁" : "Unroofing technique: aortotomy, probe mapping of the intramural segment, and opening the shared wall"}
+                />
+                <figcaption>
+                  <strong>{copy.unroofingFigure}</strong>
+                  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8149602/#F3" target="_blank" rel="noreferrer">
+                    {copy.figureCredit} <span aria-hidden="true">↗</span>
+                  </a>
+                </figcaption>
+              </figure>
             </article>
-            <article>
-              <span className="path-tag">B</span>
-              <h3>{copy.shortTitle}</h3>
-              <div className="coronary-sketch reimplant" aria-hidden="true">
-                <i className="short-segment" />
-                <b>→</b>
-                <i className="new-origin" />
+            <article className="procedure-card reimplant-card">
+              <div className="procedure-copy">
+                <span className="path-tag">B</span>
+                <h3>{copy.shortTitle}</h3>
+                <p>{copy.shortBody}</p>
               </div>
-              <p>{copy.shortBody}</p>
+              <figure className="technical-figure portrait-figure">
+                {/* The original CC BY figure is intentionally not cropped or altered. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/figures/aaorca-reimplantation-technical.jpg"
+                  width="630"
+                  height="846"
+                  loading="lazy"
+                  alt={lang === "zh" ? "再植术技术图：游离异常冠脉、切取冠脉纽扣并在正确冠窦打孔" : "Reimplantation technique: mobilisation, coronary-button excision, and punching the correct sinus"}
+                />
+                <figcaption>
+                  <strong>{copy.reimplantFigure}</strong>
+                  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8149602/#F7" target="_blank" rel="noreferrer">
+                    {copy.figureCredit} <span aria-hidden="true">↗</span>
+                  </a>
+                </figcaption>
+              </figure>
             </article>
             <article className="cabg-path">
               <span className="path-tag">C</span>
