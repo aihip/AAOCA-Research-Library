@@ -12,19 +12,24 @@ import {
 import { REPOSITORY_URL } from "../../lib/site";
 import { findTopic } from "../../lib/topics";
 
+/** A curator note such as "未分配或未检得" is not an identifier; only real IDs link out. */
+const PMID_PATTERN = /^\d+$/;
+const PMCID_PATTERN = /^PMC\d+$/;
+const DOI_PATTERN = /^10\./;
+
 function externalIdentifiers(paper: Paper) {
   return [
-    paper.doi && {
+    paper.doi && DOI_PATTERN.test(paper.doi) && {
       label: "DOI",
       value: paper.doi,
       url: `https://doi.org/${paper.doi}`,
     },
-    paper.pmid && {
+    paper.pmid && PMID_PATTERN.test(paper.pmid) && {
       label: "PMID",
       value: paper.pmid,
       url: `https://pubmed.ncbi.nlm.nih.gov/${paper.pmid}/`,
     },
-    paper.pmcid && {
+    paper.pmcid && PMCID_PATTERN.test(paper.pmcid) && {
       label: "PMCID",
       value: paper.pmcid,
       url: `https://pmc.ncbi.nlm.nih.gov/articles/${paper.pmcid}/`,
@@ -52,9 +57,9 @@ export function PaperDetail({ lang, paper }: { lang: Language; paper: Paper }) {
     url: absoluteUrl(`${dict.basePath}${path}`),
     sameAs: paper.entry_url || undefined,
     identifier: [
-      paper.doi && `https://doi.org/${paper.doi}`,
-      paper.pmid && `PMID:${paper.pmid}`,
-      paper.pmcid && `PMCID:${paper.pmcid}`,
+      paper.doi && DOI_PATTERN.test(paper.doi) && `https://doi.org/${paper.doi}`,
+      paper.pmid && PMID_PATTERN.test(paper.pmid) && `PMID:${paper.pmid}`,
+      paper.pmcid && PMCID_PATTERN.test(paper.pmcid) && `PMCID:${paper.pmcid}`,
     ].filter(Boolean),
     inLanguage: ["en", "zh-CN"],
   };
