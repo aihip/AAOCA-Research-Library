@@ -50,6 +50,10 @@ export const updates: UpdateEntry[] = [
         zh: "修复站内锚点链接在跳转后反复锁定滚动位置的问题。",
         en: "Fixed in-page fragment links repeatedly locking the scroll position after navigation.",
       },
+      {
+        zh: "新增经过匿名与来源边界处理的网友问诊经验，并与可核查的研究证据分开呈现。",
+        en: "Added a de-identified community consultation experience with explicit source limits, kept separate from verifiable research evidence.",
+      },
     ],
     commits: ["f161714", "bb9e735", "265b6ce", "bca721c", "35af62d", "5059cbc", "fee52be"],
   },

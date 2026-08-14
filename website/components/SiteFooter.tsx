@@ -25,6 +25,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
           {dict.footer.contributing}
         </a>
         <Link href={href(dict, "/updates")}>{dict.footer.updates}</Link>
+        <Link href={href(dict, "/experiences")}>{dict.footer.experiences}</Link>
         <a href={`mailto:${CONTACT_EMAIL}`}>
           {dict.footer.contact}: {CONTACT_EMAIL}
         </a>

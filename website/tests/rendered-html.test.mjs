@@ -241,7 +241,7 @@ test("English tree renders independently with its own document language", async 
 });
 
 test("both trees declare each other as hreflang alternates", async () => {
-  const paths = ["/", "/updates", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", "/updates", "/experiences/aaorca-family-consultations", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
 
   for (const path of paths) {
     const zhHtml = await renderHtml(path);
@@ -505,6 +505,34 @@ test("the contact email is visible and usable across both language trees", async
   }
 });
 
+test("the community experience is bilingual, de-identified, and separated from evidence", async () => {
+  const zhIndex = await renderHtml("/experiences");
+  assert.match(zhIndex, /别人是怎样一路问下去的/);
+  assert.match(zhIndex, /aaorca-family-consultations/);
+
+  const zhHtml = await renderHtml("/experiences/aaorca-family-consultations");
+  assert.match(zhHtml, /问了很多医生，却得到不同答案/);
+  assert.match(zhHtml, /39/);
+  assert.match(zhHtml, /二手转述/);
+  assert.match(zhHtml, /无法独立核实医生原话/);
+  assert.match(zhHtml, /不是病历、研究或医疗建议/);
+  assert.match(zhHtml, /aaorca-decision-model/);
+  assert.match(zhHtml, /topics\/sports/);
+
+  // Names, chat handles, screenshots, and workbook metadata stay out of the public page.
+  assert.doesNotMatch(zhHtml, /李守军|杨克明|茜哥哥妈妈|YUAN,BAILING/);
+  assert.doesNotMatch(zhHtml, /xwechat_files|\.xlsx|<img/);
+
+  const enHtml = await renderHtml("/en/experiences/aaorca-family-consultations");
+  assert.match(enHtml, /Many consultations, different answers/);
+  assert.match(enHtml, /cannot independently verify/);
+  assert.match(enHtml, /not a medical record, research study, or medical advice/);
+
+  for (const path of ["/", "/about", "/topics/sports"]) {
+    assert.match(await renderHtml(path), /href="\/experiences\//);
+  }
+});
+
 test("the evidence analysis keeps unlike study designs separate and traceable", async () => {
   const zhHtml = await renderHtml(ANALYSIS_PATH);
   assert.match(zhHtml, /把病例数、手术比例、术式和随访真正摊平/);
@@ -591,7 +619,7 @@ test("canonical URLs, alternates, and internal links resolve without a redirect"
     assert.match(url, /\/$/, `sitemap entry is not slash-terminated: ${url}`);
   }
 
-  const paths = ["/", "/en", "/about", "/updates", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", "/en", "/about", "/updates", "/experiences", "/experiences/aaorca-family-consultations", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
   for (const path of paths) {
     const html = await renderHtml(path);
 
@@ -614,9 +642,9 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
 
-  // (landing + about + updates + analysis index + one per analysis + one per question
-  // + one per record) x 2 trees.
-  const perTree = 4 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
+  // (landing + about + updates + experience index + one experience + analysis index
+  // + one per analysis + one per question + one per record) x 2 trees.
+  const perTree = 6 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
   assert.equal((sitemap.match(/<url>/g) ?? []).length, perTree * 2);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);
@@ -625,6 +653,8 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/about/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/updates/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/updates/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/experiences\/aaorca-family-consultations/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/experiences\/aaorca-family-consultations/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/analysis\/aaorca-evidence-20-studies/);
   assert.doesNotMatch(sitemap, /chatgpt\.site|sites\.openai\.com/);
 

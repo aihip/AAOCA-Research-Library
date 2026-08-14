@@ -170,6 +170,7 @@ export type Dictionary = {
     rights: string;
     contributing: string;
     updates: string;
+    experiences: string;
     contact: string;
     github: string;
     visitCount: string;

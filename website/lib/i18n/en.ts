@@ -253,6 +253,7 @@ export const en: Dictionary = {
     rights: "Rights",
     contributing: "Contributing",
     updates: "Updates",
+    experiences: "Community experiences",
     contact: "Contact",
     github: "GitHub",
     visitCount: "Page views",

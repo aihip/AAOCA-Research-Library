@@ -4,6 +4,7 @@ import { absoluteUrl } from "../lib/i18n";
 import { TOPIC_SLUGS } from "../lib/topics";
 import { ANALYSIS_INDEX_PATH, ANALYSIS_SLUGS, analysisPath } from "../lib/analyses";
 import { UPDATE_HISTORY_PATH } from "../lib/updates";
+import { EXPERIENCE_INDEX_PATH, EXPERIENCE_PATH } from "../lib/experiences";
 
 const LAST_MODIFIED = "2026-08-14";
 const TREES = ["", "/en"] as const;
@@ -27,6 +28,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    },
+    {
+      url: absoluteUrl(`${base}${EXPERIENCE_INDEX_PATH}`),
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
+    {
+      url: absoluteUrl(`${base}${EXPERIENCE_PATH}`),
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     },
     {
       url: absoluteUrl(`${base}${ANALYSIS_INDEX_PATH}`),

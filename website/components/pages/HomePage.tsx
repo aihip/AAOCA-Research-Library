@@ -20,10 +20,16 @@ import {
   analysisSummary,
   latestAnalysis,
 } from "../../lib/analyses";
+import {
+  EXPERIENCE_PATH,
+  experienceIndexCopy,
+  familyConsultationExperience,
+} from "../../lib/experiences";
 
 export function HomePage({ lang }: { lang: Language }) {
   const dict = getDictionary(lang);
   const analysis = analysisSummary(lang);
+  const experienceCopy = experienceIndexCopy[lang];
 
   const datasetJsonLd = {
     "@context": "https://schema.org",
@@ -145,6 +151,21 @@ export function HomePage({ lang }: { lang: Language }) {
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="home-experience" aria-labelledby="home-experience-title">
+        <div>
+          <p className="eyebrow">{experienceCopy.eyebrow}</p>
+          <h2 id="home-experience-title">
+            {familyConsultationExperience.title[lang]}
+          </h2>
+        </div>
+        <div className="home-experience-copy">
+          <p>{familyConsultationExperience.summary[lang]}</p>
+          <Link href={href(dict, EXPERIENCE_PATH)}>
+            {experienceCopy.read} <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 
