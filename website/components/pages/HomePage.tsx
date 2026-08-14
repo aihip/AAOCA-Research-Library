@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LibraryTimeline } from "../LibraryTimeline";
 import { PaperExplorer } from "../PaperExplorer";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
@@ -165,6 +166,8 @@ export function HomePage({ lang }: { lang: Language }) {
           <span>{dict.home.stats.guidance}</span>
         </article>
       </section>
+
+      <LibraryTimeline dict={dict} />
 
       <PaperExplorer records={papers} lang={lang} />
 

@@ -1,4 +1,5 @@
 import papersData from "../data/papers.json";
+import libraryGrowthData from "../data/library-growth.json";
 import plainLanguageData from "../data/plain-language.json";
 import type { Language } from "./i18n/types";
 import { isTopicSlug, TOPIC_SLUGS, type TopicSlug } from "./topics";
@@ -160,3 +161,34 @@ export const libraryStats = {
     .length,
   drafted: papers.filter((paper) => Boolean(paper.summaryZh)).length,
 };
+
+export type TimelineCount = {
+  label: string;
+  count: number;
+};
+
+function countBy(values: string[]): TimelineCount[] {
+  const counts = values.reduce<Record<string, number>>((result, value) => {
+    result[value] = (result[value] ?? 0) + 1;
+    return result;
+  }, {});
+
+  return Object.entries(counts)
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.label.localeCompare(a.label));
+}
+
+const growthRecords = (
+  libraryGrowthData as { generatedAt: string; records: Record<string, string> }
+).records;
+
+/**
+ * Homepage timeline data is derived from the bibliography itself. Publication
+ * years therefore update whenever the index changes, while accession months
+ * come from the first commit in which each current record appeared.
+ */
+export const publicationYearCounts = countBy(papers.map((paper) => paper.year));
+
+export const accessionMonthCounts = countBy(
+  papers.map((paper) => growthRecords[paper.sha256]).filter(Boolean),
+);

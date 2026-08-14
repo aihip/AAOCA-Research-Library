@@ -38,6 +38,10 @@ export const updates: UpdateEntry[] = [
         zh: "新增本更新历史，公开记录网站内容与功能的主要变化。",
         en: "Added this update history to make major content and product changes visible.",
       },
+      {
+        zh: "首页新增按发表年份和入库月份自动统计的论文时间面板。",
+        en: "Added an automatically maintained homepage timeline by publication year and accession month.",
+      },
     ],
     commits: ["f161714", "bb9e735", "265b6ce", "bca721c", "35af62d", "5059cbc", "fee52be"],
   },

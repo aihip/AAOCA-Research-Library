@@ -64,6 +64,20 @@ export const zh: Dictionary = {
       adult: "条成人相关",
       guidance: "条共识与指南",
     },
+    timeline: {
+      eyebrow: "论文时间分布",
+      heading: "这些文献发表于哪些年份",
+      lede: "按论文的发表年份查看证据积累，也可以看到本站每个月实际纳入了多少条记录。数字会随文献索引自动更新。",
+      byYear: "按发表年份",
+      byMonth: "按入库月份",
+      publicationCount: (count) => `${count} 篇`,
+      additionCount: (count) => `新增 ${count} 篇`,
+      monthLabel: (month) => {
+        const [year, value] = month.split("-");
+        return `${year} 年 ${Number(value)} 月`;
+      },
+      monthNote: "入库月份按每条记录首次进入仓库索引的时间计算，不是论文的发表月份。",
+    },
 
     principlesEyebrow: "整理原则",
     principlesHeading: "可追溯、可核对、不混淆获取状态",

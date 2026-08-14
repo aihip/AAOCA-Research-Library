@@ -53,6 +53,17 @@ export type Dictionary = {
       adult: string;
       guidance: string;
     };
+    timeline: {
+      eyebrow: string;
+      heading: string;
+      lede: string;
+      byYear: string;
+      byMonth: string;
+      publicationCount: (count: number) => string;
+      additionCount: (count: number) => string;
+      monthLabel: (month: string) => string;
+      monthNote: string;
+    };
     principlesEyebrow: string;
     principlesHeading: string;
     principles: { number: string; heading: string; body: string }[];

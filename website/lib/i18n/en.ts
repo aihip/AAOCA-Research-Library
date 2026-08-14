@@ -65,6 +65,22 @@ export const en: Dictionary = {
       adult: "adult",
       guidance: "consensus & guidelines",
     },
+    timeline: {
+      eyebrow: "Publication timeline",
+      heading: "When this evidence was published",
+      lede: "See the evidence build by publication year and how many records this library actually added each month. Both views update with the bibliography index.",
+      byYear: "By publication year",
+      byMonth: "By month added",
+      publicationCount: (count) => `${count} papers`,
+      additionCount: (count) => `${count} added`,
+      monthLabel: (month) => {
+        const [year, value] = month.split("-");
+        return `${new Intl.DateTimeFormat("en", { month: "long" }).format(
+          new Date(Date.UTC(2000, Number(value) - 1, 1)),
+        )} ${year}`;
+      },
+      monthNote: "Month added means when a record first entered the repository index, not the article's publication month.",
+    },
 
     principlesEyebrow: "Curation principles",
     principlesHeading: "Traceable, verifiable, honest about access",

@@ -10,6 +10,10 @@ const plainLanguage = JSON.parse(
   await readFile(new URL("../data/plain-language.json", import.meta.url), "utf8"),
 );
 
+const libraryGrowth = JSON.parse(
+  await readFile(new URL("../data/library-growth.json", import.meta.url), "utf8"),
+);
+
 const synonyms = JSON.parse(
   await readFile(new URL("../lib/synonyms.json", import.meta.url), "utf8"),
 );
@@ -165,6 +169,17 @@ test("plain-language overlay stays joined to the authoritative index", () => {
   assert.match(chineseRecord.title, /[一-鿿]/);
 });
 
+test("library growth data automatically covers every current record", () => {
+  const checksums = records.map((paper) => paper.sha256).sort();
+  const growthChecksums = Object.keys(libraryGrowth.records).sort();
+
+  assert.deepEqual(growthChecksums, checksums);
+
+  for (const month of Object.values(libraryGrowth.records)) {
+    assert.match(month, /^\d{4}-(0[1-9]|1[0-2])$/);
+  }
+});
+
 test("the guidelines topic matches the documented consensus records", () => {
   const byTitle = records
     .filter((paper) => CONSENSUS_PATTERN.test(paper.title))
@@ -197,6 +212,9 @@ test("Chinese landing page leads with plain language, not jargon", async () => {
   assert.match(html, /最新分析/);
   assert.ok(html.includes(ANALYSIS_PATH));
   assert.match(html, /更多分析/);
+  assert.match(html, /论文时间分布/);
+  assert.match(html, /按发表年份/);
+  assert.match(html, /按入库月份/);
 
   // Every question is reachable from the landing page.
   for (const slug of TOPIC_SLUGS) {
@@ -214,6 +232,9 @@ test("English tree renders independently with its own document language", async 
   assert.match(html, /AAOCA Research Library/);
   assert.match(html, /Anomalous aortic origin of a coronary artery/);
   assert.match(html, /does not replace medical diagnosis or advice/);
+  assert.match(html, /Publication timeline/);
+  assert.match(html, /By publication year/);
+  assert.match(html, /By month added/);
 
   // The English tree must not fall back to the Chinese primer.
   assert.doesNotMatch(html, /心脏自己也需要血液供应/);
