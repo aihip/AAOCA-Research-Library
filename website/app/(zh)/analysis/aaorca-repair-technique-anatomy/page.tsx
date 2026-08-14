@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { AnalysisPage } from "../../../../components/pages/AnalysisPage";
+import { RepairTechniqueAnatomyPage } from "../../../../components/pages/analysis/RepairTechniqueAnatomy";
 import { alternatesFor } from "../../../../lib/i18n";
 import { analysisBySlug, analysisPath } from "../../../../lib/analyses";
 
-const meta = analysisBySlug("aaorca-evidence-20-studies");
+const meta = analysisBySlug("aaorca-repair-technique-anatomy");
 const path = analysisPath(meta.slug);
 
 export const metadata: Metadata = {
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     description: meta.zh.summary,
     publishedTime: meta.date,
     modifiedTime: meta.date,
-    tags: ["AAORCA", "儿童", "手术指征", "去顶", "再植", "缺血评估"],
+    tags: ["AAORCA", "去顶", "再植", "新开口", "壁内段", "主动脉瓣交界"],
   },
 };
 
 export default function Page() {
-  return <AnalysisPage lang="zh" />;
+  return <RepairTechniqueAnatomyPage lang="zh" />;
 }

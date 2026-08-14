@@ -23,7 +23,15 @@ const TOPIC_SLUGS = [
   "guidelines",
 ];
 
+const ANALYSIS_INDEX_PATH = "/analysis";
 const ANALYSIS_PATH = "/analysis/aaorca-evidence-20-studies";
+const ANALYSIS_SLUGS = [
+  "aaorca-repair-technique-anatomy",
+  "aaorca-proximal-diameter-geometry",
+  "aaorca-decision-model",
+  "aaorca-anatomy-versus-physiology",
+  "aaorca-evidence-20-studies",
+];
 
 const CONSENSUS_PATTERN =
   /consensus|guideline|recommendations|scientific statement|专家共识|指南/i;
@@ -90,23 +98,23 @@ test("bibliography remains complete, deduplicated, and access-safe", () => {
     (paper) => !paper.access.startsWith("全文"),
   );
 
-  assert.equal(records.length, 74);
+  assert.equal(records.length, 87);
   assert.equal(
     records.filter((paper) => paper.category === "儿童").length,
-    42,
+    53,
   );
   assert.equal(
     records.filter((paper) => paper.category === "成人").length,
-    32,
+    34,
   );
   assert.equal(fullText.length, 37);
-  assert.equal(nonFullText.length, 37);
+  assert.equal(nonFullText.length, 50);
   assert.equal(
     records.reduce((sum, paper) => sum + Number(paper.pages), 0),
-    691,
+    704,
   );
-  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 74);
-  assert.equal(new Set(records.map((paper) => paper.path)).size, 74);
+  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 87);
+  assert.equal(new Set(records.map((paper) => paper.path)).size, 87);
 
   for (const paper of nonFullText) {
     assert.match(paper.path, /NON_FULLTEXT/);
@@ -121,7 +129,7 @@ test("plain-language overlay stays joined to the authoritative index", () => {
   const checksums = new Set(records.map((paper) => paper.sha256));
   const keys = Object.keys(plainLanguage);
 
-  assert.equal(keys.length, 74, "every record needs a plain-language entry");
+  assert.equal(keys.length, 87, "every record needs a plain-language entry");
 
   for (const key of keys) {
     assert.ok(
@@ -166,7 +174,7 @@ test("the guidelines topic matches the documented consensus records", () => {
     .map(([key]) => key)
     .sort();
 
-  assert.equal(byTitle.length, 8);
+  assert.equal(byTitle.length, 9);
   assert.deepEqual(
     byTopic,
     byTitle,
@@ -186,7 +194,7 @@ test("Chinese landing page leads with plain language, not jargon", async () => {
   assert.match(html, /https:\/\/aaoca\.pheth\.com/);
   assert.match(html, /最新分析/);
   assert.ok(html.includes(ANALYSIS_PATH));
-  assert.match(html, /证据时间线/);
+  assert.match(html, /更多分析/);
 
   // Every question is reachable from the landing page.
   for (const slug of TOPIC_SLUGS) {
@@ -474,6 +482,29 @@ test("the evidence analysis keeps unlike study designs separate and traceable", 
   assert.match(enHtml, /data-label="Intramural\/proximal anatomy"/);
 });
 
+test("every analysis is reachable, dated, and traceable to library records", async () => {
+  const indexHtml = await renderHtml(ANALYSIS_INDEX_PATH);
+  for (const slug of ANALYSIS_SLUGS) {
+    assert.ok(indexHtml.includes(`/analysis/${slug}`), `index omits ${slug}`);
+  }
+
+  for (const slug of ANALYSIS_SLUGS) {
+    for (const prefix of ["", "/en"]) {
+      const html = await renderHtml(`${prefix}/analysis/${slug}`);
+
+      // Every analysis states that no clinician checked it.
+      assert.match(html, prefix === "" ? /没有医学专业人士审阅/ : /No medical professional reviewed it/);
+      // ...carries a machine-readable publication date...
+      assert.match(html, /dateTime="20\d\d-\d\d-\d\d"/);
+      // ...and sends the reader back to the records it rests on.
+      assert.ok(
+        (html.match(/href="[^"]*\/papers\//g) ?? []).length >= 7,
+        `${prefix}/analysis/${slug} cites too few records`,
+      );
+    }
+  }
+});
+
 test("record lists carry the summary notice in body text, not only a tooltip", async () => {
   for (const path of ["/", "/topics/how-serious"]) {
     const html = await renderHtml(path);
@@ -507,8 +538,9 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
 
-  // (landing + about + analysis + one per question + one per record) x 2 trees.
-  const perTree = 3 + TOPIC_SLUGS.length + records.length;
+  // (landing + about + analysis index + one per analysis + one per question
+  // + one per record) x 2 trees.
+  const perTree = 3 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
   assert.equal((sitemap.match(/<url>/g) ?? []).length, perTree * 2);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);

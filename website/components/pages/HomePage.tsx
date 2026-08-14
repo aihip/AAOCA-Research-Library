@@ -13,9 +13,11 @@ import {
 } from "../../lib/site";
 import { PRIMER_SOURCES, topics } from "../../lib/topics";
 import {
+  ANALYSIS_INDEX_PATH,
   ANALYSIS_PATH,
+  analyses,
+  analysisPath,
   analysisSummary,
-  evidenceTimeline,
   latestAnalysis,
 } from "../../lib/analyses";
 
@@ -33,8 +35,8 @@ export function HomePage({ lang }: { lang: Language }) {
     isAccessibleForFree: true,
     inLanguage: ["zh-CN", "en"],
     keywords: SEARCH_KEYWORDS.join(", "),
-    dateModified: "2026-08-13",
-    version: "2.0.0",
+    dateModified: "2026-08-14",
+    version: "2.1.0",
     license: "https://creativecommons.org/licenses/by/4.0/",
     creator: {
       "@type": "Organization",
@@ -74,16 +76,21 @@ export function HomePage({ lang }: { lang: Language }) {
           </Link>
         </div>
 
-        <aside className="analysis-timeline-preview" aria-label={analysis.timelineLabel}>
-          <p>{analysis.timelineLabel}</p>
-          <ol>
-            {evidenceTimeline.map((item) => (
-              <li key={item.year}>
-                <time>{item.year}</time>
-                <span>{item[lang]}</span>
+        <aside
+          className="analysis-timeline-preview"
+          aria-label={lang === "zh" ? "更多分析" : "More analyses"}
+        >
+          <p>{lang === "zh" ? "更多分析" : "More analyses"}</p>
+          <ul className="analysis-more">
+            {analyses.slice(1).map((item) => (
+              <li key={item.slug}>
+                <Link href={href(dict, analysisPath(item.slug))}>{item[lang].title}</Link>
               </li>
             ))}
-          </ol>
+          </ul>
+          <Link className="analysis-link" href={href(dict, ANALYSIS_INDEX_PATH)}>
+            {lang === "zh" ? "查看全部分析" : "See all analyses"} <span aria-hidden="true">→</span>
+          </Link>
         </aside>
       </section>
 

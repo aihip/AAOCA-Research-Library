@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { counterpartHref, href, type Dictionary } from "../lib/i18n";
 import { REPOSITORY_URL } from "../lib/site";
-import { ANALYSIS_PATH } from "../lib/analyses";
+import { ANALYSIS_INDEX_PATH } from "../lib/analyses";
 
 type SiteHeaderProps = {
   dict: Dictionary;
@@ -23,7 +23,7 @@ export function SiteHeader({ dict, path }: SiteHeaderProps) {
       </Link>
 
       <nav aria-label={dict.nav.questions}>
-        <Link href={href(dict, ANALYSIS_PATH)}>{dict.nav.analysis}</Link>
+        <Link href={href(dict, ANALYSIS_INDEX_PATH)}>{dict.nav.analysis}</Link>
         <Link href={href(dict, "/#questions")}>{dict.nav.questions}</Link>
         <Link href={href(dict, "/#library")}>{dict.nav.library}</Link>
         <Link href={href(dict, "/about")}>{dict.nav.about}</Link>

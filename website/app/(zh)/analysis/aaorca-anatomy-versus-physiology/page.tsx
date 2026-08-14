@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { AnalysisPage } from "../../../../components/pages/AnalysisPage";
+import { AnatomyVersusPhysiologyPage } from "../../../../components/pages/analysis/AnatomyVersusPhysiology";
 import { alternatesFor } from "../../../../lib/i18n";
 import { analysisBySlug, analysisPath } from "../../../../lib/analyses";
 
-const meta = analysisBySlug("aaorca-evidence-20-studies");
+const meta = analysisBySlug("aaorca-anatomy-versus-physiology");
 const path = analysisPath(meta.slug);
 
 export const metadata: Metadata = {
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     description: meta.zh.summary,
     publishedTime: meta.date,
     modifiedTime: meta.date,
-    tags: ["AAORCA", "儿童", "手术指征", "去顶", "再植", "缺血评估"],
+    tags: ["AAORCA", "壁内段", "缺血评估", "手术指征", "主动脉瓣反流"],
   },
 };
 
 export default function Page() {
-  return <AnalysisPage lang="zh" />;
+  return <AnatomyVersusPhysiologyPage lang="zh" />;
 }

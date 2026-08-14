@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { getDictionary, href, type Language } from "../../lib/i18n";
-import { ANALYSIS_PATH, evidenceTimeline, latestAnalysis } from "../../lib/analyses";
+import { analysisBySlug, analysisPath, evidenceTimeline } from "../../lib/analyses";
 import { SITE_URL } from "../../lib/site";
 
 type Localized = { zh: string; en: string };
@@ -419,15 +419,16 @@ const sourceTitles = [
 export function AnalysisPage({ lang }: { lang: Language }) {
   const dict = getDictionary(lang);
   const copy = articleCopy[lang];
-  const path = ANALYSIS_PATH;
+  const meta = analysisBySlug("aaorca-evidence-20-studies");
+  const path = analysisPath(meta.slug);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "AnalysisNewsArticle",
     headline: copy.title,
     description: copy.lede,
-    datePublished: latestAnalysis.date,
-    dateModified: latestAnalysis.date,
+    datePublished: meta.date,
+    dateModified: meta.date,
     inLanguage: dict.htmlLang,
     url: `${SITE_URL}${dict.basePath}${path}`,
     mainEntityOfPage: `${SITE_URL}${dict.basePath}${path}`,
@@ -453,10 +454,8 @@ export function AnalysisPage({ lang }: { lang: Language }) {
         <header className="analysis-article-header">
           <div className="analysis-byline">
             <span>{copy.label}</span>
-            <time dateTime={latestAnalysis.date}>
-              {lang === "zh" ? "2026 年 8 月 13 日" : "13 August 2026"}
-            </time>
-            <span>{lang === "zh" ? "约 15 分钟" : "15 min read"}</span>
+            <time dateTime={meta.date}>{meta.dateLabel[lang]}</time>
+            <span>{meta.readingLabel[lang]}</span>
           </div>
           <h1>{copy.title}</h1>
           <p className="analysis-standfirst">{copy.lede}</p>

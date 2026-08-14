@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { AnalysisPage } from "../../../../components/pages/AnalysisPage";
+import { ProximalDiameterGeometryPage } from "../../../../components/pages/analysis/ProximalDiameterGeometry";
 import { alternatesFor } from "../../../../lib/i18n";
 import { analysisBySlug, analysisPath } from "../../../../lib/analyses";
 
-const meta = analysisBySlug("aaorca-evidence-20-studies");
+const meta = analysisBySlug("aaorca-proximal-diameter-geometry");
 const path = analysisPath(meta.slug);
 
 export const metadata: Metadata = {
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     description: meta.zh.summary,
     publishedTime: meta.date,
     modifiedTime: meta.date,
-    tags: ["AAORCA", "儿童", "手术指征", "去顶", "再植", "缺血评估"],
+    tags: ["AAORCA", "冠脉几何", "面积狭窄", "开口短轴", "Z 值", "CTA 定量"],
   },
 };
 
 export default function Page() {
-  return <AnalysisPage lang="zh" />;
+  return <ProximalDiameterGeometryPage lang="zh" />;
 }
