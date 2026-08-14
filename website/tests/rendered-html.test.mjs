@@ -496,6 +496,14 @@ test("the update history is bilingual, traceable, and reachable site-wide", asyn
   }
 });
 
+test("the contact email is visible and usable across both language trees", async () => {
+  for (const path of ["/", "/about", "/en", "/en/about"]) {
+    const html = await renderHtml(path);
+    assert.match(html, /href="mailto:hippopig29@gmail\.com"/);
+    assert.match(html, /hippopig29@gmail\.com/);
+  }
+});
+
 test("the evidence analysis keeps unlike study designs separate and traceable", async () => {
   const zhHtml = await renderHtml(ANALYSIS_PATH);
   assert.match(zhHtml, /把病例数、手术比例、术式和随访真正摊平/);

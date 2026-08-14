@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { href, type Dictionary } from "../lib/i18n";
-import { REPOSITORY_URL } from "../lib/site";
+import { CONTACT_EMAIL, REPOSITORY_URL } from "../lib/site";
 import { VisitCounter } from "./VisitCounter";
 
 export function SiteFooter({ dict }: { dict: Dictionary }) {
@@ -25,6 +25,9 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
           {dict.footer.contributing}
         </a>
         <Link href={href(dict, "/updates")}>{dict.footer.updates}</Link>
+        <a href={`mailto:${CONTACT_EMAIL}`}>
+          {dict.footer.contact}: {CONTACT_EMAIL}
+        </a>
         <a href={REPOSITORY_URL}>{dict.footer.github}</a>
       </div>
     </footer>

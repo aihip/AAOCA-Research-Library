@@ -42,6 +42,10 @@ export const updates: UpdateEntry[] = [
         zh: "首页新增按发表年份和入库月份自动统计的论文时间面板。",
         en: "Added an automatically maintained homepage timeline by publication year and accession month.",
       },
+      {
+        zh: "全站页脚新增公开联系邮箱，方便反馈内容、版权与维护问题。",
+        en: "Added a public contact email to every page for content, rights, and maintenance enquiries.",
+      },
     ],
     commits: ["f161714", "bb9e735", "265b6ce", "bca721c", "35af62d", "5059cbc", "fee52be"],
   },

@@ -7,6 +7,8 @@ export const SITE_URL =
 
 export const SITE_NAME = "AAOCA Research Library";
 
+export const CONTACT_EMAIL = "hippopig29@gmail.com";
+
 export const SITE_DESCRIPTION =
   "Bilingual pediatric and adult AAOCA literature index with expert consensus, guidelines, DOI, PMID, and clearly marked non-full-text records.";
 
