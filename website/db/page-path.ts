@@ -1,5 +1,5 @@
 const contentPathPattern =
-  /^(?:about|analysis(?:\/[a-z0-9-]+)?|topics\/[a-z0-9-]+|papers\/[a-z0-9-]+)$/;
+  /^(?:about|updates|analysis(?:\/[a-z0-9-]+)?|topics\/[a-z0-9-]+|papers\/[a-z0-9-]+)$/;
 
 export function normalizePagePath(path: string): string | null {
   const normalized = path.replace(/^\//, "").replace(/\/$/, "");

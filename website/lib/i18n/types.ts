@@ -21,6 +21,7 @@ export type Dictionary = {
     questions: string;
     library: string;
     about: string;
+    updates: string;
     rights: string;
     github: string;
     switchTo: string;
@@ -157,6 +158,7 @@ export type Dictionary = {
     citation: string;
     rights: string;
     contributing: string;
+    updates: string;
     github: string;
     visitCount: string;
     visitCountLoading: string;

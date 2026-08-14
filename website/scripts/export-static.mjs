@@ -89,6 +89,7 @@ const ANALYSIS_SLUGS = [
 const pagePaths = LANGUAGE_PREFIXES.flatMap((prefix) => [
   prefix || "/",
   `${prefix}/about`,
+  `${prefix}/updates`,
   `${prefix}/analysis`,
   ...ANALYSIS_SLUGS.map((slug) => `${prefix}/analysis/${slug}`),
   ...TOPIC_SLUGS.map((slug) => `${prefix}/topics/${slug}`),

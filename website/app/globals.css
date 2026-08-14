@@ -1392,6 +1392,149 @@ footer .visit-counter {
   color: var(--ink);
 }
 
+/* --- update history --- */
+
+.updates-body {
+  max-width: 920px;
+}
+
+.update-history {
+  margin: 58px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.update-entry {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 34px;
+  padding: 38px 0;
+  border-top: 1px solid var(--line);
+}
+
+.update-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.update-date time {
+  color: var(--ink-soft);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.update-date span {
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: var(--teal-dark);
+  background: var(--teal-pale);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.update-card h2 {
+  margin: 0;
+  color: var(--teal-dark);
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.update-summary {
+  max-width: 66ch;
+  margin: 15px 0 28px;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.update-card h3 {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.update-card > ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.update-card > ul li {
+  margin: 8px 0;
+  padding-left: 4px;
+  line-height: 1.7;
+}
+
+.update-commits {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(217, 213, 202, 0.7);
+}
+
+.update-commits strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.update-commits > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.update-commits a {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--teal);
+  background: rgba(255, 255, 255, 0.45);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  text-decoration: none;
+}
+
+.update-commits a:hover {
+  border-color: var(--teal);
+  background: var(--teal-pale);
+}
+
+.all-commits-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 4px 0 14px 164px;
+  color: var(--teal);
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+@media (max-width: 680px) {
+  .update-entry {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 32px 0;
+  }
+
+  .update-date {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .all-commits-link {
+    margin-left: 0;
+  }
+}
+
 /* --- topic pages --- */
 
 .topic-shell {

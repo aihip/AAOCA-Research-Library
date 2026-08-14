@@ -220,7 +220,7 @@ test("English tree renders independently with its own document language", async 
 });
 
 test("both trees declare each other as hreflang alternates", async () => {
-  const paths = ["/", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", "/updates", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
 
   for (const path of paths) {
     const zhHtml = await renderHtml(path);
@@ -459,6 +459,22 @@ test("the about page says who compiled this and that no clinician checked it", a
   }
 });
 
+test("the update history is bilingual, traceable, and reachable site-wide", async () => {
+  const zhHtml = await renderHtml("/updates");
+  assert.match(zhHtml, /更新历史/);
+  assert.match(zhHtml, /双语患者版文献库上线/);
+  assert.match(zhHtml, /2026-07-31/);
+  assert.match(zhHtml, /github\.com\/aihip\/AAOCA-Research-Library\/commit\/f161714/);
+
+  const enHtml = await renderHtml("/en/updates");
+  assert.match(enHtml, /Update history/);
+  assert.match(enHtml, /Bilingual patient-facing library launched/);
+
+  for (const path of ["/", "/about", "/topics/sports"]) {
+    assert.match(await renderHtml(path), /href="\/updates\/"/);
+  }
+});
+
 test("the evidence analysis keeps unlike study designs separate and traceable", async () => {
   const zhHtml = await renderHtml(ANALYSIS_PATH);
   assert.match(zhHtml, /把病例数、手术比例、术式和随访真正摊平/);
@@ -545,7 +561,7 @@ test("canonical URLs, alternates, and internal links resolve without a redirect"
     assert.match(url, /\/$/, `sitemap entry is not slash-terminated: ${url}`);
   }
 
-  const paths = ["/", "/en", "/about", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", "/en", "/about", "/updates", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
   for (const path of paths) {
     const html = await renderHtml(path);
 
@@ -568,15 +584,17 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
 
-  // (landing + about + analysis index + one per analysis + one per question
+  // (landing + about + updates + analysis index + one per analysis + one per question
   // + one per record) x 2 trees.
-  const perTree = 3 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
+  const perTree = 4 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
   assert.equal((sitemap.match(/<url>/g) ?? []).length, perTree * 2);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/topics\/sports/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/about/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/about/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/updates/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/updates/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/analysis\/aaorca-evidence-20-studies/);
   assert.doesNotMatch(sitemap, /chatgpt\.site|sites\.openai\.com/);
 
