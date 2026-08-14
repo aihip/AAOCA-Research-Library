@@ -107,11 +107,11 @@ test("bibliography remains complete, deduplicated, and access-safe", () => {
     records.filter((paper) => paper.category === "成人").length,
     34,
   );
-  assert.equal(fullText.length, 49);
-  assert.equal(nonFullText.length, 38);
+  assert.equal(fullText.length, 50);
+  assert.equal(nonFullText.length, 37);
   assert.equal(
     records.reduce((sum, paper) => sum + Number(paper.pages), 0),
-    931,
+    1010,
   );
   assert.equal(new Set(records.map((paper) => paper.sha256)).size, 87);
   assert.equal(new Set(records.map((paper) => paper.path)).size, 87);

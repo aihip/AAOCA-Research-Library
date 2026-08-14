@@ -61,6 +61,7 @@ OK	adult	fulltext	9	4149	papers/adult/fulltext/2024_Li_Adolescent_Adult_Surgical
 OK	adult	fulltext	8	4303	papers/adult/fulltext/2023_James_CABG_AAOCA_ITA.pdf
 OK	adult	fulltext	20	3888	papers/adult/fulltext/2022_Bigler_Therapeutic_Management_ACAOS.pdf
 OK	adult	fulltext	5	3895	papers/adult/fulltext/2021_Nellis_AAOCA_Anterior_Minithoracotomy_Repair.pdf
+OK	adult	fulltext	80	5145	papers/adult/fulltext/2021_Pelliccia_ESC_Sports_Cardiology_Guideline.pdf
 OK	adult	fulltext	11	3794	papers/adult/fulltext/2020_Tang_CT_FFR_94_Adult_Patients.pdf
 OK	adult	fulltext	112	3411	papers/adult/fulltext/2019_Stout_AHA_ACC_Adult_CHD_Guideline.pdf
 OK	adult	fulltext	4	3821	papers/adult/fulltext/2019_McCray_Novel_Assessment_Ischemia_AAORCA.pdf
@@ -77,7 +78,6 @@ OK	adult	non_fulltext	1	740	papers/adult/non_fulltext/2024_NON_FULLTEXT_Adult_AA
 OK	adult	non_fulltext	1	3217	papers/adult/non_fulltext/2023_NON_FULLTEXT_Adult_AAOCA_State_of_the_Art.pdf
 OK	adult	non_fulltext	1	3972	papers/adult/non_fulltext/2023_NON_FULLTEXT_Patlolla_Protocolized_Unroofing_148_Patients.pdf
 OK	adult	fulltext	17	5416	papers/adult/fulltext/2022_Adult_AAOCA_Coronary_Disease.pdf
-OK	adult	non_fulltext	1	5735	papers/adult/non_fulltext/2021_NON_FULLTEXT_Pelliccia_ESC_Sports_Cardiology_Guideline.pdf
 OK	adult	fulltext	8	2515	papers/adult/fulltext/2021_Adolescent_Adult_Surgical_Symptoms.pdf
 OK	adult	fulltext	85	1325	papers/adult/fulltext/2020_ESC_Adult_CHD_Guideline.pdf
 OK	adult	non_fulltext	1	3049	papers/adult/non_fulltext/2017_NON_FULLTEXT_JACC_AAOCA_Review.pdf
