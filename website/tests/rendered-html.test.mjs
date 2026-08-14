@@ -26,6 +26,7 @@ const TOPIC_SLUGS = [
 const ANALYSIS_INDEX_PATH = "/analysis";
 const ANALYSIS_PATH = "/analysis/aaorca-evidence-20-studies";
 const ANALYSIS_SLUGS = [
+  "aaorca-ischemia-testing",
   "aaorca-repair-technique-anatomy",
   "aaorca-proximal-diameter-geometry",
   "aaorca-decision-model",

@@ -25,6 +25,28 @@ export type AnalysisMeta = {
  */
 export const analyses: AnalysisMeta[] = [
   {
+    slug: "aaorca-ischemia-testing",
+    date: "2026-08-14",
+    dateLabel: { zh: "2026 年 8 月 14 日", en: "14 August 2026" },
+    readingLabel: { zh: "约 15 分钟", en: "15 min read" },
+    zh: {
+      label: "证据分析",
+      title: "怎样才算证明缺血：负荷方式决定了一次阴性结果的分量",
+      summary:
+        "没有任何单项检查能排除 AAOCA 的诱发性缺血。一次阴性结果值多少，取决于负荷够不够强、以及负荷方式是否复制了运动生理。",
+      read: "阅读全文",
+      timelineLabel: "证据时间线",
+    },
+    en: {
+      label: "Evidence analysis",
+      title: "What counts as proof of ischemia: the stressor decides what a negative result is worth",
+      summary:
+        "No single test excludes inducible ischemia in AAOCA. What a negative is worth depends on whether the stress was hard enough and whether it reproduced exercise physiology.",
+      read: "Read the analysis",
+      timelineLabel: "Evidence timeline",
+    },
+  },
+  {
     slug: "aaorca-repair-technique-anatomy",
     date: "2026-08-14",
     dateLabel: { zh: "2026 年 8 月 14 日", en: "14 August 2026" },
