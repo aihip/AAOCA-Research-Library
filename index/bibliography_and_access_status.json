@@ -529,6 +529,22 @@
   },
   {
     "category": "儿童",
+    "access": "非全文",
+    "year": "2025",
+    "title": "Serial Exercise Testing in Children With Known or Suspected Congenital and Acquired Heart Disease: A Narrative Review and Survey of Current Practice",
+    "journal": "Journal of the American Heart Association",
+    "doi": "10.1161/JAHA.124.038585",
+    "pmid": "40207521",
+    "pmcid": "PMC12132902",
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12132902/",
+    "notes": "儿童连续运动试验的叙述性综述与实践调查；给出按病种的复查间隔建议，AAOCA 相关建议为本库随访节奏的主要外部依据。开放获取（CC BY-NC-ND），出版方防爬虫拦截导致本次未能归档 PDF，取得后可用 tools/promote_to_fulltext.py 升级。",
+    "path": "papers/pediatric/non_fulltext/2025_NON_FULLTEXT_Serial_Exercise_Testing_Children.pdf",
+    "pages": "1",
+    "bytes": "26098",
+    "sha256": "bc7be47eaea1ad5e4f1dfc9fa03cf49af91323a930de9c4cd3ad0020d6102380"
+  },
+  {
+    "category": "儿童",
     "access": "全文",
     "year": "2024",
     "title": "Anomalous Aortic Origin of a Coronary Artery in Pediatric Patients",
@@ -1310,6 +1326,22 @@
     "pages": "8",
     "bytes": "780528",
     "sha256": "49305e1a62b025fc717106c07a29043aa7e4b86ecd307cbffd58539f92f8e42f"
+  },
+  {
+    "category": "成人",
+    "access": "非全文",
+    "year": "2021",
+    "title": "Coronary Artery Anomalies",
+    "journal": "Circulation",
+    "doi": "10.1161/CIRCULATIONAHA.121.055347",
+    "pmid": "34543069",
+    "pmcid": "",
+    "entry_url": "https://doi.org/10.1161/CIRCULATIONAHA.121.055347",
+    "notes": "冠状动脉异常的综述性框架，含影像分工与随访原则；非开放获取，本卡仅为书目入口，未使用摘要冒充全文。",
+    "path": "papers/adult/non_fulltext/2021_NON_FULLTEXT_Circulation_Coronary_Artery_Anomalies.pdf",
+    "pages": "1",
+    "bytes": "24393",
+    "sha256": "8fa45060a5ce4d66086ed5f76f749e0e1e80f6672e55e638beddd199bb69828f"
   },
   {
     "category": "成人",

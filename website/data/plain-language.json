@@ -752,5 +752,23 @@
       "what-tests"
     ],
     "check": "source"
+  },
+  "bc7be47eaea1ad5e4f1dfc9fa03cf49af91323a930de9c4cd3ad0020d6102380": {
+    "title_zh": "儿童已知或疑似先天性与获得性心脏病的连续运动试验：叙述性综述与实践调查",
+    "summary_zh": "综述加实践调查，讨论儿童心脏病如何按病种安排重复的运动试验，并给出复查间隔的建议区间；AAOCA 被列为值得周期性做心肺运动试验与负荷影像的病种之一。属于综述与专家实践调查，不是前瞻性队列，间隔建议没有随机对照证据支撑。本库暂未持有全文，摘要以外的细节未逐条核对。",
+    "topics": [
+      "what-tests",
+      "sports"
+    ],
+    "check": "metadata"
+  },
+  "8fa45060a5ce4d66086ed5f76f749e0e1e80f6672e55e638beddd199bb69828f": {
+    "title_zh": "冠状动脉起源异常（综述）",
+    "summary_zh": "Circulation 的冠状动脉异常综述，梳理分型、影像分工与处理原则，覆盖儿童与成人。属于叙述性综述而非原始数据研究，且以成人视角为主。本库未持有全文，仅保留题录入口。",
+    "topics": [
+      "what-is-it",
+      "what-tests"
+    ],
+    "check": "metadata"
   }
 }

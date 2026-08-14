@@ -77,6 +77,7 @@ const TOPIC_SLUGS = [
 // Chinese lives at the root, English under /en. Both trees are exported in full.
 const LANGUAGE_PREFIXES = ["", "/en"];
 const ANALYSIS_SLUGS = [
+  "aaorca-conservative-surveillance",
   "aaorca-ischemia-testing",
   "aaorca-repair-technique-anatomy",
   "aaorca-proximal-diameter-geometry",

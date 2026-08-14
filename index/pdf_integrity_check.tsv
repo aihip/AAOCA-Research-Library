@@ -88,3 +88,5 @@ OK	adult	non_fulltext	1	3290	papers/adult/non_fulltext/2016_NON_FULLTEXT_Adult_C
 OK	adult	non_fulltext	1	3744	papers/adult/non_fulltext/2016_NON_FULLTEXT_Law_AAORCA_Reimplantation_16_Patients.pdf
 OK	adult	non_fulltext	1	824	papers/adult/non_fulltext/2015_NON_FULLTEXT_CCTA_High_Risk_Anatomy_Outcomes.pdf
 OK	adult	non_fulltext	1	3121	papers/adult/non_fulltext/2014_NON_FULLTEXT_AAOCA_Surgical_Unroofing.pdf
+OK	pediatric	non_fulltext	1	618	papers/pediatric/non_fulltext/2025_NON_FULLTEXT_Serial_Exercise_Testing_Children.pdf
+OK	adult	non_fulltext	1	462	papers/adult/non_fulltext/2021_NON_FULLTEXT_Circulation_Coronary_Artery_Anomalies.pdf

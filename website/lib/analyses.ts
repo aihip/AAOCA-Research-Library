@@ -25,6 +25,28 @@ export type AnalysisMeta = {
  */
 export const analyses: AnalysisMeta[] = [
   {
+    slug: "aaorca-conservative-surveillance",
+    date: "2026-08-14",
+    dateLabel: { zh: "2026 年 8 月 14 日", en: "14 August 2026" },
+    readingLabel: { zh: "约 16 分钟", en: "16 min read" },
+    zh: {
+      label: "证据分析",
+      title: "「保守观察」不是不管：把观察写成一份可执行的监测方案",
+      summary:
+        "选择不手术，不等于等几年再看看。文献里的保守管理是一套有间隔、有内容、有终止条件的主动监测——这篇把它拼成一张可以带去门诊的表。",
+      read: "阅读全文",
+      timelineLabel: "证据时间线",
+    },
+    en: {
+      label: "Evidence analysis",
+      title: "Conservative is not passive: writing observation down as a protocol you can execute",
+      summary:
+        "Choosing not to operate is not choosing to wait and see. Conservative management in the literature is active surveillance with defined intervals, content, and stopping rules — assembled here into one table.",
+      read: "Read the analysis",
+      timelineLabel: "Evidence timeline",
+    },
+  },
+  {
     slug: "aaorca-ischemia-testing",
     date: "2026-08-14",
     dateLabel: { zh: "2026 年 8 月 14 日", en: "14 August 2026" },

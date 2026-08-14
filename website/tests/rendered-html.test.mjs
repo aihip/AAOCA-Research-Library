@@ -26,6 +26,7 @@ const TOPIC_SLUGS = [
 const ANALYSIS_INDEX_PATH = "/analysis";
 const ANALYSIS_PATH = "/analysis/aaorca-evidence-20-studies";
 const ANALYSIS_SLUGS = [
+  "aaorca-conservative-surveillance",
   "aaorca-ischemia-testing",
   "aaorca-repair-technique-anatomy",
   "aaorca-proximal-diameter-geometry",
@@ -99,23 +100,23 @@ test("bibliography remains complete, deduplicated, and access-safe", () => {
     (paper) => !paper.access.startsWith("全文"),
   );
 
-  assert.equal(records.length, 89);
+  assert.equal(records.length, 91);
   assert.equal(
     records.filter((paper) => paper.category === "儿童").length,
-    54,
+    55,
   );
   assert.equal(
     records.filter((paper) => paper.category === "成人").length,
-    35,
+    36,
   );
   assert.equal(fullText.length, 52);
-  assert.equal(nonFullText.length, 37);
+  assert.equal(nonFullText.length, 39);
   assert.equal(
     records.reduce((sum, paper) => sum + Number(paper.pages), 0),
-    1031,
+    1033,
   );
-  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 89);
-  assert.equal(new Set(records.map((paper) => paper.path)).size, 89);
+  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 91);
+  assert.equal(new Set(records.map((paper) => paper.path)).size, 91);
 
   for (const paper of nonFullText) {
     assert.match(paper.path, /NON_FULLTEXT/);
@@ -130,7 +131,7 @@ test("plain-language overlay stays joined to the authoritative index", () => {
   const checksums = new Set(records.map((paper) => paper.sha256));
   const keys = Object.keys(plainLanguage);
 
-  assert.equal(keys.length, 89, "every record needs a plain-language entry");
+  assert.equal(keys.length, 91, "every record needs a plain-language entry");
 
   for (const key of keys) {
     assert.ok(
