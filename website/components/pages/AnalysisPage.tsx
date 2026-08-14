@@ -2,9 +2,8 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
-import { getDictionary, href, type Language } from "../../lib/i18n";
+import { absoluteUrl, getDictionary, href, type Language } from "../../lib/i18n";
 import { analysisBySlug, analysisPath, evidenceTimeline } from "../../lib/analyses";
-import { SITE_URL } from "../../lib/site";
 
 type Localized = { zh: string; en: string };
 
@@ -430,14 +429,14 @@ export function AnalysisPage({ lang }: { lang: Language }) {
     datePublished: meta.date,
     dateModified: meta.date,
     inLanguage: dict.htmlLang,
-    url: `${SITE_URL}${dict.basePath}${path}`,
-    mainEntityOfPage: `${SITE_URL}${dict.basePath}${path}`,
+    url: absoluteUrl(`${dict.basePath}${path}`),
+    mainEntityOfPage: absoluteUrl(`${dict.basePath}${path}`),
     author: {
       "@type": "Organization",
       name: "AAOCA Research Library contributors",
     },
     citation: [
-      ...sourceTitles.map(([slug]) => `${SITE_URL}${dict.basePath}/papers/${slug}`),
+      ...sourceTitles.map(([slug]) => absoluteUrl(`${dict.basePath}/papers/${slug}`)),
       "https://doi.org/10.3389/fcvm.2021.626108",
     ],
   };

@@ -31,7 +31,7 @@ export const en: Dictionary = {
     metaTitle: "AAOCA for patients and families: an evidence library",
     metaDescription:
       "What anomalous aortic origin of a coronary artery (AAOCA / AAORCA) is, how serious it is, which tests are used, whether sport can continue, and when surgery is considered. Published research organised around the questions families ask.",
-    eyebrow: "Updated 2026-08-13",
+    eyebrow: "Updated 2026-08-14",
     title: "Anomalous aortic origin of a coronary artery",
     subtitle: "AAOCA / AAORCA",
     lede: "If you or someone in your family has just been given this diagnosis, this library organises the published research around the questions you are most likely to ask.",

@@ -402,8 +402,8 @@ test("hand-written medical prose points at the consensus it rests on", async () 
   const home = await renderHtml("/");
   assert.match(home, /source-list/, "the primer cites nothing");
   // The risk figures in the primer come from these two consensus documents.
-  assert.match(home, /href="\/papers\/2020-8bcae4884a2a"/);
-  assert.match(home, /href="\/papers\/2017-eef7d139c8b6"/);
+  assert.match(home, /href="\/papers\/2020-8bcae4884a2a\/"/);
+  assert.match(home, /href="\/papers\/2017-eef7d139c8b6\/"/);
   // Both consensus documents stress that sudden death is often the first sign,
   // so the primer must not leave a family reassured by an absence of symptoms.
   assert.match(home, /没有症状不等于没有风险/);
@@ -453,7 +453,7 @@ test("the about page says who compiled this and that no clinician checked it", a
 
   // Reachable from the nav on every page rather than buried in the footer.
   for (const path of ["/", "/topics/sports"]) {
-    assert.match(await renderHtml(path), /href="\/about"/);
+    assert.match(await renderHtml(path), /href="\/about\/"/);
   }
 });
 
@@ -531,6 +531,34 @@ test("renders a non-full-text record in plain words with usable identifiers", as
       `https://github.com/aihip/AAOCA-Research-Library/blob/main/${paper.path}`,
     ),
   );
+});
+
+test("canonical URLs, alternates, and internal links resolve without a redirect", async () => {
+  // Pages are exported as <path>/index.html and the host 308s the slashless
+  // form, so anything we publish must already carry the slash. A canonical
+  // pointing at a redirect is the one thing crawlers should never be handed.
+  const sitemap = await (await render("/sitemap.xml", "application/xml")).text();
+  for (const loc of sitemap.match(/<loc>[^<]*<\/loc>/g) ?? []) {
+    const url = loc.replace(/<\/?loc>/g, "");
+    assert.match(url, /\/$/, `sitemap entry is not slash-terminated: ${url}`);
+  }
+
+  const paths = ["/", "/en", "/about", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  for (const path of paths) {
+    const html = await renderHtml(path);
+
+    for (const tag of html.match(/<link rel="(?:canonical|alternate)"[^>]*>/g) ?? []) {
+      const url = tag.match(/href="([^"]+)"/)?.[1];
+      assert.match(url, /\/$/, `${path} publishes a redirecting URL: ${url}`);
+    }
+
+    // Internal links, ignoring pure fragments and fragment-bearing hrefs.
+    for (const link of html.match(/href="\/[^"#]*"/g) ?? []) {
+      const url = link.slice(6, -1);
+      if (url.startsWith("/assets/") || /\.[a-z0-9]+$/i.test(url)) continue;
+      assert.match(url, /\/$/, `${path} links to a redirecting URL: ${url}`);
+    }
+  }
 });
 
 test("publishes a canonical sitemap and robots policy for both trees", async () => {

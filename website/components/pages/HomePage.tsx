@@ -3,13 +3,12 @@ import { PaperExplorer } from "../PaperExplorer";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { SourceList } from "../SourceList";
-import { getDictionary, href, type Language } from "../../lib/i18n";
+import { absoluteUrl, getDictionary, href, type Language } from "../../lib/i18n";
 import { libraryStats, papers, topicCounts } from "../../lib/library";
 import {
   REPOSITORY_URL,
   SEARCH_KEYWORDS,
   SITE_DESCRIPTION,
-  SITE_URL,
 } from "../../lib/site";
 import { PRIMER_SOURCES, topics } from "../../lib/topics";
 import {
@@ -31,7 +30,7 @@ export function HomePage({ lang }: { lang: Language }) {
     name: "AAOCA Research Library",
     alternateName: "冠状动脉起源异常文献库",
     description: SITE_DESCRIPTION,
-    url: `${SITE_URL}${dict.basePath}`,
+    url: absoluteUrl(dict.basePath),
     isAccessibleForFree: true,
     inLanguage: ["zh-CN", "en"],
     keywords: SEARCH_KEYWORDS.join(", "),
@@ -65,9 +64,7 @@ export function HomePage({ lang }: { lang: Language }) {
         <div className="latest-analysis-copy">
           <div className="latest-analysis-meta">
             <span>{analysis.label}</span>
-            <time dateTime={latestAnalysis.date}>
-              {lang === "zh" ? "2026 年 8 月 13 日" : "13 August 2026"}
-            </time>
+            <time dateTime={latestAnalysis.date}>{latestAnalysis.dateLabel[lang]}</time>
           </div>
           <h2 id="latest-analysis-title">{analysis.title}</h2>
           <p>{analysis.summary}</p>

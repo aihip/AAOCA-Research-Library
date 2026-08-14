@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { SiteFooter } from "../../SiteFooter";
 import { SiteHeader } from "../../SiteHeader";
-import { getDictionary, href, type Language } from "../../../lib/i18n";
+import { absoluteUrl, getDictionary, href, type Language } from "../../../lib/i18n";
 import { analysisBySlug, analysisPath } from "../../../lib/analyses";
-import { SITE_URL } from "../../../lib/site";
 
 export type Localized = { zh: string; en: string };
 
@@ -142,14 +141,14 @@ export function AnalysisArticle({
     datePublished: meta.date,
     dateModified: meta.date,
     inLanguage: dict.htmlLang,
-    url: `${SITE_URL}${dict.basePath}${path}`,
-    mainEntityOfPage: `${SITE_URL}${dict.basePath}${path}`,
+    url: absoluteUrl(`${dict.basePath}${path}`),
+    mainEntityOfPage: absoluteUrl(`${dict.basePath}${path}`),
     author: {
       "@type": "Organization",
       name: "AAOCA Research Library contributors",
     },
     citation: [
-      ...copy.sources.map(({ slug: record }) => `${SITE_URL}${dict.basePath}/papers/${record}`),
+      ...copy.sources.map(({ slug: record }) => absoluteUrl(`${dict.basePath}/papers/${record}`)),
       ...(copy.external ?? []).map((item) => item.url),
     ],
   };

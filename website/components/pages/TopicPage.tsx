@@ -4,9 +4,8 @@ import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { SourceList } from "../SourceList";
 import { SummaryNotice } from "../SummaryNotice";
-import { getDictionary, href, type Language } from "../../lib/i18n";
+import { absoluteUrl, getDictionary, href, type Language } from "../../lib/i18n";
 import { papersForTopic } from "../../lib/library";
-import { SITE_URL } from "../../lib/site";
 import { topics, type Topic } from "../../lib/topics";
 
 export function TopicPage({ lang, topic }: { lang: Language; topic: Topic }) {
@@ -21,12 +20,12 @@ export function TopicPage({ lang, topic }: { lang: Language; topic: Topic }) {
     "@type": "CollectionPage",
     name: copy.question,
     description: copy.blurb,
-    url: `${SITE_URL}${dict.basePath}${path}`,
+    url: absoluteUrl(`${dict.basePath}${path}`),
     inLanguage: dict.htmlLang,
     isPartOf: {
       "@type": "Dataset",
       name: "AAOCA Research Library",
-      url: `${SITE_URL}${dict.basePath}`,
+      url: absoluteUrl(dict.basePath),
     },
     mainEntity: {
       "@type": "ItemList",
@@ -34,7 +33,7 @@ export function TopicPage({ lang, topic }: { lang: Language; topic: Topic }) {
       itemListElement: records.map((paper, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `${SITE_URL}${dict.basePath}/papers/${paper.slug}`,
+        url: absoluteUrl(`${dict.basePath}/papers/${paper.slug}`),
         name: paper.title,
       })),
     },

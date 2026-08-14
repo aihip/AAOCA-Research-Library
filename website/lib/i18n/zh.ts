@@ -31,7 +31,7 @@ export const zh: Dictionary = {
     metaTitle: "冠状动脉起源异常（AAOCA）：写给患者和家属的文献库",
     metaDescription:
       "冠状动脉起源异常（AAOCA / AAORCA）是什么、严不严重、要做什么检查、还能不能运动、要不要手术。按家属最常问的问题整理的公开研究文献索引，中英文对照。",
-    eyebrow: "更新于 2026-08-13",
+    eyebrow: "更新于 2026-08-14",
     title: "冠状动脉起源异常",
     subtitle: "AAOCA / AAORCA",
     lede: "如果你或家人刚被诊断出这个情况，这里按你最可能想问的几个问题，整理了目前公开发表的研究文献。",

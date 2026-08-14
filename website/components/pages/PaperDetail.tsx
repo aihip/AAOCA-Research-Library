@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
-import { getDictionary, href, type Language } from "../../lib/i18n";
+import { absoluteUrl, getDictionary, href, type Language } from "../../lib/i18n";
 import {
   displayTitle,
   hasDistinctOriginalTitle,
@@ -9,7 +9,7 @@ import {
   isFullText,
   type Paper,
 } from "../../lib/library";
-import { REPOSITORY_URL, SITE_URL } from "../../lib/site";
+import { REPOSITORY_URL } from "../../lib/site";
 import { findTopic } from "../../lib/topics";
 
 function externalIdentifiers(paper: Paper) {
@@ -49,7 +49,7 @@ export function PaperDetail({ lang, paper }: { lang: Language; paper: Paper }) {
     alternativeHeadline: paper.titleZh || undefined,
     datePublished: paper.year,
     isPartOf: paper.journal,
-    url: `${SITE_URL}${dict.basePath}${path}`,
+    url: absoluteUrl(`${dict.basePath}${path}`),
     sameAs: paper.entry_url || undefined,
     identifier: [
       paper.doi && `https://doi.org/${paper.doi}`,
