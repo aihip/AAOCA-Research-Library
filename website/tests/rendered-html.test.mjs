@@ -266,6 +266,7 @@ test("both trees resolve a fragment once without locking later scrolling", async
     assert.match(html, /document\.getElementById/, `${path} never resolves its target`);
     assert.match(html, /target\.scrollIntoView\(\)/, `${path} never lands on its target`);
     assert.match(html, /history\.replaceState/, `${path} never clears the hash`);
+    assert.match(html, /addEventListener\("click"/, `${path} never handles later fragment clicks`);
     assert.doesNotMatch(html, /window\.scrollTo/);
     assert.doesNotMatch(html, /requestAnimationFrame/);
     assert.doesNotMatch(html, /setTimeout/);

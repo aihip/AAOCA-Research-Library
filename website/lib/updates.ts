@@ -46,6 +46,10 @@ export const updates: UpdateEntry[] = [
         zh: "全站页脚新增公开联系邮箱，方便反馈内容、版权与维护问题。",
         en: "Added a public contact email to every page for content, rights, and maintenance enquiries.",
       },
+      {
+        zh: "修复站内锚点链接在跳转后反复锁定滚动位置的问题。",
+        en: "Fixed in-page fragment links repeatedly locking the scroll position after navigation.",
+      },
     ],
     commits: ["f161714", "bb9e735", "265b6ce", "bca721c", "35af62d", "5059cbc", "fee52be"],
   },

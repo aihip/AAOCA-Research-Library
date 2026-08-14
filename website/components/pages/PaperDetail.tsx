@@ -69,9 +69,9 @@ export function PaperDetail({ lang, paper }: { lang: Language; paper: Paper }) {
       <SiteHeader dict={dict} path={path} />
 
       <article className="paper-detail">
-        <Link className="back-link" href={href(dict, "/#library")}>
+        <a className="back-link" href={href(dict, "/#library")}>
           {dict.detail.backToAll}
-        </Link>
+        </a>
 
         <div className="paper-meta detail-meta">
           <span>{paper.year}</span>

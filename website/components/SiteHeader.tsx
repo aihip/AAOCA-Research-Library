@@ -24,8 +24,8 @@ export function SiteHeader({ dict, path }: SiteHeaderProps) {
 
       <nav aria-label={dict.nav.questions}>
         <Link href={href(dict, ANALYSIS_INDEX_PATH)}>{dict.nav.analysis}</Link>
-        <Link href={href(dict, "/#questions")}>{dict.nav.questions}</Link>
-        <Link href={href(dict, "/#library")}>{dict.nav.library}</Link>
+        <a href={href(dict, "/#questions")}>{dict.nav.questions}</a>
+        <a href={href(dict, "/#library")}>{dict.nav.library}</a>
         <Link href={href(dict, "/about")}>{dict.nav.about}</Link>
         <Link href={href(dict, "/updates")}>{dict.nav.updates}</Link>
         <a href={`${REPOSITORY_URL}/blob/main/RIGHTS.md`}>{dict.nav.rights}</a>
