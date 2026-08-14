@@ -10,9 +10,9 @@ Last curated: **2026-08-14**
 
 ## Collection at a glance
 
-- **87** unique literature records and **1010** verified PDF pages
-- **53 pediatric** records: 30 full-text records and 23 non-full-text access cards
-- **34 adult** records: 20 full-text records and 14 non-full-text access cards
+- **89** unique literature records and **1031** verified PDF pages
+- **54 pediatric** records: 31 full-text records and 23 non-full-text access cards
+- **35 adult** records: 21 full-text records and 14 non-full-text access cards
 - **9 expert consensus or guideline** entries, each indexed separately
 - DOI, PMID, PMCID, publisher/source entry, access status, file path, page count, byte count, and SHA-256 fields where available
 

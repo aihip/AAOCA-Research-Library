@@ -22,6 +22,7 @@ papers/adult/fulltext/2025_Shiri_AI_AAOCA_CCTA.pdf
 papers/adult/fulltext/2025_Varela_Barca_AAOCA_Spanish_Surgical_Outcomes.pdf
 papers/adult/fulltext/2026_Adult_MuSCAT_Invasive_Testing.pdf
 papers/adult/fulltext/2026_Mokhtari_CCTA_Geometry_FFR_Manuscript.pdf
+papers/adult/fulltext/2026_Stark_IVUS_Adenosine_vs_Dobutamine_FFR.pdf
 papers/adult/fulltext/2026_Verheijen_Adult_Intramural_Histology_reference.pdf
 papers/adult/non_fulltext/2014_NON_FULLTEXT_AAOCA_Surgical_Unroofing.pdf
 papers/adult/non_fulltext/2015_NON_FULLTEXT_CCTA_High_Risk_Anatomy_Outcomes.pdf
@@ -57,6 +58,7 @@ papers/pediatric/fulltext/2023_Surgical_Management_Trends.pdf
 papers/pediatric/fulltext/2023_Zhen_69_Children_AAOCA.pdf
 papers/pediatric/fulltext/2024_Doan_Pediatric_AAOCA_Review.pdf
 papers/pediatric/fulltext/2024_Puelz_Pediatric_AAOCA_FFR_Preprint.pdf
+papers/pediatric/fulltext/2025_Carter_Exercise_Stress_CMR_AAOCA.pdf
 papers/pediatric/fulltext/2025_China_Single_Center_Management.pdf
 papers/pediatric/fulltext/2025_Li_Pediatric_AAOCA_Right_Axillary_Thoracotomy.pdf
 papers/pediatric/fulltext/2025_Luo_Pediatric_AAOCA_Surgery_China.pdf

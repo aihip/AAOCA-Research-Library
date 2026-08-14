@@ -14,16 +14,16 @@ The **AAOCA Research Library** is a bilingual, deduplicated bibliography for ano
 - [术语与检索关键词](#术语与检索关键词)
 - [分类与使用规则](#分类与使用规则)
 - [专家共识与指南](#专家共识与指南9)
-- [儿童 - 全文](#儿童---全文30)
+- [儿童 - 全文](#儿童---全文31)
 - [儿童 - 非全文](#儿童---非全文23)
-- [成人 - 全文](#成人---全文20)
+- [成人 - 全文](#成人---全文21)
 - [成人 - 非全文](#成人---非全文14)
 - [完整性与去重](#完整性与去重)
 - [引用、许可与贡献](#引用许可与贡献)
 
 整理日期：2026-08-14
 
-当前仓库共收录 **87 条独立文献记录、1010 个 PDF 页面**：儿童类 **53 条**（30 全文、23 非全文），成人类 **34 条**（20 全文、14 非全文）。
+当前仓库共收录 **89 条独立文献记录、1031 个 PDF 页面**：儿童类 **54 条**（31 全文、23 非全文），成人类 **35 条**（21 全文、14 非全文）。
 
 > [!WARNING]
 > **凡文件名含 `NON_FULLTEXT`，均不是论文全文。** 这些条目因出版社付费墙、登录要求、反自动下载限制，或仅取得书目信息/会议摘要等原因，未在本地收录正式全文。每个文件只是一页书目访问卡，醒目标注“非全文”，并附 DOI、PMID（如已分配）及原始入口。**没有用摘要冒充论文，也不能把访问卡当作原文引用。**
@@ -75,7 +75,7 @@ TERMINOLOGY.md
 | 2017 | Expert consensus guidelines: Anomalous aortic origin of a coronary artery | Journal of Thoracic and Cardiovascular Surgery | 全文 | [PDF](<papers/pediatric/fulltext/2017_Brothers_AATS_AAOCA_Expert_Consensus.pdf>) |
 | 2015 | Eligibility and Disqualification Recommendations for Competitive Athletes With Cardiovascular Abnormalities: Task Force 4: Congenital Heart Disease: A Scientific Statement From the American Heart Association and American College of Cardiology | Circulation | 全文 | [PDF](<papers/pediatric/fulltext/2015_AHA_ACC_Competitive_Athlete_Eligibility_Combined_Statement.pdf>) |
 
-## 儿童 - 全文（30）
+## 儿童 - 全文（31）
 
 | 年份 | 论文 | 来源 | DOI/入口 | 获取状态 | 研究概况 | PDF |
 |:---:|---|---|---|---|---|:---:|
@@ -86,6 +86,7 @@ TERMINOLOGY.md
 | 2026 | Single-center clinical analysis of anomalous aortic origin of a coronary artery (AAOCA) in children: a multimodal imaging approach to risk stratification | Journal of Cardiothoracic Surgery | [10.1186/s13019-026-04667-9](https://doi.org/10.1186/s13019-026-04667-9) | 全文-reference | 儿童队列，58 例；出版社 Article in Press/reference 全文。 | [PDF](<papers/pediatric/fulltext/2026_Wang_Pediatric_AAOCA_Multimodal_Imaging_reference.pdf>) |
 | 2026 | Surgical Outcomes of anomalous aortic origin of coronary arteries: early and mid-term results from a single-center experience | BMC Pediatrics | [10.1186/s12887-026-06746-1](https://doi.org/10.1186/s12887-026-06746-1) | 全文 | 儿童外科队列，17 例。 | [PDF](<papers/pediatric/fulltext/2026_Cao_Pediatric_AAOCA_Surgical_Outcomes.pdf>) |
 | 2026 | Surgical Results for Anomalous Aortic Origin of Coronary Artery - Is Right Side Prompt Surgery Necessary? | Circulation Journal | [10.1253/circj.CJ-25-0097](https://doi.org/10.1253/circj.CJ-25-0097) | 全文 | 儿童外科队列，34 例；AAORCA 占 94.1%，32 例行去顶术；手术中位年龄 13.4 岁。 | [PDF](<papers/pediatric/fulltext/2026_Yun_Pediatric_AAOCA_Surgical_Results_Korea.pdf>) |
+| 2025 | Exercise stress cardiovascular magnetic resonance imaging is feasible in adolescents and young adults with anomalous coronary arteries | Journal of Cardiovascular Magnetic Resonance | [10.1016/j.jocmr.2025.101944](https://doi.org/10.1016/j.jocmr.2025.101944) | 全文 | 儿童与青年 AAOCA 运动负荷 CMR 可行性研究，38 例（右冠型 28 例），年龄 13–24 岁。 | [PDF](<papers/pediatric/fulltext/2025_Carter_Exercise_Stress_CMR_AAOCA.pdf>) |
 | 2025 | Right Axillary Thoracotomy for Anomalous Aortic Origin of a Coronary Artery in Children | Congenital Heart Disease | [10.32604/chd.2026.076517](https://doi.org/10.32604/chd.2026.076517) | 全文 | 儿童右腋下开胸病例系列，12 例；按正式卷期年份 2025 归档。 | [PDF](<papers/pediatric/fulltext/2025_Li_Pediatric_AAOCA_Right_Axillary_Thoracotomy.pdf>) |
 | 2025 | Surgical treatment of anomalous aortic origin of the coronary artery in paediatric patients: a Chinese single-center experience | BMC Surgery | [10.1186/s12893-025-02781-4](https://doi.org/10.1186/s12893-025-02781-4) | 全文 | 儿童外科队列，27 例。 | [PDF](<papers/pediatric/fulltext/2025_Luo_Pediatric_AAOCA_Surgery_China.pdf>) |
 | 2025 | The Diagnosis and Therapeutic Management of Anomalous Aortic Origin of the Coronary Artery: A Retrospective Study Conducted at a Single Center in China | Reviews in Cardiovascular Medicine | [10.31083/RCM33432](https://doi.org/10.31083/RCM33432) | 全文 | 中国单中心 AAOCA 诊断与治疗管理回顾性研究。 | [PDF](<papers/pediatric/fulltext/2025_China_Single_Center_Management.pdf>) |
@@ -140,12 +141,13 @@ TERMINOLOGY.md
 | 2010 | ⚠️ **非全文**<br>The registry of anomalous aortic origin of the coronary artery of the Congenital Heart Surgeons' Society | Cardiology in the Young | [10.1017/S1047951110001095](https://doi.org/10.1017/S1047951110001095) | [21087560](https://pubmed.ncbi.nlm.nih.gov/21087560/) | [原始入口](https://doi.org/10.1017/S1047951110001095) | [【非全文】PDF](<papers/pediatric/non_fulltext/2010_NON_FULLTEXT_CHSS_Registry.pdf>) |
 | 2003 | ⚠️ **非全文**<br>Outcome of unroofing procedure for repair of anomalous aortic origin of left or right coronary artery | The Annals of Thoracic Surgery | [10.1016/s0003-4975(03)00436-3](https://doi.org/10.1016/s0003-4975(03)00436-3) | [12902110](https://pubmed.ncbi.nlm.nih.gov/12902110/) | [原始入口](https://doi.org/10.1016/s0003-4975(03)00436-3) | [【非全文】PDF](<papers/pediatric/non_fulltext/2003_NON_FULLTEXT_Romp_Unroofing_Outcome_Neo_Ostium.pdf>) |
 
-## 成人 - 全文（20）
+## 成人 - 全文（21）
 
 | 年份 | 论文 | 来源 | DOI/入口 | 获取状态 | 研究概况 | PDF |
 |:---:|---|---|---|---|---|:---:|
 | 2026 | Adults with anomalous aortic origin of a coronary artery: impact of invasive functional testing on clinical decision making - insights from the MuSCAT registry | European Heart Journal - Imaging Methods and Practice | [10.1093/ehjimp/qyag010](https://doi.org/10.1093/ehjimp/qyag010) | 全文 | MuSCAT 注册研究；评估侵入性功能学检测对成人 AAOCA 临床决策的影响。 | [PDF](<papers/adult/fulltext/2026_Adult_MuSCAT_Invasive_Testing.pdf>) |
 | 2026 | Fluid dynamics-informed CCTA-derived geometric parameters in right coronary artery anomalies predict abnormal invasive Adenosine-FFR and Dobutamine-FFR | Computers in Biology and Medicine | [10.1016/j.compbiomed.2026.111851](https://doi.org/10.1016/j.compbiomed.2026.111851) | 全文-作者稿 | 81 名 R-AAOCA 成人；同时评估腺苷 FFR 与多巴酚丁胺 FFR；本地为完整作者稿。 | [PDF](<papers/adult/fulltext/2026_Mokhtari_CCTA_Geometry_FFR_Manuscript.pdf>) |
+| 2026 | Invasive Right Anomalous Coronary Arteries Assessment: Intravascular Ultrasound and Adenosine vs Dobutamine Fractional Flow Reserve | JACC: Advances | [10.1016/j.jacadv.2025.102526](https://doi.org/10.1016/j.jacadv.2025.102526) | 全文 | 成人 R-AAOCA 73 例；以多巴酚丁胺 FFR 为参照比较腺苷 FFR 与 IVUS。 | [PDF](<papers/adult/fulltext/2026_Stark_IVUS_Adenosine_vs_Dobutamine_FFR.pdf>) |
 | 2026 | Histological assessment of the intramural segment in adults with an anomalous aortic origin of a coronary artery with an interarterial course | BMC Cardiovascular Disorders | [10.1186/s12872-026-06000-7](https://doi.org/10.1186/s12872-026-06000-7) | 全文-reference | 成人组织学研究；出版社 Article in Press/reference 全文。 | [PDF](<papers/adult/fulltext/2026_Verheijen_Adult_Intramural_Histology_reference.pdf>) |
 | 2025 | AI-based detection and classification of anomalous aortic origin of coronary arteries using coronary CT angiography images | Nature Communications | [10.1038/s41467-025-58362-9](https://doi.org/10.1038/s41467-025-58362-9) | 全文 | 以成人冠脉 CCTA 工作流为主的大型 AI 数据集。 | [PDF](<papers/adult/fulltext/2025_Shiri_AI_AAOCA_CCTA.pdf>) |
 | 2025 | Anomalous Aortic Origin of a Coronary Artery: Results from a Single Surgical Team in Spain | World Journal for Pediatric and Congenital Heart Surgery | [10.1177/21501351241278684](https://doi.org/10.1177/21501351241278684) | 全文 | 成人外科队列，16 例；中位年龄 43.3 岁。 | [PDF](<papers/adult/fulltext/2025_Varela_Barca_AAOCA_Spanish_Surgical_Outcomes.pdf>) |
