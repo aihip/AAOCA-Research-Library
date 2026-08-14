@@ -1,18 +1,8 @@
 import { incrementPageView } from "./visits";
+import { normalizePagePath } from "./page-path";
 
 interface VisitEnv {
   DB: D1Database;
-}
-
-const contentPathPattern = /^(?:about|topics\/[a-z0-9-]+|papers\/[a-z0-9-]+)$/;
-
-function isPagePath(path: string): boolean {
-  const normalized = path.replace(/^\//, "").replace(/\/$/, "");
-  if (normalized === "" || normalized === "en") return true;
-  if (normalized.startsWith("en/")) {
-    return contentPathPattern.test(normalized.slice(3));
-  }
-  return contentPathPattern.test(normalized);
 }
 
 function json(body: unknown, status = 200): Response {
@@ -45,16 +35,15 @@ export async function handleVisit(request: Request, env: VisitEnv): Promise<Resp
     return json({ error: "Invalid JSON" }, 400);
   }
 
-  if (
-    typeof path !== "string"
-    || path.length > 160
-    || !path.startsWith("/")
-    || !isPagePath(path)
-  ) {
+  if (typeof path !== "string" || path.length > 160 || !path.startsWith("/")) {
     return json({ error: "Invalid page path" }, 400);
   }
 
-  const normalizedPath = path.length > 1 ? path.replace(/\/$/, "") : path;
+  const normalizedPath = normalizePagePath(path);
+  if (normalizedPath === null) {
+    return json({ error: "Invalid page path" }, 400);
+  }
+
   const count = await incrementPageView(env.DB, normalizedPath);
   return json({ count });
 }
