@@ -6,13 +6,13 @@
 
 The **AAOCA Research Library** is a bilingual, deduplicated bibliography on **anomalous aortic origin of a coronary artery (AAOCA)** and **anomalous aortic origin of the right coronary artery (AAORCA / ARCA-L)**. It covers pediatric and adult cohorts, expert consensus statements, clinical guidelines, multimodality imaging, ischemia and risk assessment, sports participation, and surgical management.
 
-Last curated: **2026-08-13**
+Last curated: **2026-08-14**
 
 ## Collection at a glance
 
-- **74** unique literature records and **691** verified PDF pages
-- **42 pediatric** records: 23 full-text records and 19 non-full-text access cards
-- **32 adult** records: 14 full-text records and 18 non-full-text access cards
+- **87** unique literature records and **704** verified PDF pages
+- **53 pediatric** records: 23 full-text records and 30 non-full-text access cards
+- **34 adult** records: 14 full-text records and 20 non-full-text access cards
 - **8 expert consensus or guideline** entries, each indexed separately
 - DOI, PMID, PMCID, publisher/source entry, access status, file path, page count, byte count, and SHA-256 fields where available
 
