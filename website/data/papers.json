@@ -385,7 +385,7 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文",
     "year": "2026",
     "title": "Multimodality Approach to Coronary Ischemic Testing in Pediatric Patients: A Scientific Statement From the American Heart Association",
     "journal": "Journal of the American Heart Association",
@@ -393,11 +393,11 @@
     "pmid": "41744120",
     "pmcid": "PMC13279187",
     "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13279187/",
-    "notes": "非全文书目访问卡；美国心脏协会关于儿童冠状动脉缺血检测的科学声明。PMC 有开放获取版本，但本库当前无法自动取得正式 PDF，未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2026_NON_FULLTEXT_AHA_Pediatric_Coronary_Ischemic_Testing_Statement.pdf",
-    "pages": "1",
-    "bytes": "62494",
-    "sha256": "2c70f730ab2ddf945a880921073c0a2b897be5ec32b40a43aafed38dd1362437"
+    "notes": "美国心脏协会关于儿童冠状动脉缺血检测的科学声明；Europe PMC 开放全文。",
+    "path": "papers/pediatric/fulltext/2026_AHA_Pediatric_Coronary_Ischemic_Testing_Statement.pdf",
+    "pages": "16",
+    "bytes": "1634389",
+    "sha256": "924accf79cba437193f7355dd53202dfb418dbdc4e583ffe1c7eb51b2f4f163d"
   },
   {
     "category": "儿童",
@@ -481,19 +481,19 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文",
     "year": "2025",
     "title": "The Diagnosis and Therapeutic Management of Anomalous Aortic Origin of the Coronary Artery: A Retrospective Study Conducted at a Single Center in China",
     "journal": "Reviews in Cardiovascular Medicine",
     "doi": "10.31083/RCM33432",
-    "pmid": "未分配或未检得（截至 2026-07-31）",
-    "pmcid": "",
-    "entry_url": "https://doi.org/10.31083/RCM33432",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2025_NON_FULLTEXT_China_Single_Center_Management.pdf",
-    "pages": "1",
-    "bytes": "70347",
-    "sha256": "c04bf2c3cfee08f29ff83d647f7b3cd6d5f458cdde9722b4132514e55aa33fe7"
+    "pmid": "40776969",
+    "pmcid": "PMC12326397",
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12326397/",
+    "notes": "中国单中心 AAOCA 诊断与治疗管理回顾性研究；出版社开放全文。",
+    "path": "papers/pediatric/fulltext/2025_China_Single_Center_Management.pdf",
+    "pages": "7",
+    "bytes": "279870",
+    "sha256": "fbbea7c2eecc09a42aee3909ee06a46f73952c3daad3d707b51b927faaeb8838"
   },
   {
     "category": "儿童",
@@ -513,7 +513,7 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文",
     "year": "2024",
     "title": "Anomalous Aortic Origin of a Coronary Artery in Pediatric Patients",
     "journal": "Current Pediatrics Reports",
@@ -521,11 +521,11 @@
     "pmid": "39816672",
     "pmcid": "PMC11729077",
     "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11729077/",
-    "notes": "非全文书目访问卡；儿童 AAOCA 风险评估与管理综述。PMC 有 CC BY 开放获取版本，但本库当前无法自动取得正式 PDF，未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2024_NON_FULLTEXT_Doan_Pediatric_AAOCA_Review.pdf",
-    "pages": "1",
-    "bytes": "61104",
-    "sha256": "dad8fbda391dbddb3e1240a8b5bcecfcbfad955c27a59f5c18ce0c2a6bd03414"
+    "notes": "儿童 AAOCA 风险评估与管理综述；CC BY 开放全文。",
+    "path": "papers/pediatric/fulltext/2024_Doan_Pediatric_AAOCA_Review.pdf",
+    "pages": "12",
+    "bytes": "1024424",
+    "sha256": "b021e8a43bf9abbb6592003528be28fff07b49fc140ee13c409819912e00be1a"
   },
   {
     "category": "儿童",
@@ -545,19 +545,19 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文",
     "year": "2023",
     "title": "Application of Patient-Specific Computational Fluid Dynamics in Anomalous Aortic Origin of Coronary Artery: A Systematic Review",
     "journal": "Journal of Cardiovascular Development and Disease",
     "doi": "10.3390/jcdd10090384",
     "pmid": "37754814",
-    "pmcid": "",
-    "entry_url": "https://doi.org/10.3390/jcdd10090384",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2023_NON_FULLTEXT_Patient_Specific_CFD_Systematic_Review.pdf",
-    "pages": "1",
-    "bytes": "68365",
-    "sha256": "63390950c883e6fe6ccdf576fc1c2d4cf63924b5d2a586f0a69fa1ca29ab9f06"
+    "pmcid": "PMC10532130",
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10532130/",
+    "notes": "AAOCA 患者特异性计算流体力学系统综述；开放全文。",
+    "path": "papers/pediatric/fulltext/2023_Patient_Specific_CFD_Systematic_Review.pdf",
+    "pages": "24",
+    "bytes": "2803054",
+    "sha256": "07ac8e2d98f74e0e316db55551d5e5f3504526c4d23c86270b7ea29f18b55050"
   },
   {
     "category": "儿童",
@@ -609,19 +609,19 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文",
     "year": "2023",
     "title": "Trends in surgical management of anomalous aortic origin of the coronary artery over 2 decades",
     "journal": "JTCVS Open",
     "doi": "10.1016/j.xjon.2023.07.017",
     "pmid": "38204671",
-    "pmcid": "",
-    "entry_url": "https://doi.org/10.1016/j.xjon.2023.07.017",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2023_NON_FULLTEXT_Surgical_Management_Trends.pdf",
-    "pages": "1",
-    "bytes": "66968",
-    "sha256": "fe5139622f029b5c41d5a6ab59c4d2eb343306b6e916a0505447fa5d4952c29e"
+    "pmcid": "PMC10774946",
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10774946/",
+    "notes": "AAOCA 外科管理 20 年趋势研究；JTCVS Open 开放全文。",
+    "path": "papers/pediatric/fulltext/2023_Surgical_Management_Trends.pdf",
+    "pages": "14",
+    "bytes": "1350780",
+    "sha256": "e48492f3ff2743496baccf0d74c562c9bd9965c4852f4bab56b0e7c4ecc68566"
   },
   {
     "category": "儿童",
@@ -721,7 +721,7 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文-作者稿",
     "year": "2018",
     "title": "Patients with anomalous aortic origin of the coronary artery remain at risk after surgical repair",
     "journal": "Journal of Thoracic and Cardiovascular Surgery",
@@ -729,11 +729,11 @@
     "pmid": "29526358",
     "pmcid": "PMC5960432",
     "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5960432/",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2018_NON_FULLTEXT_Postoperative_Risk.pdf",
-    "pages": "1",
-    "bytes": "68269",
-    "sha256": "9277da5bd562dd8a69e0d8894540cd2c91f4dc13d130806f60ed9e3666698034"
+    "notes": "60 例 AAOCA 修复术后队列；PMC 收录的完整 NIH 作者手稿，非出版社排版终稿。",
+    "path": "papers/pediatric/fulltext/2018_Postoperative_Risk_Author_Manuscript.pdf",
+    "pages": "22",
+    "bytes": "610735",
+    "sha256": "6d5af7de18bb84564475ca1a5656ba00bcaa41e90e6911a58ef73e92cbd1a5fc"
   },
   {
     "category": "儿童",
@@ -753,19 +753,19 @@
   },
   {
     "category": "儿童",
-    "access": "非全文",
+    "access": "全文-作者稿",
     "year": "2017",
     "title": "Relationship of Echocardiographic Z Scores Adjusted for Body Surface Area to Age, Sex, Race, and Ethnicity: The Pediatric Heart Network Normal Echocardiogram Database",
     "journal": "Circulation: Cardiovascular Imaging",
     "doi": "10.1161/CIRCIMAGING.117.006979",
     "pmid": "29138232",
     "pmcid": "PMC5812349",
-    "entry_url": "https://doi.org/10.1161/CIRCIMAGING.117.006979",
-    "notes": "非全文书目访问卡；儿童心脏网络（PHN）正常超声数据库的主要论文，是 PHN 公开 Z 值方程（含近端右冠状动脉）的来源项目。本库收录它是为了解释儿童冠脉正常值的参照方式，未使用摘要冒充论文全文。",
-    "path": "papers/pediatric/non_fulltext/2017_NON_FULLTEXT_Lopez_PHN_Normal_Echo_Z_Score_Database.pdf",
-    "pages": "1",
-    "bytes": "64522",
-    "sha256": "9f16603be2a83de0c621a1ebdb5c85fac38b46865de1f37829b3e837f7f6ceda"
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5812349/",
+    "notes": "儿童心脏网络（PHN）正常超声 Z 值数据库主要论文；PMC 收录的完整 NIH 作者手稿，非出版社排版终稿。",
+    "path": "papers/pediatric/fulltext/2017_Lopez_PHN_Normal_Echo_Z_Score_Database_Author_Manuscript.pdf",
+    "pages": "15",
+    "bytes": "378814",
+    "sha256": "9007a89602a1e1ec62a8d0bea94a3ee8346ad7c506468968b386203eec6fc172"
   },
   {
     "category": "儿童",
@@ -1073,19 +1073,19 @@
   },
   {
     "category": "成人",
-    "access": "非全文",
+    "access": "全文",
     "year": "2026",
     "title": "Adults with anomalous aortic origin of a coronary artery: impact of invasive functional testing on clinical decision making - insights from the MuSCAT registry",
     "journal": "European Heart Journal - Imaging Methods and Practice",
     "doi": "10.1093/ehjimp/qyag010",
     "pmid": "41742957",
-    "pmcid": "",
-    "entry_url": "https://doi.org/10.1093/ehjimp/qyag010",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/adult/non_fulltext/2026_NON_FULLTEXT_Adult_MuSCAT_Invasive_Testing.pdf",
-    "pages": "1",
-    "bytes": "67521",
-    "sha256": "6728908de0ba3050414db2089be8b59e81dcc3d80a33fcd5a4cd4fe6e6e0b358"
+    "pmcid": "PMC12931452",
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12931452/",
+    "notes": "MuSCAT 成人 AAOCA 注册研究；评估侵入性功能学检测对临床决策的影响；开放全文。",
+    "path": "papers/adult/fulltext/2026_Adult_MuSCAT_Invasive_Testing.pdf",
+    "pages": "12",
+    "bytes": "862702",
+    "sha256": "b511bcdcae1fcc4d0b421a6fee809cdbfd78d1469c5c81294685bf1a32faf05a"
   },
   {
     "category": "成人",
@@ -1153,7 +1153,7 @@
   },
   {
     "category": "成人",
-    "access": "非全文",
+    "access": "全文",
     "year": "2025",
     "title": "Surgical approach and outcomes in adults with anomalous aortic origin of coronary arteries at a reference center: Outcomes of proximal coronary surgery",
     "journal": "JTCVS Open",
@@ -1161,11 +1161,11 @@
     "pmid": "41169309",
     "pmcid": "PMC12570585",
     "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12570585/",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/adult/non_fulltext/2025_NON_FULLTEXT_Adult_Proximal_Coronary_Surgery.pdf",
-    "pages": "1",
-    "bytes": "67787",
-    "sha256": "6efcdad14b268689b7d2777dc5b4406b68facdd9d0eb26d44acd17736f9026af"
+    "notes": "成人 AAOCA 近端冠状动脉手术策略与结局；JTCVS Open/PMC 开放全文。",
+    "path": "papers/adult/fulltext/2025_Adult_Proximal_Coronary_Surgery.pdf",
+    "pages": "7",
+    "bytes": "496767",
+    "sha256": "cb58c17bace86f9ec4ba8708948bc138940e5b10597ddaaf6f88f274b063c1c4"
   },
   {
     "category": "成人",
@@ -1233,7 +1233,7 @@
   },
   {
     "category": "成人",
-    "access": "非全文",
+    "access": "全文",
     "year": "2022",
     "title": "Coronary artery disease in adults with anomalous aortic origin of a coronary artery",
     "journal": "JTCVS Open",
@@ -1241,11 +1241,11 @@
     "pmid": "36004264",
     "pmcid": "PMC9390708",
     "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9390708/",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/adult/non_fulltext/2022_NON_FULLTEXT_Adult_AAOCA_Coronary_Disease.pdf",
-    "pages": "1",
-    "bytes": "67224",
-    "sha256": "342543e3086d7e73467ac4e93b2317606def6a3b8e69dc5be191942f7d9de138"
+    "notes": "成人 AAOCA 合并冠状动脉粥样硬化性疾病的队列研究；JTCVS Open/PMC 开放全文。",
+    "path": "papers/adult/fulltext/2022_Adult_AAOCA_Coronary_Disease.pdf",
+    "pages": "17",
+    "bytes": "1079120",
+    "sha256": "c4d1a7d0118b9fb20c5c2d9f7b889b01500e55bd1142a54675dcab13df782574"
   },
   {
     "category": "成人",
@@ -1265,23 +1265,23 @@
   },
   {
     "category": "成人",
-    "access": "非全文",
+    "access": "全文",
     "year": "2021",
     "title": "The significance of symptoms before and after surgery for anomalous aortic origin of coronary arteries in adolescents and adults",
     "journal": "Interactive CardioVascular and Thoracic Surgery",
     "doi": "10.1093/icvts/ivaa234",
     "pmid": "33221843",
-    "pmcid": "",
-    "entry_url": "https://doi.org/10.1093/icvts/ivaa234",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/adult/non_fulltext/2021_NON_FULLTEXT_Adolescent_Adult_Surgical_Symptoms.pdf",
-    "pages": "1",
-    "bytes": "66254",
-    "sha256": "ed09fc8e12126072df213049c25457d2bf5cb58f4ae2e39aee713bb218b7eb51"
+    "pmcid": "PMC8906714",
+    "entry_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8906714/",
+    "notes": "青少年与成人 AAOCA 手术前后症状及中期结局队列；完整期刊全文。",
+    "path": "papers/adult/fulltext/2021_Adolescent_Adult_Surgical_Symptoms.pdf",
+    "pages": "8",
+    "bytes": "780528",
+    "sha256": "49305e1a62b025fc717106c07a29043aa7e4b86ecd307cbffd58539f92f8e42f"
   },
   {
     "category": "成人",
-    "access": "非全文",
+    "access": "全文",
     "year": "2020",
     "title": "2020 ESC Guidelines for the management of adult congenital heart disease",
     "journal": "European Heart Journal",
@@ -1289,11 +1289,11 @@
     "pmid": "32860028",
     "pmcid": "",
     "entry_url": "https://doi.org/10.1093/eurheartj/ehaa554",
-    "notes": "非全文书目访问卡；未使用摘要冒充论文全文。",
-    "path": "papers/adult/non_fulltext/2020_NON_FULLTEXT_ESC_Adult_CHD_Guideline.pdf",
-    "pages": "1",
-    "bytes": "66463",
-    "sha256": "1ce9306f71d19975a37ff831ee7f48c8485b25327e2cfee37e8e4b8654655982"
+    "notes": "ESC 成人先天性心脏病指南；从 Amsterdam UMC 机构仓储取得的出版社 PDF（Version of Record，CC BY）。",
+    "path": "papers/adult/fulltext/2020_ESC_Adult_CHD_Guideline.pdf",
+    "pages": "85",
+    "bytes": "3365763",
+    "sha256": "08325d4512e27a69973b633face1da634a85fdfb3c48220be284ac986a203b7a"
   },
   {
     "category": "成人",

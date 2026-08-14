@@ -25,13 +25,13 @@ const copy: ArticleCopy = {
     en: "Open a library record for its DOI, PMID, access status, and curator note.",
   },
   sources: [
-    { slug: "2017-9f16603be2a8", title: { zh: "PHN 正常超声 Z 值数据库", en: "PHN normal echocardiogram Z-score database" } },
+    { slug: "2017-9007a89602a1", title: { zh: "PHN 正常超声 Z 值数据库", en: "PHN normal echocardiogram Z-score database" } },
     { slug: "2026-94384acd16a9", title: { zh: "CCTA 几何参数与腺苷/多巴酚丁胺 FFR", en: "CCTA geometry versus adenosine and dobutamine FFR" } },
     { slug: "2026-d29299373d7f", title: { zh: "广东 151 例儿童 AAORCA", en: "Guangdong 151-child AAORCA cohort" } },
     { slug: "2023-6b0bf46bb67e", title: { zh: "Texas Children’s 220 例儿童 R-AAOCA", en: "Texas Children’s 220-child R-AAOCA cohort" } },
     { slug: "2026-d6beccc7969e", title: { zh: "AAOCA 标准化命名国际建议", en: "Proposed standardized nomenclature for AAOCA" } },
     { slug: "2020-27b1754e3df3", title: { zh: "ASE 先天性冠脉异常多模态评估指南", en: "ASE multimodality assessment guideline" } },
-    { slug: "2024-dad8fbda391d", title: { zh: "儿童 AAOCA 风险评估与管理综述", en: "Review: AAOCA in pediatric patients" } },
+    { slug: "2024-b021e8a43bf9", title: { zh: "儿童 AAOCA 风险评估与管理综述", en: "Review: AAOCA in pediatric patients" } },
   ],
   externalHeading: {
     zh: "本库未收录、但本文用到的公开资料：",
