@@ -17,6 +17,7 @@ export const en: Dictionary = {
 
   nav: {
     analysis: "Analysis",
+    care: "Care in China",
     questions: "Questions",
     library: "All records",
     about: "About",
@@ -254,6 +255,7 @@ export const en: Dictionary = {
     contributing: "Contributing",
     updates: "Updates",
     experiences: "Community experiences",
+    care: "Care in China",
     contact: "Contact",
     github: "GitHub",
     visitCount: "Page views",

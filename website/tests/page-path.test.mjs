@@ -5,6 +5,7 @@ import { normalizePagePath } from "../db/page-path.ts";
 const pagePaths = [
   "/",
   "/about",
+  "/care-in-china",
   "/updates",
   "/experiences",
   "/experiences/aaorca-family-consultations",
@@ -14,6 +15,7 @@ const pagePaths = [
   "/papers/2026-d29299373d7f",
   "/en",
   "/en/about",
+  "/en/care-in-china",
   "/en/updates",
   "/en/experiences",
   "/en/experiences/aaorca-family-consultations",

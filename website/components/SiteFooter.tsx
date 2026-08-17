@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { href, type Dictionary } from "../lib/i18n";
 import { CONTACT_EMAIL, REPOSITORY_URL } from "../lib/site";
+import { CARE_IN_CHINA_PATH } from "../lib/care";
 import { VisitCounter } from "./VisitCounter";
 
 export function SiteFooter({ dict }: { dict: Dictionary }) {
@@ -26,6 +27,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
         </a>
         <Link href={href(dict, "/updates")}>{dict.footer.updates}</Link>
         <Link href={href(dict, "/experiences")}>{dict.footer.experiences}</Link>
+        <Link href={href(dict, CARE_IN_CHINA_PATH)}>{dict.footer.care}</Link>
         <a href={`mailto:${CONTACT_EMAIL}`}>
           {dict.footer.contact}: {CONTACT_EMAIL}
         </a>

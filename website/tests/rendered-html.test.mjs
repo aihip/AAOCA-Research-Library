@@ -245,7 +245,7 @@ test("English tree renders independently with its own document language", async 
 });
 
 test("both trees declare each other as hreflang alternates", async () => {
-  const paths = ["/", "/updates", "/experiences/aaorca-family-consultations", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", "/care-in-china", "/updates", "/experiences/aaorca-family-consultations", ANALYSIS_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
 
   for (const path of paths) {
     const zhHtml = await renderHtml(path);
@@ -509,6 +509,44 @@ test("the contact email is visible and usable across both language trees", async
   }
 });
 
+test("the China care directory is sourced, bilingual, and avoids clinical endorsement", async () => {
+  const zhHtml = await renderHtml("/care-in-china");
+
+  for (const name of ["李守军", "杨克明", "芮璐", "王强", "吴永涛", "李勇刚"]) {
+    assert.match(zhHtml, new RegExp(name));
+  }
+
+  assert.match(zhHtml, /阜外医院/);
+  assert.match(zhHtml, /北京安贞医院/);
+  assert.match(zhHtml, /重庆医科大学附属儿童医院/);
+  assert.match(zhHtml, /上海儿童医学中心/);
+  assert.match(zhHtml, /不是全国排名、转诊意见、广告或疗效保证/);
+  assert.match(zhHtml, /不能说明所有 AAOCA 都适合小切口/);
+  assert.match(zhHtml, /不要只按医生姓名、城市或切口大小做决定/);
+  assert.match(zhHtml, /原始 DICOM/);
+  assert.match(zhHtml, /拨打 120/);
+
+  for (const domain of [
+    "fuwaihospital.org",
+    "anzhen.org.cn",
+    "chcmu.com",
+    "shsmu.edu.cn",
+    "scmc.com.cn",
+  ]) {
+    assert.match(zhHtml, new RegExp(domain.replace(".", "\\.")));
+  }
+
+  const enHtml = await renderHtml("/en/care-in-china");
+  assert.match(enHtml, /Teams in China to approach for an AAOCA discussion/);
+  assert.match(enHtml, /not a national ranking, referral, advertisement, or promise of outcome/);
+  assert.match(enHtml, /Li Shoujun/);
+  assert.match(enHtml, /Shanghai Children&#x27;s Medical Center/);
+
+  for (const path of ["/", "/about", "/en", "/en/about"]) {
+    assert.match(await renderHtml(path), /href="(?:\/en)?\/care-in-china\/"/);
+  }
+});
+
 test("the community experience is bilingual, de-identified, and separated from evidence", async () => {
   const zhIndex = await renderHtml("/experiences");
   assert.match(zhIndex, /别人是怎样一路问下去的/);
@@ -623,7 +661,7 @@ test("canonical URLs, alternates, and internal links resolve without a redirect"
     assert.match(url, /\/$/, `sitemap entry is not slash-terminated: ${url}`);
   }
 
-  const paths = ["/", "/en", "/about", "/updates", "/experiences", "/experiences/aaorca-family-consultations", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
+  const paths = ["/", "/en", "/about", "/care-in-china", "/updates", "/experiences", "/experiences/aaorca-family-consultations", ANALYSIS_INDEX_PATH, "/topics/sports", `/papers/${slugFor(records[0])}`];
   for (const path of paths) {
     const html = await renderHtml(path);
 
@@ -673,15 +711,17 @@ test("publishes a canonical sitemap and robots policy for both trees", async () 
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
 
-  // (landing + about + updates + experience index + one experience + analysis index
+  // (landing + about + care directory + updates + experience index + one experience + analysis index
   // + one per analysis + one per question + one per record) x 2 trees.
-  const perTree = 6 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
+  const perTree = 7 + ANALYSIS_SLUGS.length + TOPIC_SLUGS.length + records.length;
   assert.equal((sitemap.match(/<url>/g) ?? []).length, perTree * 2);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/papers\//);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/topics\/sports/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/about/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/about/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/care-in-china/);
+  assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/care-in-china/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/updates/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/en\/updates/);
   assert.match(sitemap, /https:\/\/aaoca\.pheth\.com\/experiences\/aaorca-family-consultations/);

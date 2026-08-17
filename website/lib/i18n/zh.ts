@@ -17,6 +17,7 @@ export const zh: Dictionary = {
 
   nav: {
     analysis: "最新分析",
+    care: "中国就医",
     questions: "常见问题",
     library: "全部文献",
     about: "关于本站",
@@ -251,6 +252,7 @@ export const zh: Dictionary = {
     contributing: "参与维护",
     updates: "更新历史",
     experiences: "网友经验",
+    care: "中国就医线索",
     contact: "联系邮箱",
     github: "GitHub",
     visitCount: "本页累计访问",

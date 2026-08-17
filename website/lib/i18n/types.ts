@@ -18,6 +18,7 @@ export type Dictionary = {
 
   nav: {
     analysis: string;
+    care: string;
     questions: string;
     library: string;
     about: string;
@@ -171,6 +172,7 @@ export type Dictionary = {
     contributing: string;
     updates: string;
     experiences: string;
+    care: string;
     contact: string;
     github: string;
     visitCount: string;

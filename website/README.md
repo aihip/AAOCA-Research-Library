@@ -13,6 +13,7 @@ plain-language primer, then six question pages, then the full searchable index:
 ```text
 /                      Chinese landing page
 /analysis/…            dated evidence synthesis and comparison article
+/care-in-china         China care institutions and clinician leads
 /topics/[slug]         one page per family question
 /papers/[slug]         one page per bibliography record
 /en, /en/analysis/…    the English tree, same components

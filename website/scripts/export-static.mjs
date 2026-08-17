@@ -91,6 +91,7 @@ const ANALYSIS_SLUGS = [
 const pagePaths = LANGUAGE_PREFIXES.flatMap((prefix) => [
   prefix || "/",
   `${prefix}/about`,
+  `${prefix}/care-in-china`,
   `${prefix}/updates`,
   `${prefix}/experiences`,
   `${prefix}/experiences/aaorca-family-consultations`,
