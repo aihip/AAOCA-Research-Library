@@ -12,6 +12,36 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    date: "2026-08-17",
+    title: {
+      zh: "新增中国就医线索与家长会诊建议",
+      en: "Added China care leads and consultation guidance for families",
+    },
+    summary: {
+      zh: "整理可由官方资料核实的国内医院与医生线索，并补充选择中心、核实同类手术经验和取得独立第二意见的实用建议。",
+      en: "Added officially verifiable hospital and clinician leads in China, together with practical guidance on choosing a centre, checking directly comparable surgical experience, and obtaining an independent second opinion.",
+    },
+    changes: [
+      {
+        zh: "新增阜外医院、北京安贞医院、重庆医科大学附属儿童医院和上海儿童医学中心等就医线索，并明确这不是排名、转诊或疗效背书。",
+        en: "Added care leads for Fuwai Hospital, Beijing Anzhen Hospital, Children's Hospital of Chongqing Medical University, and Shanghai Children's Medical Center, with explicit limits against treating the list as a ranking, referral, or endorsement.",
+      },
+      {
+        zh: "建议家长多咨询大型先心病中心，重点核实主刀医生对相似冠脉解剖和相近术式的实际病例经验，并正视心脏手术的真实风险。",
+        en: "Advised families to consult multiple large congenital-heart centres, verify the operating surgeon's experience with comparable coronary anatomy and repairs, and treat the operation as real heart surgery with genuine risk.",
+      },
+      {
+        zh: "新增“先独立看片、后比较方案”的第二意见方法：不先用其他医生的姓名或结论给新会诊定调，同时强调必须如实提供完整病史并回答医生提问。",
+        en: "Added an independent-second-opinion sequence: let the new clinician review the images before introducing other clinicians' names or conclusions, while still disclosing the full medical history and answering questions honestly.",
+      },
+      {
+        zh: "为旧版论文地址增加永久跳转，避免历史链接继续形成重复页面或无效索引入口。",
+        en: "Added permanent redirects for legacy paper URLs so old links no longer create duplicate or invalid indexing entry points.",
+      },
+    ],
+    commits: ["8c715cf", "7126f1b", "e38bcb9", "cc86188"],
+  },
+  {
     date: "2026-08-14",
     title: {
       zh: "分析体系扩充，文献库增至 91 条",

@@ -488,12 +488,17 @@ test("the about page says who compiled this and that no clinician checked it", a
 test("the update history is bilingual, traceable, and reachable site-wide", async () => {
   const zhHtml = await renderHtml("/updates");
   assert.match(zhHtml, /更新历史/);
+  assert.match(zhHtml, /新增中国就医线索与家长会诊建议/);
+  assert.match(zhHtml, /2026-08-17/);
+  assert.match(zhHtml, /先独立看片、后比较方案/);
+  assert.match(zhHtml, /github\.com\/aihip\/AAOCA-Research-Library\/commit\/cc86188/);
   assert.match(zhHtml, /双语患者版文献库上线/);
   assert.match(zhHtml, /2026-07-31/);
   assert.match(zhHtml, /github\.com\/aihip\/AAOCA-Research-Library\/commit\/f161714/);
 
   const enHtml = await renderHtml("/en/updates");
   assert.match(enHtml, /Update history/);
+  assert.match(enHtml, /Added China care leads and consultation guidance for families/);
   assert.match(enHtml, /Bilingual patient-facing library launched/);
 
   for (const path of ["/", "/about", "/topics/sports"]) {
