@@ -183,6 +183,30 @@ export const careInstitutions: CareInstitution[] = [
   },
 ];
 
+export const careVolumeSources = [
+  {
+    url: "https://pubmed.ncbi.nlm.nih.gov/37652353/",
+    label: {
+      zh: "先心病外科中心手术量与结局（STS 数据库，2023）",
+      en: "Congenital heart-surgery centre volume and outcomes (STS database, 2023)",
+    },
+  },
+  {
+    url: "https://pubmed.ncbi.nlm.nih.gov/9606220/",
+    label: {
+      zh: "医院与术者手术量和儿童心脏手术死亡率（1998）",
+      en: "Hospital and surgeon volume in pediatric cardiac surgery (1998)",
+    },
+  },
+  {
+    url: "https://pubmed.ncbi.nlm.nih.gov/38290594/",
+    label: {
+      zh: "为什么不能只用手术量判断质量（2024）",
+      en: "Why volume alone cannot determine quality (2024)",
+    },
+  },
+] as const;
+
 export const careInChinaCopy = {
   zh: {
     metaTitle: "中国就医机构与专家线索｜冠状动脉起源异常文献库",
@@ -192,6 +216,14 @@ export const careInChinaCopy = {
     lede: "这份清单把家属提出的医生和机构逐一对照医院官网，帮助你找到挂号入口和提问方向。它不是全国排名、转诊意见、广告或疗效保证。",
     warningTitle: "先看边界",
     warning: "是否需要手术、适合去顶术还是再植等其他修复，以及能不能采用小切口，都取决于具体冠脉开口、壁内段、走行、缺血证据和团队判断。不要只按医生姓名、城市或切口大小做决定。",
+    familyAdviceTitle: "给家长最实际的建议",
+    familyAdviceBody: [
+      "尽量多咨询几家，让不同的大型先心病中心直接看冠脉 CTA 原始影像。AAOCA 少见，不要只问医生一年做多少台心脏手术，要具体问：做过多少例与你相近的冠脉解剖、多少例相同或相近的修复术式、通常由谁主刀，以及围手术期和随访结果怎样。",
+      "如果最后需要手术，要把它当作真正的心脏手术来准备，不是“小手术”。在病情允许、医生没有要求紧急处理的前提下，宁可多花时间核对，也尽量选择病例量较大、影像评估、心外科、麻醉、体外循环和术后重症监护完整的大型中心，并优先找做过较多同类手术的医生。",
+      "家长无法改变孩子的先天解剖，也无法把手术风险降到零。多咨询、找对中心、核实同类经验，几乎是家长在术前唯一能主动把握的部分，也是最值得认真做的功课。",
+    ],
+    volumeEvidence: "研究总体支持先心病外科的中心量和术者量与结局存在关联，复杂手术尤其明显；但手术量只是重要线索，不是质量或个人疗效的保证。还要一起询问相近病例、并发症、再次干预、团队配置和随访。",
+    volumeSourcesTitle: "这项建议依据的研究",
     selectionTitle: "为什么只列这些",
     selectionBody: [
       "目前只收录本项目维护者或患者家属提出、且能通过医院或医学院官方页面核实的线索。没有出现在这里，不代表医院或医生能力较弱；出现在这里，也不等于本站为其背书。",
@@ -229,6 +261,14 @@ export const careInChinaCopy = {
     lede: "This directory checks family-suggested clinicians and institutions against official hospital sources, then points you to the booking trail and questions to ask. It is not a national ranking, referral, advertisement, or promise of outcome.",
     warningTitle: "Read the boundary first",
     warning: "Whether surgery is indicated, whether unroofing, reimplantation, or another repair fits, and whether a small incision is appropriate all depend on the exact ostium, intramural segment, course, ischemia evidence, and the treating team's judgment. Do not decide from a name, city, or incision size alone.",
+    familyAdviceTitle: "The most practical advice for families",
+    familyAdviceBody: [
+      "Seek several opinions and have more than one large congenital-heart centre review the original coronary CTA. AAOCA is rare, so do not ask only how many heart operations a surgeon performs. Ask how many patients had anatomy like yours, how many underwent the same or a similar repair, who normally operates, and what the perioperative and follow-up results were.",
+      "If surgery is ultimately needed, prepare for it as real heart surgery—not a “minor operation”. When the condition is stable and the treating team has not advised urgent action, take the time to check the evidence. Prefer a larger centre with substantial case volume and complete imaging, surgery, anesthesia, perfusion, and cardiac intensive-care support, and look for a surgeon with meaningful experience in the same kind of repair.",
+      "A family cannot change the congenital anatomy or reduce surgical risk to zero. Seeking several opinions, choosing the team carefully, and checking directly comparable experience are almost the only parts families can actively control before an operation—and they are worth doing thoroughly.",
+    ],
+    volumeEvidence: "Research generally supports an association between congenital-heart centre and surgeon volume and outcomes, particularly for more complex operations. Volume is an important signal, not a guarantee of quality or an individual's result. Ask about comparable cases, complications, reintervention, team support, and follow-up as well.",
+    volumeSourcesTitle: "Research behind this advice",
     selectionTitle: "Why this is a short list",
     selectionBody: [
       "For now, it includes only leads proposed by this project's maintainer or patient families that can be verified on an official hospital or medical-school page. Absence is not a negative judgment; inclusion is not an endorsement.",

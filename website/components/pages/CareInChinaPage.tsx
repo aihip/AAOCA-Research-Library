@@ -5,6 +5,7 @@ import {
   CARE_IN_CHINA_PATH,
   careInChinaCopy,
   careInstitutions,
+  careVolumeSources,
 } from "../../lib/care";
 import { getDictionary, href, type Language } from "../../lib/i18n";
 
@@ -31,6 +32,26 @@ export function CareInChinaPage({ lang }: { lang: Language }) {
           <strong>{copy.warningTitle}</strong>
           <p>{copy.warning}</p>
         </aside>
+
+        <section className="care-family-advice">
+          <h2>{copy.familyAdviceTitle}</h2>
+          {copy.familyAdviceBody.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="care-volume-evidence">{copy.volumeEvidence}</p>
+          <div className="care-volume-sources">
+            <strong>{copy.volumeSourcesTitle}</strong>
+            <ul>
+              {careVolumeSources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} target="_blank" rel="noreferrer">
+                    {source.label[lang]} <span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <section className="care-selection">
           <h2>{copy.selectionTitle}</h2>

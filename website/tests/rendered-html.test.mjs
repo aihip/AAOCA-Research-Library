@@ -523,6 +523,14 @@ test("the China care directory is sourced, bilingual, and avoids clinical endors
   assert.match(zhHtml, /不是全国排名、转诊意见、广告或疗效保证/);
   assert.match(zhHtml, /不能说明所有 AAOCA 都适合小切口/);
   assert.match(zhHtml, /不要只按医生姓名、城市或切口大小做决定/);
+  assert.match(zhHtml, /给家长最实际的建议/);
+  assert.match(zhHtml, /尽量多咨询几家/);
+  assert.match(zhHtml, /不是“小手术”/);
+  assert.match(zhHtml, /做过较多同类手术的医生/);
+  assert.match(zhHtml, /几乎是家长在术前唯一能主动把握的部分/);
+  assert.match(zhHtml, /手术量只是重要线索，不是质量或个人疗效的保证/);
+  assert.match(zhHtml, /pubmed\.ncbi\.nlm\.nih\.gov\/37652353/);
+  assert.match(zhHtml, /pubmed\.ncbi\.nlm\.nih\.gov\/38290594/);
   assert.match(zhHtml, /原始 DICOM/);
   assert.match(zhHtml, /拨打 120/);
 
@@ -539,6 +547,8 @@ test("the China care directory is sourced, bilingual, and avoids clinical endors
   const enHtml = await renderHtml("/en/care-in-china");
   assert.match(enHtml, /Teams in China to approach for an AAOCA discussion/);
   assert.match(enHtml, /not a national ranking, referral, advertisement, or promise of outcome/);
+  assert.match(enHtml, /The most practical advice for families/);
+  assert.match(enHtml, /not a “minor operation”/);
   assert.match(enHtml, /Li Shoujun/);
   assert.match(enHtml, /Shanghai Children&#x27;s Medical Center/);
 

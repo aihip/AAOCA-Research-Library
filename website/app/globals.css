@@ -1631,6 +1631,69 @@ footer .visit-counter {
   margin-top: 58px;
 }
 
+.care-family-advice {
+  max-width: 900px;
+  margin-top: 44px;
+  padding: clamp(26px, 5vw, 44px);
+  border: 1px solid rgba(13, 75, 77, 0.22);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(200, 132, 47, 0.13), transparent 22rem),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.care-family-advice h2 {
+  margin: 0 0 18px;
+  color: var(--teal-dark);
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.22;
+}
+
+.care-family-advice > p {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.care-family-advice .care-volume-evidence {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--teal);
+  background: var(--teal-pale);
+  color: var(--teal-dark);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+.care-volume-sources {
+  margin-top: 20px;
+}
+
+.care-volume-sources strong {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.care-volume-sources ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.care-volume-sources li {
+  margin: 5px 0;
+}
+
+.care-volume-sources a {
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
 .care-selection h2,
 .care-prep h2,
 .care-questions h2 {
@@ -1814,7 +1877,8 @@ footer .visit-counter {
 
   .care-warning,
   .care-emergency,
-  .care-expert {
+  .care-expert,
+  .care-family-advice {
     padding: 18px;
   }
 }
