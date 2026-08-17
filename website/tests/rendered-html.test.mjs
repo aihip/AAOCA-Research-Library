@@ -6,6 +6,10 @@ const records = JSON.parse(
   await readFile(new URL("../data/papers.json", import.meta.url), "utf8"),
 );
 
+const legacyPaperSlugs = JSON.parse(
+  await readFile(new URL("../data/legacy-paper-slugs.json", import.meta.url), "utf8"),
+);
+
 const plainLanguage = JSON.parse(
   await readFile(new URL("../data/plain-language.json", import.meta.url), "utf8"),
 );
@@ -633,6 +637,33 @@ test("canonical URLs, alternates, and internal links resolve without a redirect"
       const url = link.slice(6, -1);
       if (url.startsWith("/assets/") || /\.[a-z0-9]+$/i.test(url)) continue;
       assert.match(url, /\/$/, `${path} links to a redirecting URL: ${url}`);
+    }
+  }
+});
+
+test("legacy checksum paper URLs permanently redirect to the current records", async () => {
+  const redirects = await readFile(
+    new URL("../dist/client/_redirects", import.meta.url),
+    "utf8",
+  );
+  const lines = redirects.trim().split("\n");
+
+  assert.equal(lines.length, legacyPaperSlugs.length * 2);
+
+  for (const legacy of legacyPaperSlugs) {
+    const paper = records.find((record) => record.doi === legacy.doi);
+    assert.ok(paper, `${legacy.slug} has no current record for ${legacy.doi}`);
+
+    const currentSlug = slugFor(paper);
+    assert.notEqual(legacy.slug, currentSlug, `${legacy.slug} is not a legacy slug`);
+
+    for (const prefix of ["", "/en"]) {
+      assert.ok(
+        lines.includes(
+          `${prefix}/papers/${legacy.slug}/ ${prefix}/papers/${currentSlug}/ 301`,
+        ),
+        `${prefix}/papers/${legacy.slug}/ does not redirect to the current record`,
+      );
     }
   }
 });

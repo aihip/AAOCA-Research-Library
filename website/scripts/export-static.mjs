@@ -7,11 +7,13 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(scriptDir, "..");
 const clientRoot = resolve(siteRoot, "dist/client");
 const dataPath = resolve(siteRoot, "data/papers.json");
+const legacySlugsPath = resolve(siteRoot, "data/legacy-paper-slugs.json");
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("static", createHash("sha1").update(String(Date.now())).digest("hex"));
 
 const { default: worker } = await import(workerUrl.href);
 const papers = JSON.parse(await readFile(dataPath, "utf8"));
+const legacyPaperSlugs = JSON.parse(await readFile(legacySlugsPath, "utf8"));
 
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
@@ -103,6 +105,37 @@ const pagePaths = LANGUAGE_PREFIXES.flatMap((prefix) => [
 for (const pathname of pagePaths) {
   await writeRendered(pathname, await render(pathname));
 }
+
+// Paper URLs use a short content checksum. When a better copy of the same PDF
+// replaces an earlier file, keep the published URL alive by resolving its DOI
+// to the record's current checksum slug. Cloudflare Pages applies this file
+// before serving the custom noindex 404 page.
+const papersByDoi = new Map(papers.map((paper) => [paper.doi, paper]));
+const redirectLines = [];
+
+for (const legacy of legacyPaperSlugs) {
+  const paper = papersByDoi.get(legacy.doi);
+  if (!paper) {
+    throw new Error(`Legacy paper slug ${legacy.slug} has no current DOI match: ${legacy.doi}`);
+  }
+
+  const currentSlug = `${paper.year}-${paper.sha256.slice(0, 12)}`;
+  if (currentSlug === legacy.slug) {
+    throw new Error(`Legacy paper slug is still current: ${legacy.slug}`);
+  }
+
+  for (const prefix of LANGUAGE_PREFIXES) {
+    redirectLines.push(
+      `${prefix}/papers/${legacy.slug}/ ${prefix}/papers/${currentSlug}/ 301`,
+    );
+  }
+}
+
+await writeFile(
+  resolve(clientRoot, "_redirects"),
+  `${redirectLines.join("\n")}\n`,
+  "utf8",
+);
 
 await writeRendered("/robots.txt", await render("/robots.txt", "text/plain"));
 await writeRendered("/sitemap.xml", await render("/sitemap.xml", "application/xml"));
