@@ -207,6 +207,23 @@ export const careVolumeSources = [
   },
 ] as const;
 
+export const careIndependentOpinionSources = [
+  {
+    url: "https://pubmed.ncbi.nlm.nih.gov/41020455/",
+    label: {
+      zh: "既往诊断怎样影响独立第二意见（随机试验，2026）",
+      en: "How a prior diagnosis influences an independent second opinion (randomized trial, 2026)",
+    },
+  },
+  {
+    url: "https://pubmed.ncbi.nlm.nih.gov/37358843/",
+    label: {
+      zh: "医生临床决策中的锚定效应（2023）",
+      en: "Anchoring bias in physician decision-making (2023)",
+    },
+  },
+] as const;
+
 export const careInChinaCopy = {
   zh: {
     metaTitle: "中国就医机构与专家线索｜冠状动脉起源异常文献库",
@@ -222,6 +239,14 @@ export const careInChinaCopy = {
       "如果最后需要手术，要把它当作真正的心脏手术来准备，不是“小手术”。在病情允许、医生没有要求紧急处理的前提下，宁可多花时间核对，也尽量选择病例量较大、影像评估、心外科、麻醉、体外循环和术后重症监护完整的大型中心，并优先找做过较多同类手术的医生。",
       "家长无法改变孩子的先天解剖，也无法把手术风险降到零。多咨询、找对中心、核实同类经验，几乎是家长在术前唯一能主动把握的部分，也是最值得认真做的功课。",
     ],
+    independentOpinionTitle: "每换一位医生，先拿一次独立意见",
+    independentOpinionBody: [
+      "每见一位新医生，可以先把这次当作真正的初诊。先交冠脉 CTA 原始 DICOM 和完整检查资料，请对方独立看片并说出自己的判断。在医生形成初步意见前，不必主动说已经看过哪些医生，也不要先转述上一位医生建议手术还是观察、建议哪种术式。医生姓名本身不能代替对当前影像的判断，过早给出既有结论，可能让讨论被前一个方案带着走。",
+      "等新医生给出自己的解剖判断和方案后，再拿出其他中心的意见，逐项询问为什么不同。这样得到的才是可以相互比较的第二意见，而不是对前一个结论的简单表态。",
+      "这不等于隐瞒病史，更不能编造或否认。既往症状、检查、急诊、住院、手术、用药、过敏和病情变化都要如实完整告知；医生明确询问既往诊疗经过时，也应如实回答。目的只是调整信息出现的顺序，减少先入为主，不是考验医生。",
+    ],
+    independentOpinionEvidence: "既往结论可能产生“锚定效应”，使后续判断受第一个意见影响。相关研究主要来自一般临床决策和病理第二意见，不是 AAOCA 专门研究，也不能证明这种安排一定改变结果；它支持的是先独立看片、后比较方案的顺序。",
+    independentOpinionSourcesTitle: "为什么建议先独立判断",
     volumeEvidence: "研究总体支持先心病外科的中心量和术者量与结局存在关联，复杂手术尤其明显；但手术量只是重要线索，不是质量或个人疗效的保证。还要一起询问相近病例、并发症、再次干预、团队配置和随访。",
     volumeSourcesTitle: "这项建议依据的研究",
     selectionTitle: "为什么只列这些",
@@ -240,7 +265,7 @@ export const careInChinaCopy = {
       "超声心动图、心电图，以及已经完成的运动试验、负荷影像或其他缺血检查；",
       "症状时间线：胸痛、胸闷、心悸、晕厥是否与运动相关；",
       "年龄、身高、体重、运动项目与训练强度，以及既往疾病和手术史；",
-      "正在考虑手术时，带上其他中心的诊断与方案，但不要只转述一句“建议手术/观察”。",
+      "正在考虑手术时，把其他中心的诊断与方案另行整理；先请新医生独立看片，形成初步意见后再拿出来逐项比较，不要只转述一句“建议手术/观察”。",
     ],
     questionsTitle: "向每个团队问同一组问题",
     questions: [
@@ -267,6 +292,14 @@ export const careInChinaCopy = {
       "If surgery is ultimately needed, prepare for it as real heart surgery—not a “minor operation”. When the condition is stable and the treating team has not advised urgent action, take the time to check the evidence. Prefer a larger centre with substantial case volume and complete imaging, surgery, anesthesia, perfusion, and cardiac intensive-care support, and look for a surgeon with meaningful experience in the same kind of repair.",
       "A family cannot change the congenital anatomy or reduce surgical risk to zero. Seeking several opinions, choosing the team carefully, and checking directly comparable experience are almost the only parts families can actively control before an operation—and they are worth doing thoroughly.",
     ],
+    independentOpinionTitle: "Let each new clinician give an independent opinion first",
+    independentOpinionBody: [
+      "Treat each new consultation as a genuine first assessment. Provide the original coronary CTA DICOM files and the complete clinical record, then ask the clinician to review the images and state an independent view. Before that initial view is formed, you do not need to volunteer which other clinicians you have seen or lead with whether someone else recommended surgery, observation, or a particular repair. A previous clinician's name cannot replace assessment of the current images, and an early conclusion can anchor the discussion to the earlier plan.",
+      "After the new clinician has described the anatomy and proposed a plan, bring out the other centres' opinions and ask, point by point, why they differ. This produces opinions that can actually be compared instead of a reaction to the first recommendation.",
+      "This does not mean hiding the medical history, and never means inventing or denying information. Fully disclose previous symptoms, tests, emergency visits, admissions, operations, medicines, allergies, and changes in the condition; answer honestly if the clinician asks about prior care. The aim is to change the order in which opinions appear and reduce anchoring—not to test the clinician.",
+    ],
+    independentOpinionEvidence: "A prior conclusion can create anchoring, influencing the opinion that follows. The supporting research comes mainly from general clinical decision-making and pathology second opinions, not AAOCA-specific care, and it does not prove that this sequence will change an outcome. It supports obtaining an independent image review before comparing proposed plans.",
+    independentOpinionSourcesTitle: "Why seek an independent view first",
     volumeEvidence: "Research generally supports an association between congenital-heart centre and surgeon volume and outcomes, particularly for more complex operations. Volume is an important signal, not a guarantee of quality or an individual's result. Ask about comparable cases, complications, reintervention, team support, and follow-up as well.",
     volumeSourcesTitle: "Research behind this advice",
     selectionTitle: "Why this is a short list",
@@ -285,7 +318,7 @@ export const careInChinaCopy = {
       "Echocardiogram, ECG, and any exercise, stress-imaging, or other ischemia testing already completed;",
       "A symptom timeline, including whether chest pain, breathlessness, palpitations, or fainting occur with exercise;",
       "Age, height, weight, sport and training intensity, previous conditions, and operations;",
-      "If surgery is being considered, bring other centres' diagnoses and proposed plans—not just a verbal summary saying “operate” or “observe”.",
+      "If surgery is being considered, organize the other centres' diagnoses and plans separately. Let the new clinician review the images independently, then compare the plans point by point rather than offering only a verbal “operate” or “observe”.",
     ],
     questionsTitle: "Ask every team the same core questions",
     questions: [

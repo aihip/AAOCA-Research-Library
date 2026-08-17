@@ -4,6 +4,7 @@ import { SiteHeader } from "../SiteHeader";
 import {
   CARE_IN_CHINA_PATH,
   careInChinaCopy,
+  careIndependentOpinionSources,
   careInstitutions,
   careVolumeSources,
 } from "../../lib/care";
@@ -38,6 +39,25 @@ export function CareInChinaPage({ lang }: { lang: Language }) {
           {copy.familyAdviceBody.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          <div className="care-independent-opinion">
+            <h3>{copy.independentOpinionTitle}</h3>
+            {copy.independentOpinionBody.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p className="care-independent-evidence">{copy.independentOpinionEvidence}</p>
+            <div className="care-volume-sources">
+              <strong>{copy.independentOpinionSourcesTitle}</strong>
+              <ul>
+                {careIndependentOpinionSources.map((source) => (
+                  <li key={source.url}>
+                    <a href={source.url} target="_blank" rel="noreferrer">
+                      {source.label[lang]} <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <p className="care-volume-evidence">{copy.volumeEvidence}</p>
           <div className="care-volume-sources">
             <strong>{copy.volumeSourcesTitle}</strong>

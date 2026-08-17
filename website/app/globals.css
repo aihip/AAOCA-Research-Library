@@ -1658,6 +1658,37 @@ footer .visit-counter {
   line-height: 1.9;
 }
 
+.care-independent-opinion {
+  margin: 28px 0 0;
+  padding: clamp(20px, 4vw, 30px);
+  border: 1px solid rgba(200, 132, 47, 0.28);
+  border-radius: 12px;
+  background: rgba(248, 239, 220, 0.58);
+}
+
+.care-independent-opinion h3 {
+  margin: 0 0 14px;
+  color: #704714;
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.care-independent-opinion > p {
+  margin: 0 0 12px;
+  line-height: 1.85;
+}
+
+.care-independent-opinion .care-independent-evidence {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(112, 71, 20, 0.2);
+  color: #65451f;
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
 .care-family-advice .care-volume-evidence {
   margin-top: 24px;
   padding: 16px 18px;

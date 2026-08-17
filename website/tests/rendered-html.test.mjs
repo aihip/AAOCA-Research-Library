@@ -531,6 +531,13 @@ test("the China care directory is sourced, bilingual, and avoids clinical endors
   assert.match(zhHtml, /手术量只是重要线索，不是质量或个人疗效的保证/);
   assert.match(zhHtml, /pubmed\.ncbi\.nlm\.nih\.gov\/37652353/);
   assert.match(zhHtml, /pubmed\.ncbi\.nlm\.nih\.gov\/38290594/);
+  assert.match(zhHtml, /每换一位医生，先拿一次独立意见/);
+  assert.match(zhHtml, /不必主动说已经看过哪些医生/);
+  assert.match(zhHtml, /先独立看片、后比较方案/);
+  assert.match(zhHtml, /这不等于隐瞒病史/);
+  assert.match(zhHtml, /医生明确询问既往诊疗经过时，也应如实回答/);
+  assert.match(zhHtml, /pubmed\.ncbi\.nlm\.nih\.gov\/41020455/);
+  assert.match(zhHtml, /pubmed\.ncbi\.nlm\.nih\.gov\/37358843/);
   assert.match(zhHtml, /原始 DICOM/);
   assert.match(zhHtml, /拨打 120/);
 
@@ -549,6 +556,8 @@ test("the China care directory is sourced, bilingual, and avoids clinical endors
   assert.match(enHtml, /not a national ranking, referral, advertisement, or promise of outcome/);
   assert.match(enHtml, /The most practical advice for families/);
   assert.match(enHtml, /not a “minor operation”/);
+  assert.match(enHtml, /Let each new clinician give an independent opinion first/);
+  assert.match(enHtml, /This does not mean hiding the medical history/);
   assert.match(enHtml, /Li Shoujun/);
   assert.match(enHtml, /Shanghai Children&#x27;s Medical Center/);
 
