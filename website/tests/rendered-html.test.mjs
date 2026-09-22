@@ -108,23 +108,23 @@ test("bibliography remains complete, deduplicated, and access-safe", () => {
     (paper) => !paper.access.startsWith("全文"),
   );
 
-  assert.equal(records.length, 91);
+  assert.equal(records.length, 102);
   assert.equal(
     records.filter((paper) => paper.category === "儿童").length,
-    55,
+    60,
   );
   assert.equal(
     records.filter((paper) => paper.category === "成人").length,
-    36,
+    42,
   );
-  assert.equal(fullText.length, 52);
-  assert.equal(nonFullText.length, 39);
+  assert.equal(fullText.length, 54);
+  assert.equal(nonFullText.length, 48);
   assert.equal(
     records.reduce((sum, paper) => sum + Number(paper.pages), 0),
-    1033,
+    1048,
   );
-  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 91);
-  assert.equal(new Set(records.map((paper) => paper.path)).size, 91);
+  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 102);
+  assert.equal(new Set(records.map((paper) => paper.path)).size, 102);
 
   for (const paper of nonFullText) {
     assert.match(paper.path, /NON_FULLTEXT/);

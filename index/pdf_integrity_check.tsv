@@ -90,3 +90,14 @@ OK	adult	non_fulltext	1	824	papers/adult/non_fulltext/2015_NON_FULLTEXT_CCTA_Hig
 OK	adult	non_fulltext	1	3121	papers/adult/non_fulltext/2014_NON_FULLTEXT_AAOCA_Surgical_Unroofing.pdf
 OK	pediatric	non_fulltext	1	618	papers/pediatric/non_fulltext/2025_NON_FULLTEXT_Serial_Exercise_Testing_Children.pdf
 OK	adult	non_fulltext	1	462	papers/adult/non_fulltext/2021_NON_FULLTEXT_Circulation_Coronary_Artery_Anomalies.pdf
+OK	adult	fulltext	3	2277	papers/adult/fulltext/2026_Karla_Quadricuspid_Valve_Anomalous_RCA.pdf
+OK	pediatric	fulltext	3	5621	papers/pediatric/fulltext/2026_Chen_AAOCA_vs_ALCAPA_Review.pdf
+OK	adult	non_fulltext	1	686	papers/adult/non_fulltext/2026_NON_FULLTEXT_Stark_CCTA_vs_3D_IVUS_Accuracy.pdf
+OK	pediatric	non_fulltext	1	653	papers/pediatric/non_fulltext/2026_NON_FULLTEXT_Imperatore_AAOCA_Surgical_Meta_Analysis.pdf
+OK	pediatric	non_fulltext	1	622	papers/pediatric/non_fulltext/2026_NON_FULLTEXT_Oishi_Punch_Assisted_Unroofing_Technique.pdf
+OK	pediatric	non_fulltext	1	642	papers/pediatric/non_fulltext/2026_NON_FULLTEXT_Kawabata_Long_Intramural_LCA_Case.pdf
+OK	adult	non_fulltext	1	663	papers/adult/non_fulltext/2026_NON_FULLTEXT_Durmaz_CCTA_High_Risk_Features.pdf
+OK	pediatric	non_fulltext	1	663	papers/pediatric/non_fulltext/2026_NON_FULLTEXT_Natarajan_Patient_Specific_Hemodynamic_Case.pdf
+OK	adult	non_fulltext	1	645	papers/adult/non_fulltext/2026_NON_FULLTEXT_Luo_Chest_Pain_Circumflex_Anomaly_70yo.pdf
+OK	adult	non_fulltext	1	624	papers/adult/non_fulltext/2026_NON_FULLTEXT_Eisa_Exercise_Induced_VT_Anomalous_RCA.pdf
+OK	adult	non_fulltext	1	627	papers/adult/non_fulltext/2026_NON_FULLTEXT_Kumi_Covered_Stent_ASD_Anomalous_RCA.pdf
