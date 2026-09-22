@@ -108,23 +108,23 @@ test("bibliography remains complete, deduplicated, and access-safe", () => {
     (paper) => !paper.access.startsWith("全文"),
   );
 
-  assert.equal(records.length, 102);
+  assert.equal(records.length, 101);
   assert.equal(
     records.filter((paper) => paper.category === "儿童").length,
-    60,
+    59,
   );
   assert.equal(
     records.filter((paper) => paper.category === "成人").length,
     42,
   );
-  assert.equal(fullText.length, 54);
+  assert.equal(fullText.length, 53);
   assert.equal(nonFullText.length, 48);
   assert.equal(
     records.reduce((sum, paper) => sum + Number(paper.pages), 0),
-    1048,
+    1045,
   );
-  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 102);
-  assert.equal(new Set(records.map((paper) => paper.path)).size, 102);
+  assert.equal(new Set(records.map((paper) => paper.sha256)).size, 101);
+  assert.equal(new Set(records.map((paper) => paper.path)).size, 101);
 
   for (const paper of nonFullText) {
     assert.match(paper.path, /NON_FULLTEXT/);
@@ -139,7 +139,7 @@ test("plain-language overlay stays joined to the authoritative index", () => {
   const checksums = new Set(records.map((paper) => paper.sha256));
   const keys = Object.keys(plainLanguage);
 
-  assert.equal(keys.length, 91, "every record needs a plain-language entry");
+  assert.equal(keys.length, 101, "every record needs a plain-language entry");
 
   for (const key of keys) {
     assert.ok(

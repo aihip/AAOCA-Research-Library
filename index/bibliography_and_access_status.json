@@ -1472,22 +1472,6 @@
     "sha256": "b5de9e0f54f554d851f601fef2d3f3b11448cc982ec01c7f8afbdd8f777c4cab"
   },
   {
-    "category": "儿童",
-    "access": "全文",
-    "year": "2026",
-    "title": "AAOCA and ALCAPA Are Distinct Congenital Coronary Anomalies With Different Pathophysiology and Management",
-    "journal": "Reviews in Cardiovascular Medicine",
-    "doi": "10.31083/RCM49595",
-    "pmid": "42694857",
-    "pmcid": "PMC13540004",
-    "entry_url": "https://doi.org/10.31083/RCM49595",
-    "notes": "综述：区分 AAOCA 与 ALCAPA 两类先天性冠状动脉异常的病理生理与管理策略差异。",
-    "path": "papers/pediatric/fulltext/2026_Chen_AAOCA_vs_ALCAPA_Review.pdf",
-    "pages": "3",
-    "bytes": "241232",
-    "sha256": "bd3ce0f3b87a3970c0c828d95a9d37bc4c7a43a191aa88dea7a770c7b042af47"
-  },
-  {
     "category": "成人",
     "access": "非全文",
     "year": "2026",
