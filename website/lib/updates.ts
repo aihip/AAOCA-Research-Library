@@ -31,7 +31,7 @@ export const updates: UpdateEntry[] = [
         en: "Question-page titles now use search phrasing such as “Does AAOCA need surgery?”, while the on-page questions are unchanged.",
       },
     ],
-    commits: [],
+    commits: ["4800b40"],
   },
   {
     date: "2026-08-17",
