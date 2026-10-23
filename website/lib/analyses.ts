@@ -25,6 +25,28 @@ export type AnalysisMeta = {
  */
 export const analyses: AnalysisMeta[] = [
   {
+    slug: "aaorca-how-serious",
+    date: "2026-10-23",
+    dateLabel: { zh: "2026 年 10 月 23 日", en: "23 October 2026" },
+    readingLabel: { zh: "约 12 分钟", en: "12 min read" },
+    zh: {
+      label: "患者指南",
+      title: "右冠状动脉异常起源于左冠窦（AAORCA）：到底严重吗？",
+      summary:
+        "是什么、壁内段和主肺动脉间走行意味着什么、猝死风险有多大、要做哪些检查、什么时候考虑手术、能不能运动——按家长最常问的顺序回答。",
+      read: "阅读全文",
+      timelineLabel: "证据时间线",
+    },
+    en: {
+      label: "Patient guide",
+      title: "Right coronary artery arising from the left sinus (AAORCA): how serious is it?",
+      summary:
+        "What it is, what an intramural or interarterial course means, how large the sudden-death risk is, which tests are used, when surgery is considered, and whether sport can continue — in the order families ask.",
+      read: "Read the guide",
+      timelineLabel: "Evidence timeline",
+    },
+  },
+  {
     slug: "aaorca-conservative-surveillance",
     date: "2026-08-14",
     dateLabel: { zh: "2026 年 8 月 14 日", en: "14 August 2026" },

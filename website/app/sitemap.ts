@@ -7,7 +7,7 @@ import { UPDATE_HISTORY_PATH } from "../lib/updates";
 import { EXPERIENCE_INDEX_PATH, EXPERIENCE_PATH } from "../lib/experiences";
 import { CARE_IN_CHINA_PATH } from "../lib/care";
 
-const LAST_MODIFIED = "2026-08-17";
+const LAST_MODIFIED = "2026-10-23";
 const TREES = ["", "/en"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -13,6 +13,9 @@ type TopicCopy = {
   question: string;
   blurb: string;
   intro: string;
+  /** Search-facing <title> and description, written in the words families type. */
+  seoTitle: string;
+  seoDescription: string;
 };
 
 export type Topic = {
@@ -54,12 +57,16 @@ export const topics: Topic[] = [
       blurb: "冠状动脉从哪里发出，为什么位置会有影响",
       intro:
         "冠状动脉负责给心脏本身供血。绝大多数人的两条冠状动脉从主动脉根部各自固定的位置发出；少数人其中一条的开口长在了另一侧，或者走行在主动脉和肺动脉之间。这里收集的是描述这种解剖变异、分类方式，以及它在人群中出现频率的研究。每个人的具体解剖都不一样，影像报告上的用词要请医生结合你自己的片子来解释。",
+      seoTitle: "AAOCA是什么？冠状动脉起源异常的类型与右冠起源于左冠窦",
+      seoDescription: "冠状动脉起源异常（AAOCA）是什么：左冠、右冠（AAORCA）异常起源的区别，壁内段、主动脉肺动脉间走行等术语，以及相关研究文献。",
     },
     en: {
       question: "What is this condition",
       blurb: "Where the coronary arteries arise, and why position matters",
       intro:
         "The coronary arteries supply blood to the heart muscle itself. In most people both arise from their own sinus on the aortic root; in a small number of people one of them originates from the opposite side or courses between the aorta and the pulmonary artery. These records describe the anatomy, how it is classified, and how often it is found. Anatomy differs from person to person — ask your clinician to interpret your own imaging.",
+      seoTitle: "What is AAOCA? Coronary artery origin anomalies, AAORCA and ACAOS explained",
+      seoDescription: "What anomalous aortic origin of a coronary artery (AAOCA) is, how right-sided (AAORCA) and left-sided types differ, and the research literature behind the terms.",
     },
   },
   {
@@ -70,12 +77,16 @@ export const topics: Topic[] = [
       blurb: "风险分层、猝死风险、长期随访结果",
       intro:
         "这是家属最想知道、但研究给不出简单答案的问题。已有研究试图找出哪些解剖特征和症状与更高的风险相关，但不同研究纳入的人群、随访时间和判断标准差别很大，结论并不完全一致。下面的记录反映的是这种不确定性本身，不构成对任何具体病人的判断。",
+      seoTitle: "AAOCA严重吗？右冠异常起源（AAORCA）的猝死风险与风险分层",
+      seoDescription: "冠状动脉起源异常严不严重、会不会猝死：儿童与成人风险分层研究、壁内段与主肺动脉间走行的意义，以及证据的不确定性。",
     },
     en: {
       question: "How serious is it",
       blurb: "Risk stratification, sudden death, long-term follow-up",
       intro:
         "This is the question families most want answered, and the one the literature answers least cleanly. Studies have tried to identify which anatomical features and symptoms carry higher risk, but populations, follow-up length, and endpoints differ substantially between them. These records document that uncertainty; they are not a judgement about any individual.",
+      seoTitle: "How serious is AAOCA? Sudden death risk and risk stratification in AAORCA",
+      seoDescription: "How serious anomalous coronary origin is, sudden-death risk, what intramural and interarterial courses mean, and where the evidence is uncertain.",
     },
   },
   {
@@ -86,12 +97,16 @@ export const topics: Topic[] = [
       blurb: "CT、磁共振、超声心动图、负荷试验各能看出什么",
       intro:
         "评估通常需要不止一种检查：超声心动图常用于最初发现，CT 血管造影用于看清开口位置和血管走行，磁共振和负荷试验用于判断心肌供血是否已经受到影响。下面的研究比较了这些方法各自能看到什么、又有哪些局限。做哪些检查、什么时候做，由医生根据具体情况决定。",
+      seoTitle: "AAOCA需要做哪些检查？CTA、心脏MRI、负荷试验与超声",
+      seoDescription: "冠状动脉起源异常要做哪些检查：心脏超声、冠脉CTA、心脏MRI、运动负荷试验各能看出什么，又有哪些局限。",
     },
     en: {
       question: "Which tests are used",
       blurb: "What CT, MRI, echocardiography, and stress testing can show",
       intro:
         "Assessment usually needs more than one modality: echocardiography often makes the initial finding, CT angiography shows the ostium and course, and MRI or stress testing assess whether myocardial perfusion is affected. These studies compare what each method can and cannot show. Which tests to perform, and when, is a clinical decision.",
+      seoTitle: "Which tests are needed for AAOCA? CTA, cardiac MRI, stress testing and echo",
+      seoDescription: "What echocardiography, coronary CTA, cardiac MRI and stress testing can and cannot show in anomalous coronary origin.",
     },
   },
   {
@@ -102,12 +117,16 @@ export const topics: Topic[] = [
       blurb: "运动限制、恢复训练、竞技体育参与",
       intro:
         "运动限制往往是确诊后对日常生活影响最大的一件事。相关的专家共识在过去十年里有明显变化，不同国家和学会的建议也不完全相同。下面既包括正式的运动心脏病学指南，也包括观察运动人群结局的研究。能不能运动、运动到什么强度，必须由你的医生结合具体解剖和检查结果决定。\n先说明一件事：这个问题下面的记录最少。这不是整理时漏掉了，而是针对冠状动脉起源异常与运动的专门研究本来就很少，其中一部分还是面向所有心血管疾病的通用运动指南，并非专门研究这个情况。家属最关心的问题，恰恰是证据最薄的问题——这本身就是你和医生讨论时需要知道的一件事。",
+      seoTitle: "AAOCA还能运动吗？AAORCA儿童运动限制与竞技体育指南",
+      seoDescription: "冠状动脉起源异常还能不能运动：AHA/ACC、ESC 运动心脏病学指南的立场变化，儿童与运动员的运动限制，以及证据为何偏少。",
     },
     en: {
       question: "Can sport continue",
       blurb: "Activity restriction, return to training, competitive participation",
       intro:
         "Activity restriction is often the change that affects daily life most after diagnosis. Consensus in this area has shifted noticeably over the past decade, and recommendations differ between societies. These records include formal sports cardiology guidance as well as studies following athletic populations. Decisions about activity belong with your clinician.\nOne thing to say plainly: this question holds the fewest records of any here. That is not an oversight in the curation — research specific to this condition and exercise is genuinely scarce, and part of what exists is general sports cardiology guidance rather than work on this anomaly. The question families care most about is the one with the thinnest evidence, which is itself worth knowing when you talk to your clinician.",
+      seoTitle: "Can you exercise with AAOCA? Sports restriction in children and athletes",
+      seoDescription: "Whether sport can continue with anomalous coronary origin: how AHA/ACC and ESC sports cardiology guidance has changed, and why the evidence is thin.",
     },
   },
   {
@@ -118,12 +137,16 @@ export const topics: Topic[] = [
       blurb: "手术指征、术式选择、术后结果",
       intro:
         "手术方式包括去顶术、冠状动脉移位、旁路移植等，选择取决于具体的解剖类型。下面的记录多为单中心病例系列，样本量普遍偏小，随访时间长短不一，因此不同研究报告的结果不能直接互相比较。是否手术、何时手术，是需要和心外科团队反复讨论的决定。",
+      seoTitle: "AAOCA需要手术吗？去顶术、再植术与手术指征",
+      seoDescription: "冠状动脉起源异常要不要手术：手术指征、去顶术、冠脉再植、肺动脉移位与搭桥的选择，以及术后结果研究。",
     },
     en: {
       question: "Is surgery needed",
       blurb: "Indications, operative techniques, post-operative outcomes",
       intro:
         "Reported techniques include unroofing, coronary translocation, and bypass grafting, and the choice depends on the specific anatomy. Most records here are single-centre case series with small samples and varying follow-up, so results are not directly comparable between studies. Whether and when to operate is a decision to work through with a surgical team.",
+      seoTitle: "Does AAOCA need surgery? Indications, unroofing and reimplantation",
+      seoDescription: "When surgery is considered for anomalous coronary origin: indications, unroofing, reimplantation, translocation, bypass, and reported outcomes.",
     },
   },
   {
@@ -134,12 +157,16 @@ export const topics: Topic[] = [
       blurb: "专家共识与临床指南",
       intro:
         "单篇研究的结论可能互相矛盾，医生做判断时主要依据的是专家共识和临床指南——它们综合了大量研究，并标注了每条建议的证据强度。如果你只打算读几份材料，建议从这里开始。这些文件是写给专业人员看的，术语较多，可以带着具体问题请医生一起看。",
+      seoTitle: "AAOCA专家共识与指南：AATS、中国专家共识、ASE、AHA/ACC",
+      seoDescription: "冠状动脉起源异常的专家共识与临床指南汇总：AATS 2017、中国专家共识、ASE 影像指南、AHA/ACC 运动声明。",
     },
     en: {
       question: "What clinicians rely on",
       blurb: "Consensus statements and clinical guidelines",
       intro:
         "Individual studies can contradict one another. Clinicians rely primarily on consensus statements and guidelines, which synthesise many studies and grade the strength of evidence behind each recommendation. If you only read a few documents, start here. They are written for professionals, so bring specific questions to your clinician.",
+      seoTitle: "AAOCA consensus and guidelines: AATS, Chinese consensus, ASE, AHA/ACC",
+      seoDescription: "Consensus statements and guidelines on anomalous coronary origin: AATS 2017, Chinese expert consensus, ASE imaging guide, AHA/ACC sports statements.",
     },
   },
 ];

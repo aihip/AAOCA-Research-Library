@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TopicPage } from "../../../../components/pages/TopicPage";
 import { alternatesFor } from "../../../../lib/i18n";
-import { zh } from "../../../../lib/i18n/zh";
 import { findTopic, TOPIC_SLUGS } from "../../../../lib/topics";
 
 type TopicPageProps = { params: Promise<{ slug: string }> };
@@ -19,8 +18,8 @@ export async function generateMetadata({
   if (!topic) return {};
 
   return {
-    title: zh.topic.metaTitle(topic.zh.question),
-    description: zh.topic.metaDescription(topic.zh.question),
+    title: { absolute: topic.zh.seoTitle },
+    description: topic.zh.seoDescription,
     alternates: alternatesFor("zh", `/topics/${slug}`),
   };
 }

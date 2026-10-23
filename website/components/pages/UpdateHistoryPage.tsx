@@ -64,21 +64,23 @@ export function UpdateHistoryPage({ lang }: { lang: Language }) {
                   ))}
                 </ul>
 
-                <div className="update-commits">
-                  <strong>{text.commits}</strong>
-                  <div>
-                    {entry.commits.map((commit) => (
-                      <a
-                        href={`${REPOSITORY_URL}/commit/${commit}`}
-                        key={commit}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {commit}
-                      </a>
-                    ))}
+                {entry.commits.length > 0 ? (
+                  <div className="update-commits">
+                    <strong>{text.commits}</strong>
+                    <div>
+                      {entry.commits.map((commit) => (
+                        <a
+                          href={`${REPOSITORY_URL}/commit/${commit}`}
+                          key={commit}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {commit}
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </section>
             </li>
           ))}

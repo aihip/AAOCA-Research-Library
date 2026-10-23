@@ -12,6 +12,28 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    date: "2026-10-23",
+    title: {
+      zh: "新增 AAORCA 患者指南，并按真实搜索词重写专题页标题",
+      en: "Added an AAORCA patient guide and rewrote question-page titles around real search terms",
+    },
+    summary: {
+      zh: "新增一页按家长提问顺序写成的 AAORCA 指南，并把六个专题页的标题和描述改成患者实际会搜索的说法。",
+      en: "Added one guide written in the order families ask about AAORCA, and rewrote the titles and descriptions of the six question pages in the words patients actually search.",
+    },
+    changes: [
+      {
+        zh: "新增《右冠状动脉异常起源于左冠窦（AAORCA）：到底严重吗？》，覆盖定义、壁内段、猝死风险、检查、手术、运动与共识。",
+        en: "Added “Right coronary artery arising from the left sinus (AAORCA): how serious is it?”, covering definition, intramural course, sudden-death risk, tests, surgery, sport, and consensus.",
+      },
+      {
+        zh: "专题页标题改为「AAOCA需要手术吗」「AAOCA还能运动吗」等搜索用语，同时保留页面内的原有提问。",
+        en: "Question-page titles now use search phrasing such as “Does AAOCA need surgery?”, while the on-page questions are unchanged.",
+      },
+    ],
+    commits: [],
+  },
+  {
     date: "2026-08-17",
     title: {
       zh: "新增中国就医线索与家长会诊建议",
